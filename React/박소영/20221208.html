@@ -1,0 +1,909 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>22.12.08</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="bfae6abf-b3d7-4f81-a019-11db4c124747" class="page sans"><header><h1 class="page-title">22.12.08</h1></header><div class="page-body"><ul id="fecb08b9-f69c-43f5-81b5-3bf8c5a281eb" class="toggle"><li><details open=""><summary>성능 최적화는 어떻게 하고, 어떤 경험이 있나요?</summary><ul id="8a387a3e-b156-4719-ab3b-f8e2d51d7b23" class="toggle"><li><details open=""><summary>컴포넌트의 리렌더링 조건</summary><ul id="bfcc3d4e-0c5b-4501-8e79-15e81b8c795c" class="bulleted-list"><li style="list-style-type:disc">props가 변경되었을 때</li></ul><ul id="f72b2bf1-a78c-4241-8737-e5e934feda72" class="bulleted-list"><li style="list-style-type:disc">state가 변경되었을 때</li></ul><ul id="ffa7a8cd-80cb-421b-884c-4a53f016a667" class="bulleted-list"><li style="list-style-type:disc">forceUpdate()를 실행했을 떄</li></ul><ul id="4d3010c2-eda2-4425-b868-618e05756e8e" class="bulleted-list"><li style="list-style-type:disc">부모 컴포넌트가 리렌더링되었을 때</li></ul><p id="65244034-90d7-407a-a608-1204cadcab37" class="">
+</p></details></li></ul><ul id="528a0787-5a9e-4b7e-9063-4fd8095d90ca" class="toggle"><li><details open=""><summary>최적화</summary><ul id="753031c6-dc7b-4d51-a3bb-2211c143dc5f" class="bulleted-list"><li style="list-style-type:disc">useMemo<p id="e615b074-20f6-4993-a6a3-07e4a4290d17" class="">CPU 소모가 심한 함수들을 캐싱하기 위해 사용.
+종속 변수들이 변하지 않으면 이전에 반환한 참조값 재사용
+→ 함수 호출 시간 줄일 수 있으며 같은 값을 props로 받는 하위 컴포넌트 리렌더링 방지 가능</p></li></ul><ul id="d06fb34f-5dd1-4822-94e6-f420479b64e7" class="bulleted-list"><li style="list-style-type:disc">React.memo 컴포넌트 메모이제이션<p id="5616f806-a110-4fea-a701-8ceb28c19e16" class="">클래스형, 함수형 둘다 사용 가능
+컴포넌트의 props가 바뀌지 않았다면 리렌더링되지 않도록 최적화 가능함
+콜백 함수를 이용해 메모이제이션을 적용할지 여부 판단도 가능</p></li></ul><ul id="0350708a-14f8-4b15-ae66-b8e2c5e35f9f" class="bulleted-list"><li style="list-style-type:disc">useCallback<p id="8be4dce9-ba1b-4723-b91b-e056a09192ab" class="">함수 선언을 메모이제이션하기 위해 사용
+함수는 객체이고 새로 생성한 함수는 다른 참조값을 가지기 때문에 컴포넌트 입장에서는
+새로 생성된 함수를 받을 때 props가 변한 것으로 인지하게 됨
+이때 useCallback 사용 시 종속 변수들이 변하지 않는 이상 함수를 재생성하지 않고,
+이전에 있던 참조변수를 그대로 하위 컴포넌트에 props로 전달하므로 
+하위 컴포넌트의 리렌더링 방지 가능함</p></li></ul><ul id="a8aae26a-18bf-4f30-a406-ea13be6a565a" class="bulleted-list"><li style="list-style-type:disc">자식 컴포넌트의 props로 객체 넘겨줄 경우 변형하지 않고 넘기기<p id="73d57692-f184-4d9b-b398-dee89d083957" class="">생성자 함수나 객체리터럴을 넘기는 경우 새로 생성된 객체가 props로 들어가므로
+컴포넌트가 리렌더링될 때마다 새로운 객체가 생성되어 자식 컴포넌트로 전달됨
+즉, 이전 객체와 다른 참조 주소를 가진 객체이므로 자식 컴포넌트는 메모이제이션 되지 않음</p><p id="19fd37e4-3abc-4035-bc05-daafec5a0fa4" class="">
+</p><p id="d0ae93f0-7910-47bb-9410-2d8d02784b62" class="">따라 state를 그대로 하위 컴포넌트에 넘겨 필요한 데이터 가공은 하위 컴포넌트에서 해줌</p></li></ul><ul id="7858794b-de08-48ef-9f3e-6000b6eac277" class="bulleted-list"><li style="list-style-type:disc">컴포넌트 매핑 시 key 값으로 index 사용하지 않음<p id="32b02746-c9c0-4ee0-a11c-9a36235ec95a" class="">index로 key 값을 설정하는 경우 배열 중간에 어떤 요소가 삽입될 때 그 중간 이후 요소들은 전부 index가 변경됨 → 이로 인해 key가 동일할 경우 동일한 DOM element를 보여주기 때문에 예상치 못한 문제 발생하고 데이터와 key가 매치되지 않아 서로 꼬일 수 있음</p></li></ul><ul id="0619c491-521e-420a-87f1-166ca2a478ab" class="bulleted-list"><li style="list-style-type:disc">useState의 함수형 업데이트<p id="723a257b-dcd1-4749-b7e1-5b8d293a5547" class="">useState의 업데이트 함수를 사용하면 useCallback 사용 시 두번째 파라미터 배열에 
+값을 넣어주지 않아도 됨</p></li></ul><ul id="a07cf7dd-2016-4b6d-a615-1528e1927903" class="bulleted-list"><li style="list-style-type:disc">input에 onChange 최적화<p id="07d66861-d824-4b30-8c1d-9f231efe6a31" class="">onChange 이벤트는 타이핑시마다 해당 컴포넌트가 렌더링되므로 debounce를 통해 최적화</p></li></ul><ul id="dfe615c0-802a-4753-95e0-aca4e0341c80" class="bulleted-list"><li style="list-style-type:disc">list에 windowing 기법 사용<p id="fd89000a-e5cd-4df3-bd2b-5c2fa80ad953" class="">viewport에 보여지는 부분만 렌더링. 나머지는 스크롤 시 보여지도록
+⇒ 렌더링할 DOM 적어지므로 빠름</p></li></ul><ul id="ba41a38d-d134-4eb4-b9ec-83598660319f" class="bulleted-list"><li style="list-style-type:disc">React.PureComponent 사용<p id="bd867c4a-2c40-4b48-bef0-3b9132d68e92" class="">이전 props, state와 변경할 props, state를 얇게 비굥함
+component가 렌더링되는 횟수를 줄임으로써 최적화
+class 컴포넌트에서만 가능</p></li></ul><ul id="92983868-02d5-4866-b178-06d3cfbc7b0d" class="bulleted-list"><li style="list-style-type:disc">Web worker 사용<p id="47a8d82a-b25e-4bde-b706-8c110d43a3e1" class="">JS는 싱글스레드에서 동작하므로 오래 걸리는 프로세스는 다른 쓰레드로 옮기는 방식
+React에서 공식적으로 지원하지는 않음.
+메인쓰레드는 web worker와 병렬로 실행됨</p></li></ul><ul id="ab31b7fe-b25e-4b93-a186-d3c3af3f0109" class="bulleted-list"><li style="list-style-type:disc">Lazy Loading<p id="64f4a5f1-d278-437e-b8d4-e7b723240c2e" class="">React.lazy() API를 사용
+⇒ 동적 import를 사용해 일반 component처럼 렌딩 가능하게 함
+lazy loading과 코드 스플리팅 사용 가능</p></li></ul><ul id="e0d4c8a3-8134-4119-a1fe-eda80ca99752" class="bulleted-list"><li style="list-style-type:disc">shouldComponentUpdate()<p id="69c7a846-b941-4abe-a13d-28d63fad9d73" class="">class 컴포넌트에서만 가능 ⇒ 함수형에서는 React.memo 권장</p></li></ul><ul id="84be13f6-8ee6-4867-87e1-29e677774aa2" class="bulleted-list"><li style="list-style-type:disc">state 선언을 해당 state를 사용할 최상단 컴포넌트에 선언</li></ul><ul id="4688d130-99d4-4ba2-b22d-cd731e4c3ea6" class="bulleted-list"><li style="list-style-type:disc">객체 타입의 state는 최대한 분할해 선언<p id="7a6ee1c6-866c-4be8-8677-e1bc595b7568" class="">복잡한 객체로 선언된 state를 분할하지 않으면 하위 컴포넌트가 사용하지 않는
+다른 프로퍼티의 값이 업데이트될 때도 리렌더링 발생함</p></li></ul><p id="ff38970f-43c8-4901-ac0a-f6f04703aadd" class="">
+</p></details></li></ul><ul id="c948c2ec-038e-4fe9-a7e2-3175e5556fc0" class="toggle"><li><details open=""><summary>Reference</summary><ul id="3da8041f-bafa-4fff-9318-7717d7ac8d03" class="bulleted-list"><li style="list-style-type:disc"><a href="https://velog.io/@shin6403/React-%EB%A0%8C%EB%8D%94%EB%A7%81-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%98%EB%8A%94-7%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95-Hooks-%EA%B8%B0%EC%A4%80">https://velog.io/@shin6403/React-렌더링-성능-최적화하는-7가지-방법-Hooks-기준</a></li></ul><ul id="b95fe5b9-8e9c-46ad-b69d-1bbb7caefbe7" class="bulleted-list"><li style="list-style-type:disc"><a href="https://uzihoon.com/post/ef453fd0-ab14-11ea-98ac-61734eebc216">https://uzihoon.com/post/ef453fd0-ab14-11ea-98ac-61734eebc216</a></li></ul></details></li></ul><p id="0a4123be-ef95-4fc0-9ca3-a096d3afc2f0" class="">
+</p></details></li></ul><ul id="264b1faa-a82c-43fd-b3fa-0df7bb5e8045" class="toggle"><li><details open=""><summary>Context API가 있는데 왜 상태관리 라이브러리를 사용하나요?</summary><p id="77dcdb05-0dbc-4085-a7b2-11b915bff83c" class=""><a href="https://velog.io/@yrnana/Context-API%EA%B0%80-%EC%A1%B4%EC%9E%AC%ED%95%98%EC%A7%80%EB%A7%8C-%EC%97%AC%EC%A0%84%ED%9E%88-%EC%82%AC%EB%9E%8C%EB%93%A4%EC%9D%B4-redux%EC%99%80-%EC%A0%84%EC%97%AD-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EB%A5%BC-%EC%93%B0%EB%8A%94-%EC%9D%B4%EC%9C%A0">https://velog.io/@yrnana/Context-API가-존재하지만-여전히-사람들이-redux와-전역-상태관리-라이브러리를-쓰는-이유</a></p><ul id="3a9c7a48-308b-4091-b9b1-dbd1248bf5f3" class="bulleted-list"><li style="list-style-type:disc">React가 기본적으로 제공하는 API</li></ul><ul id="a1bac76f-9ba2-46be-9bdb-17373d4a34f1" class="bulleted-list"><li style="list-style-type:disc">사용 시 단계마다 props를 넘기지 않고도 컴포넌트 트리 전체에 데이터 공유가 가능함</li></ul><ul id="a352a028-6a98-4b9f-858d-922cb5c2de56" class="bulleted-list"><li style="list-style-type:disc">정적인 데이터 위주로 처리하거나 업데이트가 자주 발생하지 않을 때 사용하기 적합</li></ul><ul id="c48adb82-cce0-42e9-a7cc-f3e591bcb4b2" class="bulleted-list"><li style="list-style-type:disc">복잡한 업데이트 처리는 비효율적.
+Provider-Consumer 구조로 상태를 주고받는데 
+Context를 구독하는 컴포넌트들은 Provider의 value prop이 변경될 때마다 다시 렌더링됨.
+즉, context가 변경될 때마다 context를 구독한 모든 컴포넌트가 리렌더링 됨.
+⇒ 성능상의 비효율
+⇒ 
+이를 해결하려면 context를 상태값/액션으로 나눠야 하는데 
+보일러 플레이트 코드가 많아지고 코드가 지저분해짐
+또한 컨텍스트 추가시마다 provider로 감싸야하므로 provider hell이 됨
+
+또는 useMemo를 통해 Provider의 value props를 메모이제이션할 수 있지만
+렌더링 최적화에 있어서는 여전히 아쉬움</li></ul><ul id="1c612abd-b929-4070-8525-1c53e7655e77" class="bulleted-list"><li style="list-style-type:disc">이런 단점 때문에 글로벌 상태 관리 라이브러리로 대체할 수 없음</li></ul><ul id="482bf4d7-df9f-462b-af50-b0b518a3b195" class="bulleted-list"><li style="list-style-type:disc">값의 관리가 아닌 값의 전달, 공유의 목적이기 때문에 파이프나 웜홀에 가까움</li></ul><p id="d75ad9cc-8a69-470f-9c9b-e5e4de2d3b4c" class="">
+</p></details></li></ul><ul id="f065a9ba-4323-4042-8945-12f2d4201021" class="toggle"><li><details open=""><summary>Virtual DOM이란 무엇이고 동작원리는 무엇인지, DOM과 어떤 차이를 가지고 있는지, 
+Virtual DOM을 사용하면 어떤 장점을 가지고 있나요? (reflow, repaint)</summary><ul id="4a5f6d42-c274-4448-8c3d-569f6fec636a" class="toggle"><li><details open=""><summary>Virtual DOM 등장 이유</summary><ol type="1" id="abbc828b-9391-4c0c-860e-0ee58815c242" class="numbered-list" start="1"><li>DOM 트리 생성</li></ol><ol type="1" id="b4969bdf-4d24-4726-8f1a-5c52785723d6" class="numbered-list" start="2"><li>CSSOM 트리 생성</li></ol><ol type="1" id="6cde7cfa-f4d0-4e05-a2d8-daf7e7454017" class="numbered-list" start="3"><li>렌더 트리 생성</li></ol><ol type="1" id="ee717d28-2ff7-40f6-85b0-e77ed1eedf7e" class="numbered-list" start="4"><li>reflow (layout) : 브라우저 뷰포트 내 어느 위치에 어느 크기로 배치되어야 하는지 정보 계산</li></ol><ol type="1" id="19f69309-f36f-499c-b9df-df1339958739" class="numbered-list" start="5"><li>repaint (paint) : 렌더 트리 각 노드들을 모니터에 실제 픽셀로 그리는 단계</li></ol><p id="4f8b540a-a4f1-4874-8f4d-83f01a9f855d" class="">
+</p><p id="e8a02d15-9cce-4aab-a534-dae95bbc44bc" class="">DOM 자체는 빠르지만 DOM을 수정하는 일은 수정 비용 큼
+⇒ 성능 저하를 최소화하기 위해선 DOM을 최소한으로 수정 필요
+⇒ Virtual DOM 등장</p><p id="857a2972-0a56-4caf-adfa-5b26fa303481" class="">
+</p></details></li></ul><ul id="839d73c8-dfc2-424b-b0f2-91bae3df323d" class="toggle"><li><details open=""><summary>Virtual DOM이란?</summary><ul id="8de922e4-9137-474f-91d1-9bb5631f4de3" class="bulleted-list"><li style="list-style-type:disc">실제 DOM 구조와 비슷한 React 객체의 트리</li></ul><ul id="e04db98b-e4ec-4153-8442-3c3ff91180a2" class="bulleted-list"><li style="list-style-type:disc">UI의 가상적인 표현을 메모리에 저장하고 
+React DOM과 같은 라이브러리에 의해 실제 DOM과 동기화 -react 공식문서</li></ul><ul id="27cb11f0-a9c9-49aa-bdf4-7f83dd830740" class="bulleted-list"><li style="list-style-type:disc">JS 객체 활용</li></ul><ul id="d591d1ca-b03a-491c-820d-3dbdff74ccd6" class="bulleted-list"><li style="list-style-type:disc">메모리 상에서 동작하기 때문에 훨씬 더 빠르게 동작</li></ul><ul id="2d49252a-08e1-4471-a322-0ad97c13e3e0" class="bulleted-list"><li style="list-style-type:disc">실제 렌더링되지 않기 떄문에 연산 비용 적음</li></ul><ul id="135f52ad-b5e6-4ac0-aeeb-64e6bdfe3a7b" class="bulleted-list"><li style="list-style-type:disc">DOM Fragment에 변화를 묶어 적용시킨 뒤 기존 DOM에 던져주는 과정을 
+자동화, 추상화해놓은 것</li></ul><p id="f007658d-76fc-4d6c-b08d-2d4a22fc1cbc" class="">
+</p></details></li></ul><ul id="175d65fb-0483-4967-881a-27e078ce73dd" class="toggle"><li><details open=""><summary>VIrtual DOM 동작 원리</summary><p id="8d4de4cc-310a-4d79-8167-ccefe20e5e31" class="">React에서는 특정 부분이 리렌더링 되어야 할 때</p><ol type="1" id="e0e81f11-33aa-42f4-b17f-3ac64e0bdaab" class="numbered-list" start="1"><li>데이터 업데이트 시 전체 UI가 Virtual DOM에서 리렌더링 됨
+(Virtual DOM 트리를 메모리에 새로 생성)</li></ol><ol type="1" id="15ae41fe-e02b-462b-b6ed-0e9139ca4eb7" class="numbered-list" start="2"><li>이전 Virtual DOM 트리와 O(n) 휴리스틱 알고리즘으로 비교해 차이 파악</li></ol><ol type="1" id="189b919c-350d-48dd-84b1-d1b461a5f679" class="numbered-list" start="3"><li>그 차이점들을 하나로 모아 실제 DOM에 전달</li></ol><p id="69c0e4bd-b24b-4872-90d9-57aeaffc6255" class="">즉, DOM의 리렌더링 연산은 단 한번만 일어나게 되어 큰 성능의 이득을 얻게 됨.
+vanilla js로도 이런 batch update를 구현 가능하지만 직접 구현하여 관리하는 것은 비효율적
+react는 얕은 비교와 일괄 돔 업데이트 방식을 사용해 성능 향상을 이끔</p><p id="ceff148c-32dd-4167-a76f-1d04e81ac908" class="">
+</p><ul id="d82c75f4-bc3f-44a1-9e2c-c353c75d40fd" class="toggle"><li><details open=""><summary>React 최초 렌더링 과정</summary><ol type="1" id="08c16415-4e37-443e-8fe2-bde4b0b225a6" class="numbered-list" start="1"><li>ReactDOM.render (루트 엘리먼트, DOM 노드) 호출</li></ol><ol type="1" id="740d4877-9a9f-4494-8a53-19c1a75729d5" class="numbered-list" start="2"><li>루트 엘리먼트부터 시작해서, 마주친 엘리먼트의 type 검사<ul id="f9e815e8-b6fb-45bf-870b-559da100a696" class="bulleted-list"><li style="list-style-type:disc">DOM 엘리먼트 : 
+자식 엘리먼트에 대해 동일한 과정 재귀적으로 반복</li></ul><ul id="274dddbb-9ee1-44bc-ba66-21c4bbf0f289" class="bulleted-list"><li style="list-style-type:disc">컴포넌트 엘리먼트 : 
+해당 컴포넌트에 props를 입력으로 제공해 엘리먼트 트리를 얻음
+함수형 컴포넌트라면 해당 함수를 호출함으로써,
+클래스형 컴포넌트라면 컴포넌트 인스턴스를 생성한 후 render() 메소드를 호출함으로써.
+그렇게 얻은 엘리먼트 트리의 루트 엘리먼트에 대해 동일한 과정을 재귀적으로 반복</li></ul></li></ol><ol type="1" id="521c28b4-12f5-40ef-8976-31583d51fbac" class="numbered-list" start="3"><li>위와 같이 모든 컴포넌트들에 질문하는 과정을 마치면 최종적으로 한 엘리먼트 트리를 얻음</li></ol><ol type="1" id="7ac02916-b26e-4c29-9c68-dee2c58cb3e8" class="numbered-list" start="4"><li>해당 엘리먼트 트리(=Virtual DOM)를 실제로 DOM에 일괄 반영하는 작업 수행</li></ol></details></li></ul><ul id="0195c7ea-6640-440d-b374-dbb0921678ee" class="toggle"><li><details open=""><summary>React 리렌더링 과정 - state나 props가 변경되는 경우</summary><ul id="8e5bcf71-2c80-4634-b623-9a84574f8480" class="bulleted-list"><li style="list-style-type:disc">setState() 메소드 호출 시, render() 메소드의 호출을 통해 새로운 엘리먼트 트리가 반환</li></ul><ul id="41555e37-fce3-476c-b026-8ea403e45fa1" class="bulleted-list"><li style="list-style-type:disc">컴포넌트에서 새로운 엘리먼트 트리가 반환될 떄마다 기존의 엘리먼트 트리에서 
+변경된 부분을 계산하기 위한 재조정(Reconciliation) 과정을 밟음
+최초 렌더링 과정과 마찬가지로 재조정 과정도 루트 엘리먼트부터 시작해 
+아래로 내려가면서 재귀적으로 반복. 
+그렇게 계산된 차이점들은 나중에 DOM을 효율적으로 일괄 갱신하기 위해 사용됨</li></ul><ul id="59f84797-c681-4323-b353-da0edec77954" class="bulleted-list"><li style="list-style-type:disc">재조정 과정은 O(n)의 시간밖에 소요되지 않지만, 
+리렌더링이 필요치 않은 컴포넌트 엘리먼트까지 렌더링을 시도하면 
+(=render() 메소드 호출 + 재조정) 불필요한 시간 낭비를 유발할 수 있음
+이때 shouldCompoentUpdate() 메소드를 적절히 오버라이딩하면 특정 컴포넌트 엘리먼트의 불필요한 render() 메소드 호출을 막을 수 있음. 
+이 경우 해당 엘리먼트 트리는 리렌더링이 일어나지 않음</li></ul></details></li></ul><ul id="262d63a6-7c04-4d87-a9b5-908b710a3872" class="toggle"><li><details open=""><summary>Reconciliation - 재조정/레컨실리에이션</summary><p id="be5fe659-a7cd-420d-95d4-c6ef48643d67" class="">컴포넌트의 state나 props가 변경될 때 새로 반환되는 엘리먼트 트리와 이전 엘리먼트 트리를 비교해 변경점을 파악하고, 그 변경점에 대해서만 DOM을 부분적으로 일괄 갱신</p><p id="730a88a8-ff56-450b-a9e6-29453b15d747" class="">
+</p><p id="b94b961b-cae7-46ad-bfd9-3cabcadb25bc" class="">전체 DOM 트리를 탐색하고 비교하는 일반적인 알고리즘은 O(n^3)의 아주 느린 복잡도를 가짐.
+따라 React는 두 가지 가정 아래 복잡도를 O(n)에 근사한 휴리스틱 알고리즘을 구현함
+(두 엘리먼트 트리에 대한 비교를 수행할 수 있는)</p><ol type="1" id="1732d270-4e66-4df3-b80a-442aa0203e06" class="numbered-list" start="1"><li>서로 다른 타입의 두 엘리먼트는 서로 다른 트리를 만들어냄 
+(엘리먼트가 다르면 비교하지 않음)</li></ol><ol type="1" id="f6ef2ab9-a804-4a90-ac39-c6ce6d8c6516" class="numbered-list" start="2"><li>개발자가 key prop을 통해, 여러 렌더링 사이에서 어떤 자식 엘리먼트가 변경되지 않아야 할지 표시해줄 수 있음 (key가 지정되어있으면 key가 같은 노드끼리 비교함)</li></ol><p id="47621414-cb74-4cb1-a56d-459ad580a2fc" class="">
+</p><ul id="c45c5783-21c1-4cea-b37f-6772fc8a3fee" class="toggle"><li><details open=""><summary>Diff Algorithm (비교 알고리즘)</summary><p id="ad42c1a5-614e-4573-bd60-d779723cf7c2" class="">새로 반환되는 엘리먼트 트리와 기존의 엘리먼트 트리에 대해, 
+루트 엘리먼트부터 시작해서 마주친 엘리먼트의 type을 기준으로 비교 진행
+(기본적으로 기존의 엘리먼트 트리를 갱신해 나가는 방식으로 진행)</p><p id="c07e6949-8add-4992-94f3-4ef3a066a4aa" class="">
+</p><p id="13cb01cc-254b-40de-b3ad-7c85d3df34b1" class="">Level By Level : 트리 비교 시 동일한 level의 node들끼리만 비교</p><ol type="1" id="88afa574-3477-428c-93a0-a125b8a92d98" class="numbered-list" start="1"><li>같은 위치에서 엘리먼트의 타입이 다른 경우 
+(div 태그가 span 태그로 바뀐경우)<p id="20d3104d-8a9c-4eb9-bdae-0f026d1ad1e1" class="">1. 기존 트리 제거 후 새로운 트리 만듬</p><p id="cbd2472c-8166-415d-84e4-9214cb10370d" class="">2. 기존 트리 제거시 트리 내부의 엘리먼트/컴포넌트들은 모두 제거</p><p id="c31baff3-f1e6-4be5-b5ad-ec4fc1efad08" class="">3. 새로운 트리 만들 때 내부 엘리먼트/컴포넌트들도 모두 새로 만듬</p><p id="942be7f9-b502-4961-b562-c18765c0eb6c" class="">
+클래스형 컴포넌트의 경우 componentWillUnmount() 메소드가 먼저 호출 
+→ 새로운 DOM 노드들이 DOM에 삽입됨 
+→ componentDidMount() 메소드가 호출
+이전 트리에 속하는 모든 컴포넌트 인스턴스들은 언마운트 되며, 
+이에 따라 state들도 모두 소멸됨
+</p></li></ol><ol type="1" id="1dc0a8d8-1a76-46a7-9138-2db9b9cde6e2" class="numbered-list" start="2"><li>같은 위치에서 엘리먼트가 DOM을 표현하고, 그 타입이 같은 경우
+(class가 변경된 경우)<p id="4532e825-cab2-4a8b-a62b-1acb4680a7e0" class="">1. 엘리먼트의 attributes 비교</p><p id="1e5dd088-31b0-4bcc-b057-e23909aaa3ab" class="">2. 변경된 attributes만 업데이트</p><p id="86f47636-e93a-4ffe-84d9-11d30e40e5df" class="">3. 자식 엘리먼트들에 diff 알고리즘 재귀적으로 적용</p><p id="95e0f2db-8168-44e1-a76e-2bf9c64b6afb" class="">
+</p><p id="d3af0c08-1344-489f-ae91-3ab006ccd8cb" class="">두 엘리먼트의 속성을 확인해 동일한 부분은 유지하고 변경된 부분들만 갱신.
+이후 자식 엘리먼트들을 대상으로 동일한 과정을 재귀적으로 반복
+</p></li></ol><ol type="1" id="25bd908a-26c0-478e-a851-8984ba31931c" class="numbered-list" start="3"><li>같은 위치에서 엘리먼트가 컴포넌트이고, 그 타입이 같은 경우
+(<code>&lt;Item price=100 /&gt;</code> -&gt; <code>&lt;Item price=200 /&gt;</code>)<p id="973cc65b-3121-4dc5-9f11-ffe1913fb83a" class="">
+</p><ol type="1" id="8f5c5e1b-45b6-4017-a104-91df7532afba" class="numbered-list" start="1"><li>컴포넌트 인스턴스 자체는 변하지 않음 (컴포넌트의 state 유지)</li></ol><ol type="1" id="720d1176-81fc-4318-a932-3dd80e5d0cf8" class="numbered-list" start="2"><li>컴포넌트 인스턴스의 업데이트 전 라이프 사이클 메서드들이 호출. 
+props 업데이트 됨</li></ol><ol type="1" id="c5e67fbc-f3f6-4cf3-b809-ee8b3a95d094" class="numbered-list" start="3"><li>render()를 호출하고, 컴포넌트의 이전 엘리먼트 트리와 
+다음 엘리먼트 트리에 대해 diff 알고리즘을 재귀적으로 적용</li></ol><p id="b6fc3c1f-5073-41af-8b7a-a5e307a0ffd9" class="">
+</p><p id="520ef60c-ab24-420d-b043-1a746748333c" class="">컴포넌트 인스턴스는 동일하게 유지되어 렌더링 간 state가 유지됨
+대신 새로운 엘리먼트의 내용을 반영하기 위해 
+현재 컴포넌트 인스턴스의 props를 갱신함
+
+그리고 shouldComponentUpdate() 메소드를 호출하여 
+render() 함수를 호출할지 결정함
+만약 그 반환 값이 false라면 리렌더링은 더 이상 진행되지 않고 멈추며, 
+true라면 render() 메소드가 호출되어 그렇게 얻은 엘리먼트 트리의 
+루트 엘리먼트에 대해서 동일한 과정을 재귀적으로 반복함</p><p id="9183ac7b-336d-48bd-bb5c-62e12abce9b2" class="">
+</p><p id="9ad1c079-8679-4301-b2a8-d5957f3d3fe4" class="">
+</p></li></ol><p id="f08a6771-1f8a-4472-8768-dda0a040ae9d" class="">
+</p></details></li></ul><ul id="1306f361-8349-42e0-8eeb-83d5f5764a74" class="toggle"><li><details open=""><summary>자식 엘리먼트들에 대한 재귀적 처리</summary><ul id="39895687-fb10-44fb-b03b-7a1449351d70" class="bulleted-list"><li style="list-style-type:disc">자식 엘리먼트들의 리스트를 비교할 때는 기본적으로 두 리스트를 순회하며 그 차이점을 파악함</li></ul><ul id="c9cc6db1-fec6-432e-914f-f26c92b2c67e" class="bulleted-list"><li style="list-style-type:disc">이를 위해 각 리스트 엘리먼트에는 구분을 위한 key 값을 설정해줘야 함</li></ul><ul id="9be7391f-ff66-4fe2-9459-cf46976689a5" class="bulleted-list"><li style="list-style-type:disc">key 값은 엘리먼트에 저장되는 정보로, 형제들 사이에서는 유일한 값이어야 함</li></ul><ul id="d21cbe52-f972-4ec5-b107-74bce5ea5812" class="bulleted-list"><li style="list-style-type:disc">참고로 배열의 인덱스는 key로 사용하지 않는 게 좋음. 
+컴포넌트 인스턴스는 key를 기반으로 갱신되고 재사용되기 때문. 
+배열의 인덱스를 key로 사용하면, 항목의 순서가 바뀌었을 때 key 또한 바뀌게 되어, 
+해당 컴포넌트 인스턴스의 state가 엉망이 되거나 의도하지 않은 방식으로 바뀔 수 있음</li></ul><p id="019252fc-921f-4e25-acae-777c1346ad6d" class="">
+</p><p id="3ac76ebd-7b1b-49d7-91c7-3a573e7964f7" class="">DOM 노드의 자식들을 재귀적으로 처리할 때, 
+React는 기본적으로 동시에 두 리스트를 순회하고 차이점이 있으면 변경을 생성한다. 
+이 때 비교하는 대상은 단순히 first-child to last-child로 비교한다.
+</p><p id="913e917b-0bc6-4089-9f25-a1cc69e27d9c" class="">따라서, 마지막 node가 추가된 경우에는 <strong>마지막 노드만 update</strong> 되지만
+맨앞 node가 추가된 경우에는 <strong>모든 node에 update가 발생</strong>한다. 
+즉 불필요한 성능 저하가 발생하는 것이다.
+
+이러한 문제를 해결하기 위해, React에는 key 존재한다. 
+children이 key를 가지고 있으면, React는 동일한 key를 갖는 자식끼리 비교를 수행한다.</p><p id="19e6a49d-b5fb-4d9e-9724-2d426d8ed85f" class="">
+</p></details></li></ul><ul id="7a9c898f-9f75-40dd-b2f4-48e94b3d5e20" class="toggle"><li><details open=""><summary>컴포넌트 인스턴스의 생명 주기</summary><p id="5b89eaa3-6822-47c3-a154-2a195320ff9c" class="">특정 컴포넌트 인스턴스를 대상으로 <strong>setState() 메소드를 호출</strong>했다고 가정</p><p id="bfd4a0a5-a15e-494b-8ecb-46f58738c1b8" class="">해당 컴포넌트 인스턴스의 <strong>shouldComponentUpdate() 메소드를 호출</strong>하여
+리렌더링을 해야 하는지 판단.
+보통 이 메소드는 새로운 state/props의 참조값을 인자로 받기 때문에 이를 기존 state/props의 참조값과 비교함으로써 리렌더링이 필요한 상황에만 true를 반환하도록 오버라이딩하게 됨</p><p id="ff377c0c-36fd-431c-86fe-1ac030ebe692" class="">
+만약 shouldComponentUpdate() 메소드가 true를 반환하면 이어서 render() 메소드가 호출되고, false를 반환하면 여기서 멈춤. 
+<strong>render() 메소드가 호출되어 새로운 엘리먼트 트리가 반환되면, 앞서 설명한 휴리스틱 알고리즘으로 이전 엘리먼트 트리와의 비교를 수행하여 차이점을 계산한다. </strong></p><p id="fe5b9103-df16-47ae-9fd7-9f858731ac0c" class=""><strong>
+</strong>따라서 리렌더링이 불필요한 컴포넌트에 shouldComponentUpdate() 메소드를 적절히 오버라이딩해주면 불필요한 render() 메소드의 호출에 의한 성능 저하를 막을 수 있다.</p></details></li></ul><p id="88039001-5dfd-4dfc-b982-8c4e96539340" class="">
+</p></details></li></ul><ul id="25ea9871-eaab-4b1a-9c09-5f650b252d5e" class="toggle"><li><details open=""><summary>Reference</summary><p id="ce4b3514-e930-40ad-b6b2-c43ff279069c" class=""><a href="https://velog.io/@1nthek/React-Virtual-DOM%EA%B3%BC-%EB%A0%8C%EB%8D%94%EB%A7%81">https://velog.io/@1nthek/React-Virtual-DOM과-렌더링</a></p><p id="af07e708-68b0-48c0-a1cf-dd823263a7be" class=""><a href="https://it-eldorado.tistory.com/83">https://it-eldorado.tistory.com/83</a></p><p id="3a571fff-9a66-48da-8fd5-d00e7e7196f2" class=""><a href="https://yceffort.kr/2022/04/deep-dive-in-react-rendering">https://yceffort.kr/2022/04/deep-dive-in-react-rendering</a></p><p id="3781b97c-1594-45e3-862a-86316396e3ed" class="">
+</p></details></li></ul><p id="4c71d176-c89e-4ca9-8a90-9be6d5fc3e53" class="">
+</p></details></li></ul><ul id="487ec4f8-a544-4e08-8111-b7ffd7e179da" class="toggle"><li><details open=""><summary>Virtual DOM과 DOM의 차이</summary><table id="e106fb10-9152-4800-8b8e-aa12b75675c2" class="simple-table"><tbody><tr id="9ce30f25-279e-4283-8abb-03c08772fdaa"><td id="Ztmu" class="" style="width:204.05208333333334px"></td><td id="_I?s" class="" style="width:204.05208333333334px">DOM</td><td id="gH&gt;I" class="" style="width:204.05208333333334px">Virtual DOM</td></tr><tr id="ca9b62fe-7e05-474f-9b87-6326c66fa61b"><td id="Ztmu" class="" style="width:204.05208333333334px">정의</td><td id="_I?s" class="" style="width:204.05208333333334px">Document Object Model
+
+HTML 코드로 설계된 웹페이지가 브라우저 안에서 화면에 나타나고, 이벤트에 반응하며 값을 입력받는 등의 기능들을 수행할 객체들로 실체화된 형태</td><td id="gH&gt;I" class="" style="width:204.05208333333334px">실제 DOM을 모방하는 형태로 메모리 상에서만 존재하는 가상의 DOM</td></tr><tr id="f4a97baa-b1a6-4574-9aca-0180331bac15"><td id="Ztmu" class="" style="width:204.05208333333334px">업데이트</td><td id="_I?s" class="" style="width:204.05208333333334px">느림</td><td id="gH&gt;I" class="" style="width:204.05208333333334px">빠름</td></tr><tr id="55916457-c00f-4f52-90df-f241b89e4733"><td id="Ztmu" class="" style="width:204.05208333333334px">HTML 업데이트 방식</td><td id="_I?s" class="" style="width:204.05208333333334px">HTML 직접적으로 업데이트</td><td id="gH&gt;I" class="" style="width:204.05208333333334px">HTML 직접적으로 업데이트 X</td></tr><tr id="22da23b4-14e0-44fd-8d12-dce9f20923c9"><td id="Ztmu" class="" style="width:204.05208333333334px">새로운 element 업데이트</td><td id="_I?s" class="" style="width:204.05208333333334px">새로운 DOM 생성</td><td id="gH&gt;I" class="" style="width:204.05208333333334px">가상 DOM 생성 후 이전 DOM과 비교 후 차이점 DOM만 업데이트</td></tr><tr id="2a01016f-6249-4a21-bd17-1480bd1087c5"><td id="Ztmu" class="" style="width:204.05208333333334px">메모리</td><td id="_I?s" class="" style="width:204.05208333333334px">메모리 낭비 심함</td><td id="gH&gt;I" class="" style="width:204.05208333333334px">메모리 낭비 덜함</td></tr></tbody></table></details></li></ul><ul id="fa6e3886-6fb8-42cd-b6a4-3955d7d31465" class="toggle"><li><details open=""><summary>Virtual DOM의 장점</summary><p id="04cb182e-4365-4cc7-98f6-e05d05baf000" class="">개발자가 직접 DOM을 수정하지 않고 Virtual DOM 제어 시
+React에서 적절하게 Virtual DOM을 DOM에 반영하는 작업을 하게 됨</p><ol type="1" id="8b4cc4da-b22d-46b9-a65c-324e29123695" class="numbered-list" start="1"><li>직접 DOM을 조작하지 않아도 됨
+웹이 점점 복잡해질 수록 수백, 수천개의 DOM을 직접 관리, 조작하는 과정은 복잡하고 
+실수 발생 가능성 높은데 Virtual DOM은 이런 복잡한 과정들을 자동화, 추상화해줌</li></ol><ol type="1" id="b6342bcf-5b46-4037-9a17-07ec197f727a" class="numbered-list" start="2"><li>Dom의 update를 Batch로 처리로 실제 DOM의 리렌더링 연산을 최소화함
+연쇄적으로 reflow, repaint 발생을 줄이고, 필요한 연산을 한번에 묶어 처리하게 전달함</li></ol></details></li></ul><p id="7b7652cf-8e57-429e-b7ef-93f576670721" class="">
+</p></details></li></ul><ul id="6a9ee124-9198-4e39-af6a-215263766f63" class="toggle"><li><details open=""><summary>상태관리 라이브러리로는 어떤 걸 사용하고 선택한 이유가 무엇인지. 
+상태관리 라이브러리들의 장단점을 아는대로 설명하세요.</summary><p id="257db9dc-a386-47b4-bf8b-488681d94e02" class="">관리해야 할 많은 상태들을 분리해 모듈화할 수 있고, 상태관리를 간결하게 할 수 있도록 도와줌</p><ul id="bd5da1e3-c3bb-46ac-8cbc-0de816b9b59c" class="toggle"><li><details open=""><summary>상태관리 라이브러리 사용 이유</summary><ul id="c26aff18-3acf-40b2-80d9-6dcc30bc8e6c" class="bulleted-list"><li style="list-style-type:disc">리액트는 단방향 바인딩을 지원하기 떄문에 컴포넌트의 깊이가 깊을수록
+엄청난 props drilling이 발생함 ⇒ 불필요한 리렌더링 발생</li></ul></details></li></ul><ul id="49884bd8-c954-42be-bc24-b553e09ba81a" class="toggle"><li><details open=""><summary>Mobx</summary><ul id="afd0964c-445b-49a1-81ee-ab45ef3565de" class="bulleted-list"><li style="list-style-type:disc">도입 이유<p id="7f5e02e9-31cf-4c01-8836-3cb7dc7b08ea" class="">빠른 프로젝트 개발을 위해 보일러플레이트도 적고 낮은 러닝커브를 가진 mobx 선택.
+선택 당시에는 프로젝트 규모가 작았기 때문에 선택했음</p></li></ul><ul id="a2e38b58-8f6d-412b-a91e-d87604c8cc85" class="bulleted-list"><li style="list-style-type:disc">스토어 구조<ul id="36aecc29-3078-4f5d-9c17-339c169da894" class="bulleted-list"><li style="list-style-type:circle">store : observable로 지정해 관찰 대상 state로 사용</li></ul><ul id="3ea82bbc-5833-4e12-b33b-69dfff35bd21" class="bulleted-list"><li style="list-style-type:circle">model : </li></ul><ul id="42283e03-21cb-4610-8b16-997f15d7dfbb" class="bulleted-list"><li style="list-style-type:circle">repository : ajax로 데이터 가져오는 부분</li></ul></li></ul><ul id="e591c172-2364-4f7c-97fd-24f35d6c4418" class="bulleted-list"><li style="list-style-type:disc">원리<p id="2bd7f529-0439-4868-b9b4-511fc5c8c9b9" class="">렌더링할 state를 관찰 대상으로 지정.
+state 변경 시 React Component Render 메소드에 의해 rerendering 되는 아키텍처</p><ul id="330032c9-5275-42ee-894d-3392778df521" class="toggle"><li><details open=""><summary>주요 요소</summary><ul id="0cdbb9d8-6701-47d3-a70e-4f057458b745" class="bulleted-list"><li style="list-style-type:disc">state(observable state) : 관찰 받고 있는 상태<ul id="0f87cad0-c7b0-4584-94b3-ffd41389b968" class="bulleted-list"><li style="list-style-type:circle">애플리케이션의 데이터 셀</li></ul><ul id="56cbae9b-694a-40d0-ad80-7209137d22ea" class="bulleted-list"><li style="list-style-type:circle">특정 부분이 변경되면 Mobx에서는 어떤 부분이 변경되었는지를 파악할 수 있음</li></ul><ul id="52b1d9e1-7309-4e47-af3b-6f77f1385fbd" class="bulleted-list"><li style="list-style-type:circle">state의 변화는 reaction과 computations을 일으킴</li></ul></li></ul><ul id="9b11b140-f4d6-4380-8bc1-26f42e1e8d46" class="bulleted-list"><li style="list-style-type:disc">derivation(computed values) : 파생 값(연산된 값)<ul id="b8f65b1e-6ebd-488f-a4e6-7479347f2d22" class="bulleted-list"><li style="list-style-type:circle">state 변화에 따른 값</li></ul><ul id="09bd302c-85d7-48e3-8733-91dda5247746" class="bulleted-list"><li style="list-style-type:circle">observable로 부터 도출가능하며 값이 변경되면 자동으로 업데이트 됨
+(상태값과 다른 연산된 값에 기반해 만들어질 수 있는 값)</li></ul><ul id="f95deb37-e9e3-4210-a2af-8347d1aed7c1" class="bulleted-list"><li style="list-style-type:circle">성능 최적화를 위해 사용</li></ul></li></ul><ul id="7e4e3604-418b-4185-a6ec-bd8c7540e44c" class="bulleted-list"><li style="list-style-type:disc">reactions : 반응<ul id="f3f14fbf-beec-436c-a5a1-fa2ba42774ed" class="bulleted-list"><li style="list-style-type:circle">observable state 변화에 따른 부가적인 변화</li></ul><ul id="94587058-e703-48c7-96d3-8c4bc65a4f62" class="bulleted-list"><li style="list-style-type:circle">값이 바뀜에 따라 해야할 일을 정하는 것을 의미</li></ul><ul id="928aeba3-3557-4647-a466-acff9714645e" class="bulleted-list"><li style="list-style-type:circle">파생값과 비슷하지만 값을 생성하지 않는 함수</li></ul><ul id="bc3091b2-8412-4296-b81e-ecdf424ccd2b" class="bulleted-list"><li style="list-style-type:circle">when, autorun, reaction</li></ul><ul id="5f92e513-2fed-4612-8c40-c4a3d5e22674" class="bulleted-list"><li style="list-style-type:circle">state 값의 변화에 따라 자동으로 DOM이 업데이트 되거나 
+네트워크 요청을 하도록 만들 때 사용</li></ul></li></ul><ul id="ba0a4c25-0804-4e0b-8e5d-acb7f4400afe" class="bulleted-list"><li style="list-style-type:disc">actions : 액션<ul id="0b8a0733-8db8-4f01-92e1-277a0ebe2e8d" class="bulleted-list"><li style="list-style-type:circle">상태를 변경시키는 모든 것</li></ul><ul id="2ab06eff-56b5-45a5-aa58-126a7b469d32" class="bulleted-list"><li style="list-style-type:circle">mobx는 모든 사용자들의 액션으로 발생하는 상태 변화들이 전부 자동으로
+파생값과 리액션으로 처리되도록 함</li></ul></li></ul><p id="19a44743-b5fa-42cc-bc9a-030a0abe65df" class="">
+</p></details></li></ul></li></ul><ul id="89d232d1-fd00-49ba-9935-03178f970637" class="bulleted-list"><li style="list-style-type:disc">특징<ul id="19345840-9543-49d5-a2a2-0cc488602849" class="bulleted-list"><li style="list-style-type:circle">객체지향적</li></ul><ul id="c495bed8-4cdb-474b-8ac0-2d8588d1e27e" class="bulleted-list"><li style="list-style-type:circle">단일스토어를 강제하지 않음</li></ul><ul id="10c0e605-14ef-49b9-9224-60e1bd6de858" class="bulleted-list"><li style="list-style-type:circle">불변성을 신경쓰지 않아도 내부적으로 처리함</li></ul><ul id="df89e2b9-8b8a-416d-b3c4-a0d482cd08df" class="bulleted-list"><li style="list-style-type:circle">데코레이터 지원</li></ul><ul id="d75985eb-b5ce-4cce-917e-279d2316885c" class="bulleted-list"><li style="list-style-type:circle">redux에서 해야하는 action 선언, connect, mapStateToProps 등의 
+번거로운 작업들을 데코레이터로 간단히 대체</li></ul><ul id="84d01daa-3c11-48dc-90ec-7e4a21c3aa81" class="bulleted-list"><li style="list-style-type:circle">Typescript를 기반으로 만들어짐</li></ul></li></ul><ul id="f720bd3f-a8bd-4cf8-b5b2-658d6de18280" class="bulleted-list"><li style="list-style-type:disc">장점<ul id="c87a1fcb-2747-42ea-ac25-f415232f62e6" class="bulleted-list"><li style="list-style-type:circle">보일러플레이트가 적음</li></ul><ul id="3fb0af78-5581-417e-8354-0c52f454793e" class="bulleted-list"><li style="list-style-type:circle">낮은 러닝커브</li></ul><ul id="7a31819e-2952-4615-b946-b4b7d0eb69dc" class="bulleted-list"><li style="list-style-type:circle">캡슐화 (Mobx Config 설정으로 state를 오직 메소드를 통해서만 변경 가능하게 private하게 관리 가능)</li></ul><ul id="c4221278-27bd-49b7-8ade-753115bab2a0" class="bulleted-list"><li style="list-style-type:circle">데코레이터 지원으로 깔끔한 코드 생성</li></ul><ul id="da863594-5c19-49b5-b944-7e041917d915" class="bulleted-list"><li style="list-style-type:circle">불변성 노력 유지 불필요 (immutable이나 복잡한 코드 필요 없음)</li></ul><ul id="8f7a41f3-9def-440f-97c9-668078e5318d" class="bulleted-list"><li style="list-style-type:circle">multiple domain store</li></ul><ul id="33a613b4-8873-4974-86ac-ceb21e72ba2b" class="bulleted-list"><li style="list-style-type:circle">아래와 같은 프로젝트에는 mobx 사용이 유리함<ul id="1883bed6-7995-4cd9-bcb7-2d7d299dae9b" class="bulleted-list"><li style="list-style-type:square">한 스토어에 저장되는 데이터가 명확하고, 
+드물게 다른 스토어 데이터에 접근하는 경우</li></ul><ul id="0d9d5073-c454-4fc2-89c3-23ab7b5d3c67" class="bulleted-list"><li style="list-style-type:square">작은 프로젝트</li></ul><ul id="e956fe7a-dc1e-431f-9b21-13871c8ee76c" class="bulleted-list"><li style="list-style-type:square">복잡한 상태 관리가 필요치 않은 경우</li></ul></li></ul></li></ul><ul id="739928ec-d2bb-4b80-b603-86d79c64db57" class="bulleted-list"><li style="list-style-type:disc">단점<ul id="e0a406eb-ff99-4313-8b06-828837d0f59d" class="bulleted-list"><li style="list-style-type:circle">생태계가 크지 않아 레퍼런스 부족</li></ul><ul id="4ad6527b-fd56-4c14-9184-fa35b8b9d45b" class="bulleted-list"><li style="list-style-type:circle">지원하는 디버깅 툴이 없어서 불편함</li></ul><ul id="cdfdc17f-d3f4-4989-89e6-4d0ac2d10e02" class="bulleted-list"><li style="list-style-type:circle">점차 규모가 커진 프로젝트에 사용하기엔 복잡했다.
+또한 다른 스토어에 접근해야할 경우가 많아 불편했음</li></ul><ul id="92bd5d9d-d75a-45b4-9f0d-f123b0861d63" class="bulleted-list"><li style="list-style-type:circle">점차 규모가 커지면 코드 관리가 어려우짐</li></ul><ul id="014f8bbf-a90b-4f96-8bb5-a848149df248" class="bulleted-list"><li style="list-style-type:circle">스토어가 여러개일 수 있는데, 분리가 용이해 편리하지만
+상태 변경 시 다수의 스토어가 영향받을 수 있음</li></ul><ul id="96a4393b-0288-48f7-96b8-bc2f0add2e95" class="bulleted-list"><li style="list-style-type:circle">스토어의 데이터를 액션 발행 없이 업데이트 가능함.
+구현 쉽고 용이하지만 테스트 및 유지보수 측면에서 에러 발생 가능성 높음</li></ul></li></ul><p id="02ae2838-8c6b-4d2a-b3a8-cf939aeb1d34" class="">
+</p></details></li></ul><ul id="f7454e2b-0bd4-455e-858c-d585b891793f" class="toggle"><li><details open=""><summary>Recoil</summary><p id="08183d4a-cd32-4566-8844-1c39a20cf1e3" class="">도입 이유<div class="indented"><ul id="cabaa8b4-3e2f-4e64-ace3-35c023434d98" class="bulleted-list"><li style="list-style-type:disc">회사 내부에서 사용하는 어드민 프로젝트라 mobx가 아닌 
+간단한 라이브러리를 사용하고 싶었음</li></ul><ul id="eda0c86b-7441-4150-a09e-40272357ecbb" class="bulleted-list"><li style="list-style-type:disc">hook 기반의 상태 관리 툴이기 때문에 편리할 것이라 예상되었음</li></ul></div></p><p id="4220bd6e-d8c4-418d-9d23-3e2b440a8735" class="">동작 원리<div class="indented"><p id="39e2289e-4b77-47b2-afcf-e5c8d1bfa6d4" class="">atoms(공유 상태)에서 selector(순수 함수)를 거쳐 React 컴포넌트로 흘러가는.</p><ul id="bae4f1d9-4ab2-43ba-8f60-b090f25d26d6" class="toggle"><li><details open=""><summary>구성 요소</summary><ul id="1a89e138-de8e-4ccb-97f4-c64580d6a959" class="bulleted-list"><li style="list-style-type:disc">atom<ul id="9002429d-dc17-4158-942c-4db76ee5a767" class="bulleted-list"><li style="list-style-type:circle">ex) 비눗방울
+애플리케이션을 구조화 시 구조 상단에 atom이 비눗방울처럼 둥둥 떠다니는 느낌.
+즉, 개발을 하다 어떤 상태가 필요하면 해당하는 비눗방울만 쏙 빼서 쉽게 사용 가능</li></ul><ul id="34e4ad56-3e96-456b-94d6-7c9d24d51e45" class="bulleted-list"><li style="list-style-type:circle">atom은 상태 단위로 유니크한 key 값으로 구분되며 
+atom을 구독하는 해당 컴포넌트들만 선택적으로 리렌더링됨</li></ul><ul id="13e1d853-6ab0-4838-85e0-a18d32f7964e" class="bulleted-list"><li style="list-style-type:circle">key라는 고유의 값과 default라는 atom의 기본값을 넣어주면 
+간단히 하나의 전역 상태 만들 수 있음</li></ul><ul id="fd9bd43a-a33f-4b47-8f9c-d2daa637f84b" class="bulleted-list"><li style="list-style-type:circle">사용은 hook을 recoil 라이브러리에서 가져와 정의한 atom을 
+넣어주면 값 추적 가능함</li></ul></li></ul><ul id="92b7e834-53c7-4467-ae0a-fee282661470" class="bulleted-list"><li style="list-style-type:disc">selector<ul id="32b4c3b0-cb3e-4894-b818-cab1c6783eaf" class="bulleted-list"><li style="list-style-type:circle">atom의 상태변화는 순수함수를 통해 일어나는데 이를 셀렉터라 함</li></ul><ul id="fc181692-281f-46eb-862a-051b41361dab" class="bulleted-list"><li style="list-style-type:circle">비동기처리 뿐 아니라 데이터 캐싱 기능도 제공.
+비동기 데이터 다루기 용이하</li></ul><ul id="79c28b08-09ee-4fb9-9c00-dff0e0dbf5a7" class="bulleted-list"><li style="list-style-type:circle">atom을 활용해 개발자가 원하는대로 값을 뽑아서 사용할 수 있는 API
+ex) DB에서 저장된 데이터를 select를 통해 원하는 결과 뽑아오는 과정 비슷</li></ul><ul id="18e71cb2-ffc5-4c24-b39c-bac83f9ffd20" class="bulleted-list"><li style="list-style-type:circle">readonly 한 값만을 반환함
+수정 가능한 값을 받고 싶다면 반드시 atom 활용 필요</li></ul><ul id="6e268c44-15d3-467d-8c74-ecad6c329598" class="bulleted-list"><li style="list-style-type:circle">atoms 상태값을 비동기 또는 동기 방식을 통해 변환함<ul id="827b292e-d29c-46ac-9fc6-36be84e33828" class="bulleted-list"><li style="list-style-type:square">내부적으로 함수에서 get을 반환해주며, get 메서드를 활용해 현재 저장된 atom이나 다른 selector의 값을 받아오 수 있음</li></ul><ul id="2462c312-f8a1-4137-9fcb-70b0a67c5000" class="bulleted-list"><li style="list-style-type:square">set 메서드를 활용해 atom의 값 변경도 가능함
+→ 이를 통해 비동기 통신 처리도 가능</li></ul><ul id="f326745e-8c49-4c5f-8780-9fff01bba54d" class="bulleted-list"><li style="list-style-type:square">기본적으로 값을 자체적으로 캐싱하기 때문에 비동기 데이터를 다루는 측면에서 유리함</li></ul></li></ul></li></ul></details></li></ul></div></p><p id="c2ef969d-cd38-48d4-88ae-4487b2922336" class="">사용법<div class="indented"><p id="ff0feb5c-9f00-4358-a4a3-8f379f46d4c4" class="">context provider 처럼 root를 RecoilRoot로 감싸줘야 함
+atom들이 떠다니는 root 설정같은 느낌</p></div></p><p id="8ae89498-f576-4540-9842-780aa5999324" class="">특징<div class="indented"><ul id="a00153ed-c8a5-4575-ab4c-81e4c7187f0c" class="bulleted-list"><li style="list-style-type:disc">페이스북에서 출시한 React만을 위한 상태 관리 라이브러리</li></ul><ul id="2aa49ffc-5802-4150-aa10-025bea36e263" class="bulleted-list"><li style="list-style-type:disc">가장 react다운 상태관리 툴 (hook을 통해 atom을 가져와 값 추적 → 값 변경)</li></ul></div></p><p id="6b17f344-c5fd-4ac1-a4e4-bcd510942737" class="">장점<div class="indented"><ul id="944334ea-5ccd-43a3-bead-cfe528c101ff" class="bulleted-list"><li style="list-style-type:disc">간단한 개념 (Docs 분량 적음)과 낮은 진입장벽</li></ul><ul id="14caee07-cb18-46df-96a3-2d42dffcf90b" class="bulleted-list"><li style="list-style-type:disc">간결하고 간편한 스토어 선언</li></ul><ul id="63c1ba83-20fa-42b4-beea-1974dcab7983" class="bulleted-list"><li style="list-style-type:disc">쉬운 비동기 로직 (내장된 selector를 활용해 추가적인 미들웨어 없이 쉽게 구현 가능)</li></ul><ul id="a2008d11-f6dd-487f-a4be-07728771c5ef" class="bulleted-list"><li style="list-style-type:disc">useState를 사용하는 것과 거의 흡사</li></ul><ul id="fe5ab39a-2d3f-4da8-9ec5-1be0e66a6ca3" class="bulleted-list"><li style="list-style-type:disc">React 동시성 모드, Suspense 등을 지원</li></ul><ul id="d6bc73cd-9f1f-4a8e-a137-b6809626d6b4" class="bulleted-list"><li style="list-style-type:disc">보일러플레이트 없기 때문에 react 지역 상태로서 
+단순한 get/set 인터페이스로 상태 공유 가능</li></ul><ul id="ef027926-739a-462f-b34e-622af944434a" class="bulleted-list"><li style="list-style-type:disc">상태를 분산적으로 둘 수 있기 때문에 코드 스플리팅 가능</li></ul></div></p><p id="75f01965-65c6-4a59-ab89-b92cc3e9b0b9" class="">단점<div class="indented"><ul id="1214144e-79bf-4f74-b2b0-c0a758a96f0f" class="bulleted-list"><li style="list-style-type:disc">mobx와 마찬가지로 dev tool 부재</li></ul><ul id="d1f0bf8f-da12-4c50-83dd-50ea3837a4fa" class="bulleted-list"><li style="list-style-type:disc">모든 API들이 높은 신뢰성을 보장하지 않는다. useGetRecoilValue, useRecoilRefresher 등은 공식문서도 UNSTABLE로 분류.</li></ul><ul id="a7b76293-7f25-4dc5-8ad5-d3b0a8cc2505" class="bulleted-list"><li style="list-style-type:disc">아직 버전이 낮아 안정성 측면에서 불안</li></ul><ul id="b60d8cf5-4ec6-4cab-bd06-d797ae8927d3" class="bulleted-list"><li style="list-style-type:disc">캐싱 지원 : 장점이지만 단점이기도 했음. 검색이나 실시간 데이터 조회나 이런 부분에서 캐싱 처리를 위해 불필요하게 atom 값을 업데이트해줘야 했음</li></ul></div></p><p id="86ac0b6c-2690-45a1-9fcf-af026ff41c50" class="">
+</p></details></li></ul><ul id="983b0911-4d45-41fb-8e16-493b4167b6bb" class="toggle"><li><details open=""><summary>React-query</summary><p id="86a060ad-57db-40fc-9f67-62e72852d24b" class="">도입 이유 : <div class="indented"><ul id="0e2477e0-2ff8-41a2-abc6-9017c4f4bc89" class="bulleted-list"><li style="list-style-type:disc">클라이언트 state와 서버 state의 분리</li></ul><ul id="483d22b7-00a7-4fca-bfe5-3cad093099dc" class="bulleted-list"><li style="list-style-type:disc">서버 데이터를 위한 큰 비중의 로직이 불편함</li></ul></div></p><p id="aa169637-0961-407b-9311-c7cc8d8cd700" class="">동작 원리 : <div class="indented"><ul id="1847eedb-f402-4deb-8988-12c396c65b18" class="bulleted-list"><li style="list-style-type:disc">react application에서 서버 상태를 불러오고, 캐싱하며, 지속적으로 동기화하고 업데이트하는 작업을 도와주는 라이브러리</li></ul><ul id="731d3197-285a-41ef-92f3-743f03917592" class="bulleted-list"><li style="list-style-type:disc">데이터를 fetching 해온 후, 데이터를 캐싱하며 해당 데이터가 stale 하다고 판단될 때 데이터를 refetching 해오게 됨</li></ul><ul id="dcb252fa-a68a-44c8-8a47-e3f133b8f07b" class="bulleted-list"><li style="list-style-type:disc">페이지에 이벤트가 있거나, 사용자가 최신 데이터를 바라봐야 할 상황에 리패칭함으로써 
+사용자는 항상 신선한 데이터 확인이 가능함</li></ul></div></p><p id="7dcca688-a401-4644-ba3d-75ea879dd232" class="">사용법 : <div class="indented"><ul id="3709387d-1ff8-4054-a792-28ad908c5242" class="bulleted-list"><li style="list-style-type:disc">useQuery : 데이터 get하기 위한 api. 인수로 key와 비동기 함수 넣음
+비동기로 작동하기 때문에 한 컴포넌트에 여러개 useQuery가 있다면 여러개의 useQuery가 동시 실행됨, queryKey 값이 변경되면 데이터 다시 호출 캐싱 제거</li></ul><ul id="b320b3d8-7b4d-43e6-b146-522d2679b159" class="bulleted-list"><li style="list-style-type:disc">useMutation : 데이터 post, update하기 위한 api</li></ul><ul id="dd07d585-7825-494c-afad-4ac11238ef70" class="bulleted-list"><li style="list-style-type:disc">useQueries : promise.all처럼 useQuery를 하나로 묶는 api.
+하나의 배열에 각 쿼리에 대한 상태 값이 객체로 들어옴</li></ul></div></p><p id="ea59b03f-8cc9-418b-a40f-7482adc458bb" class="">
+</p><p id="27827236-8474-4735-9f0d-b380f63d38a6" class="">useMutation invalidateQueries();</p><p id="ffaba053-435d-4ab4-aca0-aa6e5b5af872" class="">atomFamily</p><p id="c1211b60-dbfe-46a5-8c8a-49654b265ffa" class="">
+</p><p id="31655699-62fe-410e-818d-a5cb57b10df8" class="">장점 : <div class="indented"><ul id="e566f077-42be-444b-a9b4-05457a3093f0" class="bulleted-list"><li style="list-style-type:disc">적은 보일러플레이트.
+간단하고 직관적인 API → 핵심적인 로직에 집중</li></ul><ul id="d34df835-8f02-4899-b703-9b303c9d7c74" class="bulleted-list"><li style="list-style-type:disc">clinet 데이터와 server 데이터의 분리 → 몹시 가벼워진 store</li></ul><ul id="fa8fb903-6071-4b1a-9f1b-093ab316a36d" class="bulleted-list"><li style="list-style-type:disc">편리한 succes와 error, loading 처리</li></ul><ul id="ce0babdb-4402-4983-9e2d-fd245bfb0698" class="bulleted-list"><li style="list-style-type:disc">hook과 구조 비슷</li></ul></div></p><p id="06106aba-0869-47c7-b032-7db869c69864" class="">단점 : <div class="indented"><ul id="fda38d04-9bbd-4c12-a313-46f73d74fe90" class="bulleted-list"><li style="list-style-type:disc">아직까진 못느낌</li></ul></div></p></details></li></ul></details></li></ul><ul id="f930bbb0-233e-4e5c-8a51-21094c2ca292" class="toggle"><li><details open=""><summary>많은 JS 프레임워크 중 React를 왜 사용하는지, 어떤 장단점이 있는지 설명하세요.</summary><ul id="7231d550-58f9-4805-93af-ed2d7f58716a" class="bulleted-list"><li style="list-style-type:disc">왜 React 사용?<ul id="81bf8fe5-2535-4f25-89bc-77ad57aca485" class="bulleted-list"><li style="list-style-type:circle">가장 대중적이며 넓고 커다란 커뮤니티. 사용자도 많아 개발자 구인 쉬움</li></ul><ul id="5923e887-c15a-4993-912e-f7118f4fc1f1" class="bulleted-list"><li style="list-style-type:circle">Virtual DOM</li></ul><ul id="3f75d31e-4936-4433-95ca-548878e4fc73" class="bulleted-list"><li style="list-style-type:circle">단방향 컴포넌트 바인딩 (부모 → 자식)</li></ul><ul id="2511b5ac-5136-4920-9ff8-57f74d0c3158" class="bulleted-list"><li style="list-style-type:circle">Next.js를 사용해 SSR 지원</li></ul><ul id="31126b5e-e311-4afd-8334-94d25be3fbda" class="bulleted-list"><li style="list-style-type:circle">JSX를 사용해 간단한 표현</li></ul></li></ul><ul id="21a11842-1dee-40dc-a80e-ad10a64faf2a" class="bulleted-list"><li style="list-style-type:disc">장점<ul id="26d3ce79-bd4f-4562-afee-c66f99d4853b" class="bulleted-list"><li style="list-style-type:circle">React Native를 이용해 앱 개발까지 가능</li></ul><ul id="7a93bbeb-5596-4592-a513-73e358e7aa40" class="bulleted-list"><li style="list-style-type:circle">angluer보다 적은 러닝커브</li></ul><ul id="9a6f515b-1051-458c-b125-affd9758a5b9" class="bulleted-list"><li style="list-style-type:circle">프레임워크라 선택의 폭이 넓음</li></ul><ul id="3fa0514a-d858-4c1b-94a7-7f6d7eb1fd0d" class="bulleted-list"><li style="list-style-type:circle">데이터와 프리젠테이션의 깔끔한 분리</li></ul><ul id="683f3ce4-3cd1-4550-a3f1-1799e9a28e42" class="bulleted-list"><li style="list-style-type:circle">마이그레이션 쉬움</li></ul></li></ul><ul id="948d64ba-6490-41d2-9099-026ae0dbe3f4" class="bulleted-list"><li style="list-style-type:disc">단점<ul id="de20e58a-939e-4ee7-b5f5-715d08481b05" class="bulleted-list"><li style="list-style-type:circle">선택의 폭이 너무 넓음</li></ul><ul id="e67afa55-baa3-4b1e-bdeb-75406290ae47" class="bulleted-list"><li style="list-style-type:circle">MVC 아키텍처 불가능</li></ul></li></ul><ul id="5cc0a0ea-ab3c-43d6-90f0-c7efba07d07f" class="bulleted-list"><li style="list-style-type:disc">Reference<ul id="968aa827-d280-4798-9e39-95144251594f" class="bulleted-list"><li style="list-style-type:circle"><a href="https://incora.software/insights/react-vs-angular-vs-vue-the-main-differences-and-use-cases/55">https://incora.software/insights/react-vs-angular-vs-vue-the-main-differences-and-use-cases/55</a></li></ul><ul id="7aade8da-3ec0-4e4b-b79b-d786cd5eca35" class="bulleted-list"><li style="list-style-type:circle"><a href="https://plainenglish.io/blog/angular-vs-react-vs-vue-js-which-is-the-best-choice-for-2022">https://plainenglish.io/blog/angular-vs-react-vs-vue-js-which-is-the-best-choice-for-2022</a></li></ul></li></ul><p id="31762c9b-d679-41da-9166-5215c7f81f42" class="">
+</p></details></li></ul><ul id="d4b532c5-8e7b-4dd7-b2d0-a8705b1c5531" class="toggle"><li><details open=""><summary>왜 state를 직접 변경하지 않고 setState를 사용해 값을 변경하나요?</summary><ul id="2ab4318f-7b13-4a1f-802e-8ee2c08a7a08" class="bulleted-list"><li style="list-style-type:disc">immutable(불변성)을 유지해야하기 때문<ul id="04b382d4-127d-4d5c-a01d-64fe919f8563" class="bulleted-list"><li style="list-style-type:circle">현재의 this.state와 setState를 비교해 업데이트 필요한 경우에만 render 함수 호출</li></ul><ul id="4243c46a-82e5-40ca-bebd-d51f1cce9397" class="bulleted-list"><li style="list-style-type:circle">state를 직접 수정하면 react가 render 함수를 호출하지 않아 
+상태 변경 일어나도 렌더링 일어나지 않을 수 있음</li></ul><ul id="9cd2ae71-ba90-4466-b795-fab9bf3fd9ee" class="bulleted-list"><li style="list-style-type:circle">따라 상태 변경을 추적하고 변경에 따라 구성 요소를 다시 렌더링하려면 setState 사용 필요</li></ul></li></ul><ul id="ab359375-03f9-4a32-bbc7-2e235ff1937f" class="toggle"><li><details open=""><summary>state의 동작</summary><ul id="0d02beba-64bf-4d10-abc1-7ebc8ceb0477" class="bulleted-list"><li style="list-style-type:disc">setState는 비동기로 작동<ul id="27e552b1-9590-47c7-8244-100ef5421f9d" class="bulleted-list"><li style="list-style-type:circle">setState는 동기성을 보장하지 않음. 성능 향상을 위해 일괄적으로 처리될 수 있음</li></ul><ul id="1ab5c268-3966-439e-b5ef-8835c2549aad" class="bulleted-list"><li style="list-style-type:circle">state는 값이 변경되면 리렌더링 발생함. 
+변경되는 state가 많을수록 리렌더링이 계속 일어나고 속도가 저하됨.
+따라 변경된 값들을 모아 한번에 업데이트를 진행하며 렌더링을 줄이고자 
+Batch 기능을 사용해 비동기로 작동함 (Batch 업데이트는 16ms 주기)</li></ul><ul id="11d5326d-a942-4d20-abd1-61aa8f0d7c92" class="bulleted-list"><li style="list-style-type:circle">setState는 비동기적으로 동작하기 때문에 state가 직접 수정되어 여러번 업데이트하는 경우, 이전 업데이트 내용이 다음 업데이트 내용에 덮어쓰여질 수 있어 예상치 못한 버그 발생 가능 있음</li></ul><ul id="453db82c-dc01-4e31-b501-1067c6ff0811" class="bulleted-list"><li style="list-style-type:circle">setState를 동적으로 사용하기 위해선 클래스형은 함수 전달, 함수형은 useEffect 사용</li></ul><ul id="4b57b9f4-baeb-4a58-b32e-ce11ec93b1c0" class="bulleted-list"><li style="list-style-type:circle">이전 state 값을 사용하고 싶다면 setState의 updater 함수 전달
+setState((prevState) ⇒ prevState + 1);</li></ul></li></ul></details></li></ul></details></li></ul><ul id="cacec56d-b508-41db-9a0f-1e8e0a7237ed" class="toggle"><li><details open=""><summary>useCallback, useMemo, memo의 차이에 대해 설명하세요.</summary><ul id="edf94f07-8bef-4991-a6ef-33c5f0b6cccd" class="bulleted-list"><li style="list-style-type:disc">useEffect<ul id="12490717-a9ee-46ed-90dd-85ab434f1705" class="bulleted-list"><li style="list-style-type:circle">어떤 값이 변경되었을 때 어떤 동작을 자동으로 실행하기 위해 사용</li></ul><ul id="257523b9-fb49-4965-bad6-319835c95802" class="bulleted-list"><li style="list-style-type:circle">인자<ul id="a8ed0b2d-fc28-4aec-ab6c-70078c65b976" class="bulleted-list"><li style="list-style-type:square">인라인 콜백 함수 : 의존성 리스트 항목 중 하나가 업데이트되면 실행시킬 동작</li></ul><ul id="d91dace0-8b5f-49a4-86ff-7e383a5e4811" class="bulleted-list"><li style="list-style-type:square">의존성 리스트 : 해당 리스트 요소가 업데이트되면 콜백 함수 다시 작동시킴</li></ul></li></ul><ul id="26359071-1ae9-438a-9e1c-7af5828faa2e" class="bulleted-list"><li style="list-style-type:circle">class component의 라이프사이클을 함수형 컴포넌트에서 동일하게 사용 가능</li></ul><ul id="559cb97f-6388-455a-a08b-5cc1b4db7be0" class="bulleted-list"><li style="list-style-type:circle">useEffect에 전달된 함수는 화면에 렌더링 완료된 후 수행됨</li></ul><ul id="6d927b5e-35b1-4056-b7df-e25d6634c430" class="bulleted-list"><li style="list-style-type:circle">여러번 리렌더링될 때 다음 effect가 수행되기 전 이전 effect는 정리됨
+즉 매 갱신마다 새로운 구독 생성. 이를 방지하기 위해선 의존성 배열 지정.</li></ul><ul id="3d795a37-0100-40c1-b44e-61aaafbf30a1" class="bulleted-list"><li style="list-style-type:circle">의존성 배열을 지정하는 경우 해당 요소 값이 업데이트 되는 경우에만 실행</li></ul><ul id="ce70ea1d-8f42-48d9-93d7-84335815f8be" class="bulleted-list"><li style="list-style-type:circle">return으로 정리 함수를 반환할 수 있음</li></ul><p id="056673ff-fd38-499c-8bcb-7894634c970f" class="">
+</p></li></ul><ul id="c9efa322-e0e1-4937-bf81-832a5a694852" class="bulleted-list"><li style="list-style-type:disc">useCallback<ul id="1b55fe8f-00e7-4cbb-83c5-3577f32506f3" class="bulleted-list"><li style="list-style-type:circle">원하는 타이밍에 호출시킬 함수를 만들기 위해 사용 (함수 반환됨)</li></ul><ul id="79bb7ed2-68e8-42a0-88ba-6ec2e64be880" class="bulleted-list"><li style="list-style-type:circle">인자<ul id="4e8b755d-6b07-4f2f-bb56-add1e6093c32" class="bulleted-list"><li style="list-style-type:square">인라인 콜백 함수 : 원하는 타이밍에 동작시킬 동작</li></ul><ul id="4d539a75-b49c-4ae6-a713-bfeb44b4c992" class="bulleted-list"><li style="list-style-type:square">의존성 리스트 : 의존성에 포함된 요소가 업데이트될 경우, 반환되는 함수 갱신됨</li></ul></li></ul><ul id="5a96dd28-7976-4244-a84c-1fdbd31e955e" class="bulleted-list"><li style="list-style-type:circle">메모이제이션된 콜백(함수) 자체를 반환</li></ul><ul id="5fd04d80-5d87-4891-b668-06ffb10d9d1d" class="bulleted-list"><li style="list-style-type:circle">useCallback(fn, deps)는 useMemo(()⇒fn, deps)와 동일</li></ul><ul id="7b6dc2f7-943f-421d-bd69-4c4ac0b4ed76" class="bulleted-list"><li style="list-style-type:circle">의존성 변경되는 경우 이전에 기억하고 있던 함수 자체외 비교해 다른 경우에만 리렌더</li></ul><p id="5c361e9c-9471-4d48-a227-a8820e42071d" class="">
+</p></li></ul><ul id="4a86d8bc-9f51-453d-a47c-84f3eb5d2564" class="bulleted-list"><li style="list-style-type:disc">useMemo<ul id="99179177-1e70-40a4-b8f2-cce74b13eea8" class="bulleted-list"><li style="list-style-type:circle">원하는 값을 업데이트하기 위해 사용</li></ul><ul id="548b4f0d-d6ba-471e-976f-ade7d0ba4995" class="bulleted-list"><li style="list-style-type:circle">인자<ul id="3e76cf48-bddd-40d0-b519-6a94e1af784e" class="bulleted-list"><li style="list-style-type:square">인라인 콜백</li></ul><ul id="d4e28f0d-c4f5-4c8a-a5a8-09dd0561a2a3" class="bulleted-list"><li style="list-style-type:square">의존성 리스트 : 해당 배열이 없으면 렌더링 시마다 새로운 값 계산</li></ul></li></ul><ul id="e68f14b4-dbdf-4a8c-8631-f7090b0f0b07" class="bulleted-list"><li style="list-style-type:circle">메오이제이션된 값을 반환</li></ul><ul id="d6778424-2e3e-49bf-8d82-fe042db57c31" class="bulleted-list"><li style="list-style-type:circle">의존성 변경되었을 때만 메모이제이션된 값 다시 계산함
+⇒ 모든 렌더링 시 고비용 계산 방지</li></ul><ul id="54f9d05f-3878-4df6-9464-13460ba520be" class="bulleted-list"><li style="list-style-type:circle">useMemo에 전달된 함수는 렌더링 중에 실행되므로,
+렌더링 중에 실행하지 않는 함수(side effect)는 useEffect 사용</li></ul><p id="e779a0ac-cd97-4cf9-b84a-5dd498873a7a" class="">
+</p></li></ul></details></li></ul><ul id="6378ad5c-dd50-41ee-9d42-fdd9e5ae9349" class="toggle"><li><details open=""><summary>JSX란 무엇인가요?</summary><ul id="8c242cbb-9b4c-4e12-9256-535a59ff02ec" class="bulleted-list"><li style="list-style-type:disc">JavaScript XML = JS에 XML을 추가한 확장한 문법</li></ul><ul id="874769c8-a5f0-418d-a854-5a1221e33dad" class="bulleted-list"><li style="list-style-type:disc">react로 프로젝트 개발 시 사용됨. 공식적인 JS 문법은 아님</li></ul><ul id="77dee59d-1645-4c63-ab82-68a35a6bee61" class="bulleted-list"><li style="list-style-type:disc">브라우저에서 실행하기 전 바벨을 사용해 일반 JS 형태의 코드로 변환됨<pre id="5e0b577e-8076-4329-ae05-b454edc7d345" class="code"><code>function App() {
+	return (&lt;h1&gt;hello&lt;/h1&gt;)
+}
+
+// 바벨이 아래 코드처럼 JS로 해석함
+function App() {
+	return React.createElement(&#x27;h1&#x27;, null, &#x27;hello&#x27;);
+}</code></pre></li></ul><ul id="a7f537ef-91d2-4dec-98f0-0f58004b7c9a" class="bulleted-list"><li style="list-style-type:disc">장점<ul id="a4f1b72b-3369-4afc-9469-059dc4f1fece" class="bulleted-list"><li style="list-style-type:circle">하나의 파일에 JS와 HTML을 동시에 작성하여 편리함</li></ul><ul id="9cd36b32-df75-440d-994a-70cc56975342" class="bulleted-list"><li style="list-style-type:circle">JS에서 HTML을 작성하듯이 하기 때문에 가독성이 높고 작성하기 쉬움</li></ul><ul id="131f08b6-bef9-4074-b937-9742f166c6ad" class="bulleted-list"><li style="list-style-type:circle">JS에 가깝고 새롭게 배워야 하는 새로운 문법이 거의 없기 때문에 쉬움</li></ul><ul id="92089129-2764-4672-add1-d25bd578518a" class="bulleted-list"><li style="list-style-type:circle">기본적으로 React DOM은 JSX에 삽입된 모든 값을 렌더링하기 전 이스케이프하므로 안전함</li></ul></li></ul><ul id="d86a381e-3a05-4565-b684-be6b787c1d4c" class="bulleted-list"><li style="list-style-type:disc">문법<ul id="dc0598bb-72c6-47cc-8f93-a3ee1fc90615" class="bulleted-list"><li style="list-style-type:circle">반드시 부모 요소 하나가 감싸는 형태 
+(컴포넌트 변화 감지 시 효율적으로 비교 위해 하나의 DOM 트리 구조)</li></ul><ul id="b04be3e7-013c-47dc-b0e5-8a484ec4b154" class="bulleted-list"><li style="list-style-type:circle">JS 표현식 사용 가능 (코드를 {}로 감싸주면 됨)</li></ul><ul id="b07b2260-8beb-415e-b967-31cf23b0cd0e" class="bulleted-list"><li style="list-style-type:circle">if문 대신 삼항연산자, AND 연산자(&amp;&amp;) 사용</li></ul><ul id="214a7353-768d-47a0-b6e0-d1ef10414c26" class="bulleted-list"><li style="list-style-type:circle">함수에서 undefined만 반환해 렌더링하는 상황 만들면 안됨</li></ul><ul id="8e6ed7e1-27de-4b3e-8d7e-8ea3a2cf1142" class="bulleted-list"><li style="list-style-type:circle">태그를 닫아주어야 함</li></ul><ul id="fa8e4af3-2b6f-420e-a8b5-5a21e4b9af37" class="bulleted-list"><li style="list-style-type:circle">HTML 어트리뷰트명 대신 camelCase 프로퍼티 명명 규칙 사용</li></ul></li></ul><p id="d9c57585-53ed-4201-8ec1-9a880bbe98d2" class="">
+</p></details></li></ul><ul id="d9aa2344-68aa-4f74-bba5-e22c38789ceb" class="toggle"><li><details open=""><summary>Suspense와 lazy란 무엇인가요?</summary><pre id="acf3f450-5863-4939-8838-16b3166f7ef8" class="code"><code>// 이 컴포넌트는 동적으로 불러옵니다
+const OtherComponent = React.lazy(() =&gt; import(&#x27;./OtherComponent&#x27;));
+
+function MyComponent() {
+  return (
+    // Displays &lt;Spinner&gt; until OtherComponent loads
+    &lt;React.Suspense fallback={&lt;Spinner /&gt;}&gt;
+      &lt;div&gt;
+        &lt;OtherComponent /&gt;
+      &lt;/div&gt;
+    &lt;/React.Suspense&gt;
+  );
+}</code></pre><ul id="13c4b2a9-60bc-4d33-9660-2a0b0916e64b" class="toggle"><li><details open=""><summary>Suspense</summary><ul id="6e274350-677c-41b2-abd2-e8dba41d3b6c" class="bulleted-list"><li style="list-style-type:disc">2018년에 첫 시연되었으며 React v18에서 정식 기능으로 지원됨</li></ul><ul id="f5e9e471-772d-41f8-a30a-b1fd9f029637" class="bulleted-list"><li style="list-style-type:disc">어떤 작업이 완료될때까지 컴포넌트 렌더링을 잠시 중단시키고 다른 컴포넌트를 먼저 렌더링함</li></ul><ul id="aa56113d-1864-4e01-956f-cb0d709a5c56" class="bulleted-list"><li style="list-style-type:disc">React는 JSX 코드 안에 들어있는 모든 컴포넌트를 즉시 호출해 바로 렌더링하는데
+컴포넌트를 Suspense로 감싸주면 컴포넌트의 렌더링을 특정 작업 이후로 미루고,
+해당 작업이 끝날 때까지는 fallback 속성으로 넘긴 컴포넌트를 대신 보여줌
+(특정 작업은 컴포넌트 내부에 명시)</li></ul><ul id="cfaa0c5b-47fb-478c-90fb-3b2068818529" class="bulleted-list"><li style="list-style-type:disc">주로 비동기로 데이터 가져오는 부분에 data fetching 라이브러리와 함께 사용거나 
+lazy와 함께 코드 분할 시 사용됨
+(컴포넌트가 읽어야 하는 데이터가 아직 준비되지 않았음을 react에게 알림)</li></ul><ul id="1d22eca7-0d1e-41a4-b91e-4cd4494c9d16" class="bulleted-list"><li style="list-style-type:disc">Suspense의 역할은 크게 2가지로 나눠짐<ul id="f407ef0e-a7aa-4df8-8286-5bf554e91600" class="bulleted-list"><li style="list-style-type:circle">모든 요청을 기다리지 않고도 화면 렌더링 가능<p id="e1001305-a32c-4fa1-aadd-57e9f1b4cc6d" class="">data fetching 요청 직후 요청 리소스를 바로 컴포넌트로 주입하는 방식.
+즉, fetching 라이브러리만 사용했을 때는 waterfall 현상은 막아주지만 
+모든 data의 응답을 기다려야 컴포넌트 트리를 렌더링 가능했음 
+⇒ 
+suspense 사용 시 fetching 요청 직후 응답 도착 여부와 상관없이 렌더링 수행</p><p id="f41326c1-660d-4cf9-a85e-f74399cd888c" class="">
+</p></li></ul><ul id="11aad46b-4f5b-4d1b-8842-1776a632f47a" class="bulleted-list"><li style="list-style-type:circle">경쟁 상태 발생을 방지함<p id="731ef7d8-3db3-4dc4-a709-8ade34cf7e46" class="">여러 개의 비동기 작업의 결과가 하나의 DOM 객체에 반영되는 경우 
+호출한 순서대로 응답이 도착해서 순서대로 DOM에 반영되지 않음.
+⇒
+suspense는 state 설정 시기를 바꾸어 이를 해결함.
+suspense 사용 시 데이터를 요청함과 동시에 해당 요청 리소스를 반영하기 때문에
+이전에 수행하던 요청이 있더라도 해당 요청은 무시하고 새로운 요청으로 대체됨</p></li></ul></li></ul><ul id="3dc0fdd2-85e9-4553-af8d-52a3633ce39e" class="bulleted-list"><li style="list-style-type:disc">기존의 비동기 데이터를 읽어오는 컴포넌트의 몇 가지 고질적인 문제를 해결함<ul id="7124af93-e608-47a2-a527-f7e40ef48d1c" class="bulleted-list"><li style="list-style-type:circle">마치 UI가 waterfall처럼 순차적으로 나타나는 현상<p id="b972b2de-1f9f-40cd-b052-3b763c2af0e0" class="">특히 한 페이지 내 여러 컴포넌트에서 동시에 비동기 데이터를 읽어오는 경우.
+상위 컴포넌트의 데이터 로딩이 끝나야 하위 컴포넌트 데이터 로딩이 시작하기 때문
+⇒</p><p id="888be118-7445-4988-9029-ce4f460d7df7" class="">data fetching 라이브러리 사용 시 waterfall 현상 막아줌
+컴포넌트 트리 구조에 필요한 모든 data fetchign 요청을 
+렌더링 이전에 실행하도록 중앙화해 해결</p></li></ul><ul id="e7700b7e-757d-4441-a64b-e19ad5c63034" class="bulleted-list"><li style="list-style-type:circle">요청 순서대로 데이터가 응답된다는 보장 없기 때문에 
+의도치 않게 싱크 맞지 않는 데이터 제공 가능성</li></ul><ul id="7ec1028e-267e-41bf-95fc-0383ff8cfc8a" class="bulleted-list"><li style="list-style-type:circle">if 조건문을 사용해 어떤 컴포넌트를 보여줄지 제어하는 것은 
+선언형이 아닌 명령형 코드에 가까움</li></ul></li></ul><p id="75385688-65c6-4094-9213-f29a1bd123ac" class="">
+</p><ul id="4ff23fd9-bf50-4d4f-8c1e-2c9eecd9970a" class="bulleted-list"><li style="list-style-type:disc">Refernece<ul id="8f6ee2e4-0a09-44d5-bc7c-e296aa4289e7" class="bulleted-list"><li style="list-style-type:circle"><a href="https://tecoble.techcourse.co.kr/post/2021-07-11-suspense/#:~:text=react%20suspense%EB%8A%94%20%EC%9D%B4%EB%9F%AC%ED%95%9C%20%EB%A1%9C%EB%94%A9,%ED%95%A8%EA%BB%98%20%EC%82%AC%EC%9A%A9%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8A%94%20%EA%B5%AC%EC%A1%B0">https://tecoble.techcourse.co.kr/post/2021-07-11-suspense/#:~:text=react suspense는 이러한 로딩,함께 사용할 수 있는 구조</a>.</li></ul><ul id="fd16dbca-e242-4145-944f-12ebf69fdcc6" class="bulleted-list"><li style="list-style-type:circle"><a href="https://www.daleseo.com/react-suspense/">https://www.daleseo.com/react-suspense/</a></li></ul></li></ul><p id="d8c54b94-0354-4bac-94bf-f94ecb23c761" class="">
+</p></details></li></ul><ul id="845000ec-2836-413a-bde4-b825af91d604" class="toggle"><li><details open=""><summary>Lazy</summary><ul id="9f82eafd-9d96-4d65-a9d5-87441cb47703" class="bulleted-list"><li style="list-style-type:disc">애플리케이션 규모가 클수록 첫 페이지를 로드하는 즉시 대규모 단일 JS 번들이 
+사용자에게 전송됨 ⇒ 비효율적인 페이지 성능</li></ul><ul id="e6e23047-112c-4fd8-96a7-39216a8ac2f3" class="bulleted-list"><li style="list-style-type:disc">React.lazy() 메서드 사용 시 동적 가져오기를 사용해 쉽게 코드 분할 가능함
+구성 요소를 개별 JS 청크로 분리
+⇒ 
+앱을 지연 로딩하게 도와주고 성능 향상을 도움
+코드 양을 줄이지 않고도 필요치 않은 코드를 불러오지 않게 해 초기화 로딩에 필요한 비용 줄임</li></ul><ul id="8e7f9f81-58fb-41c2-957b-baead5e8a21e" class="bulleted-list"><li style="list-style-type:disc">lazy 컴포넌트는 반드시 suspense 컴포넌트 하위에 렌더링되어야 함</li></ul></details></li></ul><p id="9fdb9af2-b7bc-4513-b470-130664ab349f" class="">
+</p></details></li></ul><ul id="39395af5-6a1b-469a-846f-c61d39d72a22" class="toggle"><li><details open=""><summary>prop drilling은 무엇이고 어떻게 피할 수 있나요?</summary><ul id="64507246-a4cb-4a95-9dcb-e0becf90bc63" class="bulleted-list"><li style="list-style-type:disc">props driiling<ul id="7ca4ce11-8747-4dc3-9c08-09b24c484f88" class="bulleted-list"><li style="list-style-type:circle">프로퍼티 내리꽂기</li></ul><ul id="b2e6f90d-8bf6-4447-b83c-6730cf7dfde2" class="bulleted-list"><li style="list-style-type:circle">react 컴포넌트 트리에서 데이터를 전달하기 위해 필요한 과정</li></ul><ul id="eb237479-8ddc-4945-942e-7eb74613dc35" class="bulleted-list"><li style="list-style-type:circle">오로지 props를 하위 컴포넌트로 전달하는 용도로만 쓰이는 컴포넌트들을 거치며
+React Component 트리 한 부분에서 다른 부분으로 데이터를 전달하는 과정</li></ul><ul id="b95a4b21-04ae-40ba-8458-576b45c65ffa" class="bulleted-list"><li style="list-style-type:circle">단방향 데이터 흐름으로 인해 props driiling 방식으로 데이터가 전달됨</li></ul><p id="610992a8-eea5-4926-8f3e-7f6761be5fd6" class="">
+</p></li></ul><ul id="5720a56a-d357-4d2c-8a7e-476e51266aec" class="bulleted-list"><li style="list-style-type:disc">문제<p id="08e7a4da-b30b-4d8a-af67-f270554d2eb2" class="">문제들은 props driiling의 깊이가 깊어질수록 문제 커짐</p><ul id="9e2f27fb-ee4a-4c47-8608-2c89de376298" class="bulleted-list"><li style="list-style-type:circle">중간 step의 컴포넌트들이 필요치 않은 데이터를 갖게 됨</li></ul><ul id="5c4d5575-07ac-4b26-8611-38fb225a24e9" class="bulleted-list"><li style="list-style-type:circle">중간 컴포넌트들에도 props 넘겨줘야 하므로 번거로움</li></ul><ul id="02f6ca6c-fcc5-4cb3-8f98-cbe14a4f0e2a" class="bulleted-list"><li style="list-style-type:circle">프로퍼티 명이 중간에 변경된 경우 값 추적 어려움</li></ul><ul id="b9210c0c-116e-4470-a4bf-50c8f4f12432" class="bulleted-list"><li style="list-style-type:circle">default Props 사용한 경우 어느 step에서 프로퍼티가 전달되지 않았는지 문제인지 어려움</li></ul><p id="a561f1ea-ef47-4db1-ab9f-adabbf29443f" class="">
+</p></li></ul><ul id="07277e0f-c016-4122-9654-e847af7d2fe8" class="bulleted-list"><li style="list-style-type:disc">해결방안<p id="d0fa2ce6-23dd-4d9f-abd9-e0eabc0bf672" class="">props로 전달하지 않고도 Component간에 값을 공유하도록 만들어야 함</p><hr id="a2712520-8679-4c5f-914b-f8fad3b0a5a6"/><ul id="c91ad0ec-2b81-44b4-a59f-bbe0ce5be165" class="bulleted-list"><li style="list-style-type:circle">전역 상태관리 사용</li></ul><ul id="f6fd6c69-e432-451c-94dc-d38aebe668e8" class="bulleted-list"><li style="list-style-type:circle">Context API 사용</li></ul><ul id="554fd761-1e25-4ad0-bf5c-954548151872" class="bulleted-list"><li style="list-style-type:circle">컴포넌트 합성 (children 적극 사용)</li></ul><ul id="8853eff2-632b-4365-813f-b7e85152e151" class="bulleted-list"><li style="list-style-type:circle">Render Props</li></ul><ul id="8f2e5e01-3b22-40db-8aae-bfd8920a3e25" class="bulleted-list"><li style="list-style-type:circle">재사용하는 컴포넌트만 나누기</li></ul><ul id="9fe1f037-2f3b-4935-9c73-982ce12012b3" class="bulleted-list"><li style="list-style-type:circle">render props (JSX를 반환하는 함수 prop을 사용해 컴포넌트 간 코드 공유)<p id="20f18c01-8ce0-4cd1-89e0-56f4fa0e31f3" class="">TodoPage가 TodoList에게 TodoItem을 렌더링하는 로직을 정의해
+renderItem이란 이름의 prop으로 내림 → TodoList는 이를 자신이 가진 상태와 함께 호출
+</p><p id="c3e6aed1-d97b-4492-bf12-ddf1ad51692d" class="">상위에 렌더링 책임이 있고, 하위에선 받은 UI를 렌더링 하기만 하는 것</p><pre id="ef0da2ae-4b4e-4f51-a8ef-136141f942cb" class="code"><code>const Title = props =&gt; props.render(); //2. render prop을 호출해 렌더링
+&lt;Title render={() =&gt; &lt;h1&gt;hi&lt;/h1&gt;} /&gt;; //1. render prop을 내림</code></pre></li></ul></li></ul><p id="ec794f6b-b7ce-4875-b7e3-066e9b757851" class="">
+</p></details></li></ul><ul id="81045f05-8496-4b2b-9837-7e46dc5051b8" class="toggle"><li><details open=""><summary>key를 사용하는 이유에 대해 설명하세요.</summary><ul id="97005186-2f0f-41d3-bb45-715c6103ef5e" class="bulleted-list"><li style="list-style-type:disc">배열에 map 함수 적용할 때 각 요소마다 고유 key 값을 생략 시 key 넣으라는 에러 노출됨</li></ul><ul id="b69fe27d-6f1a-41b0-bee7-359b145da504" class="bulleted-list"><li style="list-style-type:disc">key의 역할<ul id="fc7932dd-0dda-4492-86bd-eb1737f33619" class="bulleted-list"><li style="list-style-type:circle">React가 어떤 항목을 변경, 추가, 삭제할지 식별하는 것을 도움 (불변한 유일한 식별자)</li></ul><ul id="cc1c5073-482e-4beb-a883-050b7d21fa91" class="bulleted-list"><li style="list-style-type:circle">엘리먼트에 안전한 고유성을 부여하기 위해 배열 내부의 엘리먼트에 지정해야 함</li></ul></li></ul><ul id="5812183e-e03a-4f4d-8a49-bc433e5c5bf1" class="bulleted-list"><li style="list-style-type:disc">key의 값<ul id="32d7596f-6fc3-4264-9551-a1280c61035c" class="bulleted-list"><li style="list-style-type:circle">가장 좋은 방법은 고유성 부여를 위해 고유하게 식별 가능한 문자열 사용</li></ul><ul id="9525bede-7fc3-4c97-8965-9fe9d80cbac6" class="bulleted-list"><li style="list-style-type:circle">안정적인 ID 없는 경우 최후의 수단으로 항목의 index를 key로 사용 가능
+but, 항목 순서 바뀔 수 있는 경우 권장하지 않음
+이로 인해 성능 저하되거나 컴포넌트의 state와 관련된 문제 발생 가능성 있음<ul id="e26b48c7-47f1-4a92-854d-6e6619751234" class="toggle"><li><details open=""><summary>문제 발생 이유</summary><ul id="ac3871b1-3e15-45d3-8506-b0df1ff983ca" class="bulleted-list"><li style="list-style-type:disc">응용 프로그램이 중단되고 잘못된 데이터 표시 가능성 있음</li></ul><ul id="c5b02be4-4e0e-4a25-a824-fccc8436d3ef" class="bulleted-list"><li style="list-style-type:disc">key가 동일할 경우 동일한 DOM 요소를 보여주기 때문에 문제 발생</li></ul><ul id="7f43c9c4-1198-4116-b6ac-f4f4e9518bd1" class="bulleted-list"><li style="list-style-type:disc">key는 React가 DOM 요소를 식별하는데 사용하는 유일한 식별자
+만약 list에서 중간에 있는 항목을 제거하거나 추가한다면?
+key는 이전과 동일하므로 React는 DOM 요소가 이전과 
+동일한 구성 요소를 갖고 있다고 인지함
+
+즉, 배열에서 데이터가 추가되거나 삭제될 떄마다 index에 위차한 값이 변경됨
+만약 배열의 맨 앞에 요소 추가 시 기존에 0 인덱스에 위치하던 값이 1번 인덱스로 이사함 → 이때 리액트가 값을 매핑하는 key가 index라면 0 → 1 인덱스로 이사한 1번 인덱스의 값을 0번 인덱스에 매핑하게 됨</li></ul><p id="cf5f279a-a49b-4007-b71e-f178c75739d6" class="">
+</p></details></li></ul></li></ul><ul id="971e47fa-e9fa-41a3-bb73-e932472b3b04" class="bulleted-list"><li style="list-style-type:circle">명시적으로 key 지정하지 않으면 React는 기본적으로 index를 키로 사용함</li></ul></li></ul><ul id="6763c0d8-0831-4121-9173-4020b89b6b69" class="bulleted-list"><li style="list-style-type:disc">key의 효율적인 변화 감지<ul id="b5dc1525-2847-437c-9df3-a257ef2d0b0f" class="bulleted-list"><li style="list-style-type:circle">Key는 엘리먼트의 변화를 감지함<ol type="1" id="3b07cbcb-5ef7-49b4-82a7-78509c28451e" class="numbered-list" start="1"><li>VirtualDOM에서 변화 감지</li></ol><ol type="1" id="0d73fb80-9db8-42bb-831b-473126bf492e" class="numbered-list" start="2"><li>변화가 일어난 VirtualDOM과 RealDOM을 비교해 새로운 DOM을 연산</li></ol><ol type="1" id="bf5f387d-e65b-4339-bdb6-d5408528ac7a" class="numbered-list" start="3"><li>비교 이후, RealDOM은 VirtualDOM과 동일하게 업데이트됨</li></ol></li></ul><ul id="55a4688b-27f1-46aa-9195-efd4e4283088" class="bulleted-list"><li style="list-style-type:circle">변화 생긴 부분만 업데이트 하는 최소한의 업데이트가 효율적</li></ul><ul id="1339124d-4aa6-4911-b971-822155f97eb6" class="bulleted-list"><li style="list-style-type:circle">key 없을 시 하나의 아이템이 추가될 때 리액트는 list의 전체 순서가 변경된 것으로 인지
+⇒ 모든 li 태그를 리렌더링함 (리스트를 순차적으로 모든 요소를 비교하며 변화를 감지함)
+⇒ 비효율적</li></ul><ul id="e114b297-1da0-428e-b9da-6b39203af267" class="bulleted-list"><li style="list-style-type:circle">key 존재 시엔 모든 리스트를 순회할 필요 없이 key값만 비교해
+key가 추가됐는지, 삭제됐는지만 비교해 변화가 감지된 요소만 리렌더링함
+⇒ 불필요한 리렌더링 방지</li></ul></li></ul><p id="0d20843a-918f-4ccf-abe1-17de980de3c9" class="">
+</p></details></li></ul></div></article></body></html>

@@ -1,0 +1,891 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>22.12.01</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+</style></head><body><article id="bfae6abf-b3d7-4f81-a019-11db4c124747" class="page sans"><header><h1 class="page-title">22.12.04</h1></header><div class="page-body"><ul id="576360f3-3527-44d6-b82e-6917f838fdb4" class="toggle"><li><details open=""><summary>jwt에 대해 설명하세요.</summary><ul id="36ac9bd3-fae8-40b2-823d-a9fd7dbe4d21" class="bulleted-list"><li style="list-style-type:disc">Json Web Token</li></ul><ul id="c456e9d4-4611-4963-8986-e66473389e8f" class="bulleted-list"><li style="list-style-type:disc">JSON 포맷을 이용해 사용자에 대한 속성을 저장하는 Claim 기반의 Web Token</li></ul><ul id="e895f63b-2b07-42d1-8f01-85f231207413" class="bulleted-list"><li style="list-style-type:disc">토큰 자체를 정보로 사용하는 Self-Contained 방식으로 정보를 안전하게 전달함</li></ul><ul id="a834fe76-878b-4108-8ed8-87a10b96dcba" class="bulleted-list"><li style="list-style-type:disc">Header, Payload, Signature 3부분으로 구성됨<ul id="90f6be42-f209-45ac-99ba-841788d5fcc9" class="bulleted-list"><li style="list-style-type:circle">Header<ul id="ad800d17-f9c3-4021-9476-a532e092f99b" class="bulleted-list"><li style="list-style-type:square">typ, alg 두 가지 정보로 구성됨</li></ul><ul id="d18ce838-a68d-487e-90c0-1cdb522f33d7" class="bulleted-list"><li style="list-style-type:square">typ : 토큰의 타입을 지정 (ex. JWT)</li></ul><ul id="611c9507-f64b-4b70-9828-0e1aa8255977" class="bulleted-list"><li style="list-style-type:square">alg : 알고리즘 방식을 지정. 서명 및 토큰 검증에 이용 (ex. SHA256, RSA)</li></ul></li></ul><ul id="37edfafa-02e1-4ba1-ba0c-ead7fb1b72f4" class="bulleted-list"><li style="list-style-type:circle">Payload <ul id="07512607-fb16-4903-8261-827384549d8c" class="bulleted-list"><li style="list-style-type:square">토큰에서 사용할 정보의 조각들인 클레임이 담겨 있음</li></ul><ul id="fa5ffcf3-42ed-49f7-9ccb-b817a152f9b2" class="bulleted-list"><li style="list-style-type:square">클레임은 총 3가지로 나누어지며, JSON (Key, Value)형태로 다수의 정보 넣을 수 있음<ul id="bf373c87-a6fc-4036-8845-ee3d2a896796" class="bulleted-list"><li style="list-style-type:disc">Registered Claim : 토큰 정보를 표현하기 위해 이미 정해진 종류의 데이터</li></ul><ul id="9449cace-a2b4-45b3-8634-d47ac6fe4d29" class="bulleted-list"><li style="list-style-type:disc">Public Claim : 사용자 정의 클래임. 공개용 정보를 위해 사용됨. 충돌 방지를 위해 URL 포맷 이용</li></ul><ul id="31395587-fc90-43ab-a7cf-89fd4b679a82" class="bulleted-list"><li style="list-style-type:disc">Private Claim : 사용자 정의 클레임. 서버와 클라이언트 사이에 임의로 지정한 정보 저장</li></ul></li></ul></li></ul><ul id="350c138d-41c8-49d6-a768-551b92c47766" class="bulleted-list"><li style="list-style-type:circle">Signature<ul id="a5f8b179-51d1-43d1-b06a-e403571d629d" class="bulleted-list"><li style="list-style-type:square">토큰을 인코딩하거나 유효성 검증 시 사용하는 고유한 암호화 코드</li></ul><ul id="e2522809-0898-4388-8faa-8dee99eb825f" class="bulleted-list"><li style="list-style-type:square">위에서 만든 헤더와 페이로드의 값을 각각 BASE64Url로 인코딩하고ㅗ,
+인코딩 한 값을 비밀 키를 이용해 헤더에서 정의한 알고리즘으로 해상하고
+이 값을 다시 BASE64Url로 인코딩해 생성함</li></ul></li></ul><p id="41591bf0-aab0-4fed-b2d1-528ff80b872a" class="">
+</p></li></ul><ul id="5de4233d-c967-4f4d-86e1-552a98a4092d" class="bulleted-list"><li style="list-style-type:disc">JSON 형태인 각 부분은 Base64Url로 인코딩되어 표현됨</li></ul><ul id="cc104fb9-34d9-451f-bb5e-c7f2d0e2c0f1" class="bulleted-list"><li style="list-style-type:disc">또한 각각의 부분을 이어주기 위해 .구분자를 사용해 표현함</li></ul><ul id="428137d2-cd96-4d33-b863-97e282661abd" class="bulleted-list"><li style="list-style-type:disc">생성된 토큰은 HTTP 통신 신 Authorization이라는 key의 value로 사용됨
+일반적으로 value에는 Bearer가 앞에 붙여짐</li></ul><ul id="827f8802-6ac0-47c0-8396-d7c128311366" class="bulleted-list"><li style="list-style-type:disc">단점<ul id="caec4666-1876-4a51-bb23-52352b07e833" class="bulleted-list"><li style="list-style-type:circle">토큰 자체에 정보를 담고 있으므로 양날의 검이 될 수 있음</li></ul><ul id="da0c81e3-c247-41e8-970c-902ab0203a24" class="bulleted-list"><li style="list-style-type:circle">정보가 많아질 수록 톤큰의 길이가 늘어나 네트워크 부하줄 수 있음</li></ul><ul id="e8294349-0f66-407f-b456-dbaf7bbef825" class="bulleted-list"><li style="list-style-type:circle">페이로드 자체는 암호화된 것이 아니라 BASE64URL로 인코딩된 것.
+중간에 페이로드를 탈취해 디코딩 시 데이터 볼 수 있으므로 JWE로 암호화하거나 중요한 데이터를 넣으면 안됨</li></ul><ul id="5bdc6ffa-6657-48a7-8085-79fc77d9ae57" class="bulleted-list"><li style="list-style-type:circle">JWT는 상태를 저장하지 않기 떄문에 한번 만들어지면 제어 불가능
+즉, 토큰 임의로 삭제 불가능. 그러므로 토큰 만료 시간 꼭 넣어줘야 함</li></ul><ul id="6d12f73a-8c7d-4ebb-b42e-b2a88db3d651" class="bulleted-list"><li style="list-style-type:circle">토큰을 클라이언트 측에서 관리해야 하므로 토큰을 젖아해야 함</li></ul><ul id="4a4e4a39-efdf-4a07-8f33-6fb312c58025" class="bulleted-list"><li style="list-style-type:circle"></li></ul></li></ul><p id="089d0835-e684-4c75-959b-648b23941a66" class="">
+</p></details></li></ul><ul id="1021bc18-45bb-4c51-a8a2-bbbee1761e20" class="toggle"><li><details open=""><summary>일반 함수와 화살표 함수엔 어떤 차이가 있나요?</summary><ul id="b7137ec2-1dea-4fd0-923a-f98587bea86e" class="bulleted-list"><li style="list-style-type:disc">화살표 함수<ul id="2a8e68e7-00df-4c46-bcc2-4b9ad0d98541" class="bulleted-list"><li style="list-style-type:circle">function 키워드 대신 화살표를 사용해 기존 함수 정의 방식보다 간략하게 함수 정의 가능</li></ul><ul id="6ed1eb0a-f879-4eb7-81e5-6902491bbe76" class="bulleted-list"><li style="list-style-type:circle">표현만 간략할 뿐 아니라 내부 동작도 기존의 함수보다 간략함</li></ul><ul id="25e3512e-c277-4a36-aabf-c7e4dbe7d710" class="bulleted-list"><li style="list-style-type:circle">콜백 함수 내부에서 this가 전역 객체를 가리키는 문제를 해결하기 위한 대안으로 유용함</li></ul><p id="fde2a1d0-6f80-4ed7-a02e-014e832e5f75" class="">
+</p></li></ul><ul id="d617d438-e18d-4f16-8480-5a85fa211f4c" class="bulleted-list"><li style="list-style-type:disc">일반 함수와 화살표 함수의 차이<ul id="2dcf2bdb-acdc-4b02-8b7f-68652a39af12" class="bulleted-list"><li style="list-style-type:circle">함수 표현식으로 정의해야 함 (함수 선언문으로는 정의 X)</li></ul><ul id="f339c05c-f618-440e-bcbf-2663b4b8bc29" class="bulleted-list"><li style="list-style-type:circle">인스턴를 생성할 수 없는 non-constructor.
+따라 prototype 프로퍼티 없으며 프로토타입도 생성하지 않음</li></ul><ul id="dd8fbd4e-9351-4636-9328-c4f42349bf2c" class="bulleted-list"><li style="list-style-type:circle">중복된 매개변수명 선언할 수 없음 (일반 함수는 에러 X)</li></ul><ul id="dd8d89aa-0fca-42d5-a5ae-60f9c28e14eb" class="bulleted-list"><li style="list-style-type:circle">함수 자체의 this, arguments, super, <a href="http://new.target">new.target</a> 바인딩 갖지 않음
+따라 참조 시 스코프체인을 통해 스코프 체인상 가장 가까운 상위 스코프의 this,
+arguments, super, new.target을 참조함</li></ul><ul id="866997ce-2866-4f84-af71-17d3c59ec869" class="bulleted-list"><li style="list-style-type:circle">this<ul id="d6c26f62-9352-425c-950c-63e4346d91c0" class="bulleted-list"><li style="list-style-type:square">화살표 함수는 자체 this 바인딩을 갖지 않기 때문에 상위 스코프의 this를 그대로 참조함
+(lexical this = 화살표 함수 내부에서 this 참조 시 일반 식별자처럼
+스코프체인 통해 상위 스코프에서 검색)</li></ul><ul id="a97ad2bc-4023-4805-bd2d-82f26d0bf115" class="bulleted-list"><li style="list-style-type:square">call, apply, bind 메서드를 사용해도 화살표 함수 내부 this 교체 불가능</li></ul><ul id="72496c9a-d76b-4d8e-8d58-96dad597ed9d" class="bulleted-list"><li style="list-style-type:square">메서드를 화살표 함수로 정의하는 것은 피해야 함
+(상위 컨텍스트인 전역 객체 참조하므로)
+⇒ 메서드 정의 시 ES6 메서드 축약 표현 권장</li></ul><ul id="9e7bf5a6-6bd4-42e0-a41e-e34a6eb99621" class="bulleted-list"><li style="list-style-type:square">프로토타입 객체의 프로퍼티에 화살표 함수 할당하는 경우도 같은 문제 발생
+⇒&gt; 프로퍼티 동적 추가시에는 ES6 메서드 정의 사용 불가능하므로 일반 함수 할당 권장</li></ul><ul id="d3a4cb43-273f-4742-a9e8-7058cf06b826" class="bulleted-list"><li style="list-style-type:square">addEventListener 함수의 콜백함수를 화살표 함수로 정의할 경우
+this가 상위 객체인 전역 객체를 가르키게 됨
+(따라 function 키워드로 정의한 일반 함수를 사용해야 함.
+일반 함수로 정의한 addEventListner 함수의 콜백 함수 내부 this는
+이벤트 리스너에 바인딩된 요소 가리킴)</li></ul></li></ul></li></ul><p id="103c2c3f-1f47-4bdd-84ea-11861dc355c0" class="">
+</p></details></li></ul><ul id="391af400-3ced-4ce2-8e8f-264d7a689ed7" class="toggle"><li><details open=""><summary>set과 map에 대해 설명하세요.</summary><ul id="126121d5-2d12-4750-824d-6827bf99f4bd" class="bulleted-list"><li style="list-style-type:disc">Set<ul id="0c69c7aa-4a6b-4829-9cc5-98d928bb89ac" class="bulleted-list"><li style="list-style-type:circle">중복되지 않은 유일한 값들의 집합</li></ul><ul id="ed428b0f-f5a1-48f9-b92c-db28bf70ef6c" class="bulleted-list"><li style="list-style-type:circle">배열과 유사하지만 아래와 같은 차이 존재<ul id="c18846a6-0fde-4e81-8bdd-77d77adab758" class="bulleted-list"><li style="list-style-type:square">동일한 값을 중복해 포함 불가능</li></ul><ul id="701fd679-6b28-43b3-8d15-80a7eee91d48" class="bulleted-list"><li style="list-style-type:square">요소 순서의 의미 없음</li></ul><ul id="0925d16f-bc20-46bf-bde2-33eef9a0c120" class="bulleted-list"><li style="list-style-type:square">인덱스로 요소에 접근 불가능</li></ul></li></ul><ul id="29ae921c-2228-4389-8085-88715cfdf244" class="bulleted-list"><li style="list-style-type:circle">Set은 수학적 집합을 구현하기 위한 자료구조로
+교집합, 합집합, 차집합, 여집합 등을 구현 가능</li></ul><ul id="e69ed682-25e2-4bb9-8802-a07420911267" class="bulleted-list"><li style="list-style-type:circle">이터러블을 인수로 전달받아 new Set()으로 생성. 중복된 값은 저장 X </li></ul><ul id="5e2f95e2-53cf-437d-9b3b-b5d268665ecd" class="bulleted-list"><li style="list-style-type:circle">이터러블이므로 forEach, for…of, .keys(), .values(), .entries() 사용해 반복 작업 가능</li></ul><ul id="3e417fe9-b314-4c4a-8c1b-bd6643ab77da" class="bulleted-list"><li style="list-style-type:circle">값의 유일무이함을 확인하는데 최적화되어 있음</li></ul><ul id="7956f521-8ef2-464c-812a-bd6c85537266" class="bulleted-list"><li style="list-style-type:circle">주요 메서드<ul id="60f8e584-48a4-4a0b-bb80-a7cca2044320" class="bulleted-list"><li style="list-style-type:square">new Set(interable) : Set 생성. 인자로 받은 이터러블 값을 복사해 Set에 넣음</li></ul><ul id="c27792c9-50c3-4433-950c-ee04361a75c3" class="bulleted-list"><li style="list-style-type:square">set.add(value) : 값을 추가하고 Set 자신을 반환</li></ul><ul id="8ac2dc4c-cb90-43ac-82a4-0b2baf24ff4b" class="bulleted-list"><li style="list-style-type:square">set.delete(value) : 값을 제거함.
+호출 시점에 Set 내에 값이 있어 제거하면 true, 아니면 false 반환</li></ul><ul id="6cfe977b-5b85-407d-a1b9-49bc595e4394" class="bulleted-list"><li style="list-style-type:square">set.has(value) : Set 내 값 존재 여부 확인</li></ul><ul id="ebd3b516-aadb-4645-bc51-51ab260078fe" class="bulleted-list"><li style="list-style-type:square">set.clear() : Set을 비움</li></ul><ul id="44ef5548-20f1-4df0-b524-a3b3b5de6679" class="bulleted-list"><li style="list-style-type:square">set.size : Set에 몇 개의 값이 있는지 카운트</li></ul></li></ul></li></ul><ul id="d9ccb8cb-6949-4e38-a01d-77c75bb65a91" class="bulleted-list"><li style="list-style-type:disc">Map<ul id="cd3e9e93-8fc2-4798-9e24-526162f4fdf8" class="bulleted-list"><li style="list-style-type:circle">키와 값의 쌍으로 이루어진 컬렉션</li></ul><ul id="6e1a053b-28ef-449f-bcde-9d5b5ba41d76" class="bulleted-list"><li style="list-style-type:circle">객체와 유시하지만 아래와 같은 차이 있음<ul id="0d99d094-338e-414e-859a-377eec7a402f" class="bulleted-list"><li style="list-style-type:square">다양한 자료형을 키로 사용 가능 (객체를 포함한 모든 값 사용 가능)</li></ul><ul id="8af99442-6ccf-46b6-a71d-bf8b14b833ec" class="bulleted-list"><li style="list-style-type:square">이터러블 객체임</li></ul><ul id="f3405950-6a6f-4d43-8f75-bdefd1b54ab3" class="bulleted-list"><li style="list-style-type:square">요소 개수 확인 map.size 통해서 함</li></ul></li></ul><ul id="16d7c44b-5817-43e4-bb5e-4fd4ea930a0e" class="bulleted-list"><li style="list-style-type:circle">이터러블이므로 forEach, for…of, .keys(), .values(), .entries() 사용해 반복 작업 가능</li></ul><ul id="0f6f8c0a-1e84-48a2-8ed7-76c2c1879c40" class="bulleted-list"><li style="list-style-type:circle">요소 순서에 의미를 갖지 않지만 Map 객체를 순회하는 순서는 요소가 추가된 순서를 따름</li></ul><ul id="cc6971a1-6cac-4ce9-9401-9f383211b04f" class="bulleted-list"><li style="list-style-type:circle">주요 메서드와 프로퍼티가 있음<ul id="8f908fb8-5fa3-46bb-a860-ece14c7e2589" class="bulleted-list"><li style="list-style-type:square">new Map() : Map 생성</li></ul><ul id="11076325-6c5f-42a1-b2ec-8b1b99678416" class="bulleted-list"><li style="list-style-type:square">map.set(key, value) : key를 이용해 value를 저장</li></ul><ul id="50d61954-dee9-4baf-b02b-db9cf561bea2" class="bulleted-list"><li style="list-style-type:square">map.get(key) : key에 해당하는 값 반환. key 존재하지 않을 시 undefined</li></ul><ul id="e250c40f-909b-4531-ad20-4fa32430406e" class="bulleted-list"><li style="list-style-type:square">map.has(key) : key 존재 여부 확인</li></ul><ul id="41947aaa-ac6f-4377-8cd8-b531a9d506d0" class="bulleted-list"><li style="list-style-type:square">map.delete(key) : key에 해당하는 값 삭제</li></ul><ul id="c358d3f7-c3b4-496e-9895-707d8efc7502" class="bulleted-list"><li style="list-style-type:square">map.clear() : Map 안에 모든 요소 제거</li></ul><ul id="804d72a3-3fe0-4591-a737-e8049f379b65" class="bulleted-list"><li style="list-style-type:square">map.size : 요소의 갯수 반환</li></ul></li></ul></li></ul><p id="b9fb430e-96ba-4b77-a9a4-9d51ad6bf0a0" class="">
+</p></details></li></ul><ul id="2137e8c1-f815-451a-a326-f3cf0427f8bf" class="toggle"><li><details open=""><summary>this 바인딩에 대해 설명하세요.</summary><p id="b8b2c32a-6ed8-44c1-9ee8-1d67bb9133dd" class="">this는 자신이 속한 객체 또는 자신이 생성할 인스턴스를 가리키는 자기 참조 변수
+함수를 호출하는 시점에 호출 방식에 따라 바인딩할 값이 동적으로 결정됨</p><ul id="1e1915b5-0bcc-47a0-9e47-095ea6c4af72" class="bulleted-list"><li style="list-style-type:disc">전역에서의 this : 전역 객체 참조</li></ul><ul id="4515f831-bf5a-465e-8b53-8fc57174e2fd" class="bulleted-list"><li style="list-style-type:disc">일반함수로 호출했을 떄의 this : 전역 객체 참조 / strict mode - undefined</li></ul><ul id="71dd3abe-ac95-43e0-b998-e3ee50f5d26b" class="bulleted-list"><li style="list-style-type:disc">메서드로 호출했을 때의 this : 메서드를 호출한 객체</li></ul><ul id="230062dc-44e8-419d-b1f2-108fd96092ca" class="bulleted-list"><li style="list-style-type:disc">생성자 함수로 호출했을 때의 this : 생성자 함수가 생성할 인스턴스</li></ul><ul id="5549741b-223a-4686-a56a-5c0ef3fde1e6" class="bulleted-list"><li style="list-style-type:disc">bind 메서드(apply, call, bind)에 의한 간접 호출에서의 this : 인수에 의해 결정</li></ul><ul id="a628b73b-ccc1-45d2-98a3-6b175cd57e60" class="bulleted-list"><li style="list-style-type:disc">화살표 함수에서의 this : 스스로 바인딩 제공 X. 상위 렉시컬 컨텍스트 안의 this 값을 유지</li></ul><ul id="190f87d6-5999-4d18-bd22-f7bc19e35031" class="bulleted-list"><li style="list-style-type:disc">이벤트 핸들러에서의 this : 이벤트를 바인딩한 DOM 요소를 가리킴</li></ul><p id="a9f9e686-9ef2-4446-b8a0-00eeaef1cf4e" class="">
+</p></details></li></ul><ul id="36405970-61af-402c-bb51-68e396d800ef" class="toggle"><li><details open=""><summary>SOP와 CORS가 무엇인가요 ? 그리고 이를 해결하려면 어떻게 할 수 있을까요 ?</summary><ul id="1cc88bb9-5471-4733-9ebf-247fd7cc89a1" class="toggle"><li><details open=""><summary>SOP : 동일 출처 정책</summary><ul id="fbea9a33-afc5-41d7-a86e-941e23c01314" class="bulleted-list"><li style="list-style-type:disc">JS 엔진 표준 스펙의 보안 규칙</li></ul><ul id="501887af-1feb-4eb5-bef9-5b747993effa" class="bulleted-list"><li style="list-style-type:disc">하나의 출처에서 로드된 자원이 호스트나 프로토콜, 포트번호가 일치하지 않는 자과
+상호 작용하지 못하도록 요청 발생 제한하고, 동일 출처에서만 접근 가능한 정책</li></ul><ul id="6ff06c29-288b-4744-a31e-c18eaa3b240a" class="bulleted-list"><li style="list-style-type:disc">두 URL의 Port, Protocal, Host가 모두 같아에 Same Origin</li></ul><ul id="239a5fdd-114e-4052-8ed2-6abdc51603db" class="bulleted-list"><li style="list-style-type:disc">IE는 예외로 양쪽 도메인 모두가 높음 단계 보안 수준 가지고 있는 경우 해당 정책 적용 X
+또한 동일 출처 정책 검색에 포트 포함하지 않음</li></ul><hr id="4020a3c6-1678-4960-9c6b-2b54aa4c70b7"/><ul id="8106578a-f06f-4705-8e98-27d26512c086" class="bulleted-list"><li style="list-style-type:disc">동일 출처 정책 : 다른 출처로부터 조회된 자원들의 읽기 접근을 막아 다른 출처 공격을 예방</li></ul><ul id="21412990-b709-4d1f-a06f-b450852b6cde" class="bulleted-list"><li style="list-style-type:disc">다른 출처에서 얻은 이미지를 담는 &lt;img&gt;, 외부 주소를 담는 &lt;link&gt; 같은 여러 태그은 허용</li></ul><ul id="155773e1-b0cc-4a33-bcf1-d7f68b009243" class="bulleted-list"><li style="list-style-type:disc">자바스크립트는 서로 다른 도메인에 대한 요청을 보안상 제한하는데,
+이 정책을 Same-Origin Policy, 즉 SOP라고 함</li></ul><ul id="a11079f1-6e5c-4c04-913f-40c50dba64d1" class="bulleted-list"><li style="list-style-type:disc">다른 출처의 리소스를 사용하는 것을 제한하는 보안 방식
+즉, 동일한 프로토콜, 호슽, 포트의 리소스만 호용한다는 뜻</li></ul><ul id="ff276c25-cf43-4fb0-96f7-0a6837cc82dd" class="bulleted-list"><li style="list-style-type:disc">출처는 URL의 Protocol, Host, Posrt로 구분함
+<a href="http://github.com:80">http://github.com:80</a> (http: 프로토콜, github.com : 호스트, 80 : 포트)</li></ul><ul id="46a7ea57-bed6-4050-9e44-42f50c6fc179" class="bulleted-list"><li style="list-style-type:disc">요청의 출처가 다르면 Cross Origin SOP의 위반이라고 하지만
+외부 라이브러리도 사용해야 하는데 요청과 리소스를 매번 동일한 출처로만 받을 순 없음</li></ul><ul id="5d9a66ff-12a9-4c37-80b2-fb32381934e0" class="bulleted-list"><li style="list-style-type:disc">동일출처 정책은 다른 출처 자원을 가져오는 것을 굉장히 제한적으로 허용함
+SPA와 미디어 중심 웹사이트들이 더욱 늘어남으로 인해 관련 규칙들도 많아짐
+따라 다른 출처 리소스에 접근성을 높이기 위해 CORS가 등장함</li></ul><p id="f9b76b0b-0f5d-4e9d-a9b9-f866e5f668cc" class="">
+</p></details></li></ul><ul id="c1c4f73b-e8df-4155-8b19-493c102b224f" class="toggle"><li><details open=""><summary>CORS : 교차 출처 리소스 공유</summary><ul id="721847cc-e0c3-4c5e-b932-8795a2cf95c0" class="bulleted-list"><li style="list-style-type:disc">웹 애플리케이션은 자신의 출처와 동일한 리소스만 불러올 수 있으며,
+다른 출처의 리소스를 불러오려면 출처에 올바른 CORS 헤더를 포함한 응답을 반환해야 함</li></ul><ul id="3074040f-0049-4d7a-b2c6-813099b1c87e" class="bulleted-list"><li style="list-style-type:disc">시스템 수준에서 타 도메인 간 자원 호출을 승인하거나 차단을 결정하는 것</li></ul><ul id="f5d11f95-6631-40e5-a537-79d23c3721b6" class="bulleted-list"><li style="list-style-type:disc">CORS는 웹페이지 상 JS를 이용해 XHR을 다른 도메일으로 발생시킬 수 있도록 해주는 기능 가지고 있으며, XHR기반 cross-origin HTTP 요청을 이용해 자원을 공유해야 하는
+브라우저와 서버간의 안전한 교차 출처 요청 및 데이터 전송 지원</li></ul><hr id="4f66cc02-d771-4349-baf3-27296e5da2de"/><ul id="abbac5ef-1f80-4f42-8d96-bd25bd80b8dd" class="bulleted-list"><li style="list-style-type:disc">Cross-Origin Resource Sharing = 다른 출처의 자원을 공유하는 것</li></ul><ul id="4ec8a249-2fcb-4dcf-93bd-ee9c1bbc8c5d" class="bulleted-list"><li style="list-style-type:disc">한 출처에 있는 자원에서 다른 출처에 있는 자원에 접근하도록 하는 개념</li></ul><ul id="eabda8b1-67f1-4a64-ad16-02b0b446856a" class="bulleted-list"><li style="list-style-type:disc">교차 출처 리소스 공유는 추가 HTTP 헤더를 사용하여, 한 출처에서 실행 중인 웹 애플리케이션이 다른 출처의 선택한 자원에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 체제. 웹 애플리케이션은 리소스가 자신의 출처(도메인, 프로토콜, 포트)와 다를 때 교차 출처 HTTP 요청을 실행함 - mdn</li></ul><ul id="bd476ae8-4aa9-4990-aae5-37d260f767f3" class="bulleted-list"><li style="list-style-type:disc">다른 출처 요청일 경우, CORS 정책에 준수하여 요청해야만 정상적으로 응답을 받음</li></ul><ul id="f43af463-7120-4df0-9ef8-721e0fe0e138" class="bulleted-list"><li style="list-style-type:disc">다른 출처 요청의 위험성<p id="6397a06b-f44e-4457-a410-f395b52f7f28" class="">&lt;img&gt;, &lt;script&gt;이 웹에 등장하면서 페이지 로딩 이후 브라우저에서 이런 하위 자원들을
+가져올 수 있게 됨. 그러므로 동일 출처, 다른 출처 모두 호출 가능해짐
+CORS 정책이 없고 모든 다른 출처 요청이 가능하다면 웹사이트를 열면서 script가 실행되어 AJAX 호출로 은행 API를 호출해 은행 계좌를 삭제하는 사고가 발생할 수도 있음
+</p></li></ul><ul id="728eb7b3-2840-49d4-b8f9-c957bf6cfca6" class="bulleted-list"><li style="list-style-type:disc">CORS 접근제어에 사용되는 3가지의 시나리오 존재<ul id="fd99ab4e-2e7b-49d6-b9b7-6f328e2206e5" class="bulleted-list"><li style="list-style-type:circle">단순 요청 (Simple Request)<ul id="f239e7b5-51ec-4eec-ad13-e686e83912fc" class="bulleted-list"><li style="list-style-type:square">GET, HEAD, POST 요청만 가능</li></ul><ul id="7aed6f4e-3f1f-407a-8900-3bf12665c03b" class="bulleted-list"><li style="list-style-type:square">CORS 안전 리스트 헤더(Accept, Content-Type 등) 혹은 User_Agent 헤더</li></ul><ul id="a4fc1825-3ef2-4bd2-b5e9-b471747dcca8" class="bulleted-list"><li style="list-style-type:square">Contet-Type 헤더는 application/x-www-form-urlencoded, multipart/form-data and text/plain만 가능</li></ul><ul id="01ecbbc0-07bd-4748-96d6-0d8f83a14ffe" class="bulleted-list"><li style="list-style-type:square"><a href="https://developer.mozilla.org/ko/docs/Web/API/ReadableStream">ReadableStream</a> 객체가 사용되지 않음</li></ul><ul id="24922e02-897a-4d2c-a5fc-7303c5d90ae9" class="bulleted-list"><li style="list-style-type:square">XMLHttpRequest 객체를 사용하여 요청하면, 요청에서 사용된 XMLHttpRequest.upload에 의해 반환되는 객체에 어떠한 이벤트 리스너도 등록되지 않음</li></ul></li></ul><ul id="52597998-ed9a-4b62-9502-110ce4469ef1" class="bulleted-list"><li style="list-style-type:circle">사전 요청 (Preflight Request)<ul id="32461e0f-10af-40ce-9abc-3fc89c0452d1" class="bulleted-list"><li style="list-style-type:square">OPTIONS 메서드로 HTTP 요청을 미리 보내 실제 요청이 전송하기에
+안전한지 확인 (다른 출처 요청이 유저 데이터에 영향을 줄 수 있기 때문에 미리 전송한다는 의미)</li></ul><ul id="6ebffc63-bbd4-44da-9c83-c77cee399a8a" class="bulleted-list"><li style="list-style-type:square">요청이 가능한 것을 확인하면 실제 요청을 보냄</li></ul></li></ul><ul id="a6ffbe4e-de1c-48eb-b63e-3d0d705a1b40" class="bulleted-list"><li style="list-style-type:circle">인증 요청 (Credentialed Request)<ul id="9585ff3b-d94f-4078-b2cf-263ed060c68a" class="bulleted-list"><li style="list-style-type:square">쿠키, 인증 헤더, TLS 클라이언트 인증서 등의 신용정보와 함께 요청</li></ul><ul id="3c916d5c-6d62-4a14-8c9e-b2a6bca06c0e" class="bulleted-list"><li style="list-style-type:square">인증 관련 헤더를 포함할 때 사용하는 요청</li></ul><ul id="992f96c9-a230-4c2a-b060-d7a6652ccd39" class="bulleted-list"><li style="list-style-type:square">기본적으로, CORS 정책은 다른 출처 요청에 인증정보 포함을 허용하지 않음
+요청에 인증을 포함하는 플래그가 있거나 access-control-allow-credentials가 true로 설정 한다면 요청 가능함</li></ul></li></ul><p id="f7bcf4e6-8ec3-4acb-afd7-d45997ed9cec" class="">⇒ 프리플라이트 요청을 사용하는게 좋음. 먼저 검사를 하기 때문</p><p id="9a496621-9e3f-4f63-90ef-f18249849ad0" class="">
+</p></li></ul><ul id="b04cf807-b36a-4d81-a2c3-d1b8c23b7a5b" class="bulleted-list"><li style="list-style-type:disc">해결 방법<ul id="a3afc7ca-dd2b-4bb5-bae0-f5e11a54c248" class="bulleted-list"><li style="list-style-type:circle">프론트 프록시 서버 설정<p id="7c3758d4-cfcc-469b-b6fb-5e53d96e933d" class="">프론트 서버에서 백엔드 서버로 요청을 보낼 때, 대상의 URL을 변경</p></li></ul><ul id="7718a396-73ce-4309-aced-576222d614a0" class="bulleted-list"><li style="list-style-type:circle">직접 헤더 설정<p id="9a4f5ff7-e311-4c15-815a-58c6e8594290" class="">직접 헤더에 설정을 추가</p></li></ul><ul id="5fb96f7d-6846-48f8-ae4e-7549ccaa41d7" class="bulleted-list"><li style="list-style-type:circle">스프링부트 설정<p id="fca30c43-db94-4bc4-9f9b-5e3ba3f5ddf2" class="">설정 클래스를 만들고 WebMvcConfigurer을 구현하면 addCorsMappings란
+메서드를 사용해 CORS의 출처 및 설정관리 가능</p></li></ul></li></ul><p id="86bda876-bfac-4e63-868d-b3e67d39a1d4" class="">
+</p><p id="5bb7b197-6fd1-4dbe-b1e3-e925eb08b8f1" class="">
+</p></details></li></ul><ul id="9229e9bb-ee2e-465b-89e5-e5b2d39ccf8e" class="toggle"><li><details open=""><summary>해결방안</summary><p id="13bbe066-e90c-487c-9fa9-273f1f0107bd" class="">CORS는 에러가 아니라 서로 다른 origin 간에 리소스를 전달하는 방식을 제어하는 매커니즘</p><p id="8752d549-d05b-42a4-ae46-8d0950538b1b" class="">즉, CORS 이슈는 <strong>동일 출처 정책(SOP)에 의거해 다른 출처의 리소스를 사용하거나
+상호작용을 하지 못하도록 막고 경고가 발생 하는 것이고</strong>, <strong>이를 해결하기 위해 교차 출처 리소스 공유(CORS)를 사용해 접근을 허용 하도록 설정</strong>하는 것이다.</p><p id="0e8563f7-836d-4ddc-8804-a4c9021e99a2" class="">즉 명확히 말하면 CORS 이슈 해결</p><p id="8acaa43a-948a-40c7-9a85-b110b62793c1" class="">
+</p><ul id="a6aa18ad-4b29-46d3-bd86-bc9b67943d1c" class="bulleted-list"><li style="list-style-type:disc">동일 출처로 이동</li></ul><ul id="c16489b7-f885-4387-a4ad-10313dd16c74" class="bulleted-list"><li style="list-style-type:disc"><strong>서버에서 Access-Control-allow-origin 헤더 추가</strong><ul id="e6e9c6e0-1275-4756-8c7b-37f9aab75c16" class="bulleted-list"><li style="list-style-type:circle">서버에서 모든 클라이언트에 요청에 대한 cross-origin HTTP 요청을 허가하는 <code>Access-Control-Allow-Origin: *</code> 헤더를 추가하면 된다. 하지만 이렇게 설정하면 전체 호스트에 대한 요청을 허용하는 것이기 때문에 보안에 취약 할 수 있다.</li></ul></li></ul><ul id="aebc63fb-6efc-49ce-95e8-2192999eda37" class="bulleted-list"><li style="list-style-type:disc"><strong>Proxy</strong><ul id="55c5b1a3-2650-47c0-8975-43dda49255a6" class="bulleted-list"><li style="list-style-type:circle">Proxy Server는 헤더를 추가하거나 요청을 허용/거부하는 역할을 중간에서 해줄 수 있기 때문에 응답을 주고 받을때 프록시 서버에서 <code>Access-Control-Allow-Origin: *</code> 헤더를 담아 응답해 주면 된다.
+프로젝트를 개발 할 때 proxy를 사용하는 것은 필수적인건 아니지만, 백엔드에서 개발서버를 위한 CORS 설정을 안해도 돼서 불필요한 코드를 아낄 수 있다.</li></ul><ul id="9c775208-3e5e-46ce-a68e-d935f12666e4" class="bulleted-list"><li style="list-style-type:circle"><strong>webpack-dev-server proxy 기능 사용 시 서버 코드 수정하지 않고 해결 가능</strong></li></ul></li></ul></details></li></ul><p id="00ca6669-8c1a-4aa4-9781-d5a7856b1660" class="">
+</p></details></li></ul><ul id="ccd7d745-5372-474a-b355-cc7999f0b0ad" class="toggle"><li><details open=""><summary>Javascript에서 성능 최적화는 무엇이고 어떻게 할 수 있나요 ?</summary><p id="9c611d0f-e0cd-4701-bead-7566bf0eab4c" class=""><a href="https://velog.io/@wishtree/Javascript-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94%EB%A5%BC-%EB%91%98%EB%9F%AC%EC%8B%BC-%EA%B3%A0%EB%AF%BC%EB%93%A4">https://velog.io/@wishtree/Javascript-성능-최적화를-둘러싼-고민들</a></p><ul id="e900c20c-520d-4a55-840c-264c3fe2c931" class="toggle"><li><details open=""><summary>성능 최적화란?</summary><ul id="dea4c09e-0573-455a-afd5-82ab54b1e3df" class="bulleted-list"><li style="list-style-type:disc">점차 클라이언트에서 다뤄야 할 상태가 많아지고 JS 코드 양도 많아졌으므로
+효율적으로 성능을 높여야 함</li></ul><ul id="b05e8a69-82f7-4aea-930f-0d66a0db558d" class="bulleted-list"><li style="list-style-type:disc">좋은 프로파일러로 문제를 진단해 원인을 알아야 함
+(Developer Tool - UI Responsiveness, Lighthouse - 접근성, 퍼포먼스, SEO)</li></ul></details></li></ul><ul id="145df9c7-e9bd-4cff-915a-f911a8e1dce7" class="toggle"><li><details open=""><summary>성능 최적화 방법</summary><ul id="9fafc07d-40f8-45fb-9597-503e20d34535" class="bulleted-list"><li style="list-style-type:disc">가장 빠른 코드는 실행하지 않는 코드<ul id="758ee787-e7e9-4023-8a55-61c8bcac59ba" class="bulleted-list"><li style="list-style-type:circle">불필요한 기능 제거</li></ul><ul id="429c2df1-a19e-483a-8527-a42670c1cbfd" class="bulleted-list"><li style="list-style-type:circle">불필요한 단계 피하기 (Array 형태로 변환, String을 그대로 유지)</li></ul></li></ul><ul id="d912b406-a616-4120-915e-0579f07ea28b" class="bulleted-list"><li style="list-style-type:disc">덜 자주 실행하는 코드 <ul id="aae96782-bf18-4900-926e-5f2d22600345" class="bulleted-list"><li style="list-style-type:circle">가능한 빨리 loop를 해제 (모든 반복을 완료할 필요 없는 경우 loop 실행 중단)</li></ul><ul id="05169d4e-4e9e-490b-864f-b075af0cab73" class="bulleted-list"><li style="list-style-type:circle">가능할 시 한번 사전계산 ()</li></ul><ul id="45e045b2-419b-4679-ac21-a2efc0ec6605" class="bulleted-list"><li style="list-style-type:circle">작업 수 최소화</li></ul><ul id="6c06b144-c442-4e82-8645-8616fdabc6d7" class="bulleted-list"><li style="list-style-type:circle">빌트인 메서드 활용 (컴파일러 코드는 케서드나 객체 유형에 특정된 성능 최적화를 위해 설계됨)</li></ul><ul id="de6ec951-2ed3-4958-baed-3574c57d4245" class="bulleted-list"><li style="list-style-type:circle">작업에 가장 적합한 Object 사용 (Array.push보단 Set.add 객체를 이용한 추가가 더 효율적일 수 있음)</li></ul><ul id="222b207d-0a26-4484-acf4-c9cb05cdefc4" class="bulleted-list"><li style="list-style-type:circle">Memory에 대해 신경쓰기 ()</li></ul><ul id="f55cb961-bc18-4a02-9bbf-ea0384af9b44" class="bulleted-list"><li style="list-style-type:circle">가능한 단형 형태로 개발</li></ul><ul id="495cc9df-9441-46ee-ba25-c424fe377967" class="bulleted-list"><li style="list-style-type:circle">delete 키워드 피하기</li></ul><ul id="9ccfeb16-809d-469b-83b9-32d4abed0722" class="bulleted-list"><li style="list-style-type:circle">비동기 코드를 사용해 스레드 차단</li></ul><ul id="3f1039b1-49fe-47c5-a564-5b3a9d97bf43" class="bulleted-list"><li style="list-style-type:circle">code spliitting 사용</li></ul></li></ul></details></li></ul><p id="4222573e-eec8-43d8-93dd-3f1833cd0b9e" class="">
+</p></details></li></ul><ul id="1293ca9f-40a7-4e3b-855e-96eafd7bd949" class="toggle"><li><details open=""><summary>브라우저 랜더링 과정</summary><p id="326637db-68b0-4919-b594-cacc30a6d0e2" class=""><a href="https://velog.io/@bohun-kim/JS-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%A0%8C%EB%8D%94%EB%A7%81">https://velog.io/@bohun-kim/JS-브라우저-렌더링</a></p><p id="a176f962-648d-493f-9e8e-b219d793d30e" class="">composition</p><ul id="31f51b74-ca02-4e86-893d-0e341e213f0b" class="bulleted-list"><li style="list-style-type:disc">파싱 <p id="af7249fc-a36f-4838-abb9-392c4236cec0" class="">텍스트 문서의 문자열을 토큰으로 분해 →
+토큰에 문법적 의미와 구조를 반영해 파스트리를 생성하는 과정
+일반적으로 파싱 완료 후에는 파스 트리를 기반으로 중간 언어인 바이트코드를 생성하고 실행함</p></li></ul><ul id="50e22335-caa5-4168-9952-9be54e11edec" class="bulleted-list"><li style="list-style-type:disc">렌더링<p id="298d4a55-b883-480e-80ec-3745b1fedaf6" class="">HTML, CSS, JS로 작성된 문서를 파싱해 브라우저에 시각적으로 출력하는 것</p></li></ul><p id="bda579f5-877c-40f3-ba4e-895d319a5396" class="">
+</p><p id="8ec37317-d947-4d32-b31f-3f7f4e6cdd58" class="">&lt;브라우저의 렌더링 과정&gt;</p><ol type="1" id="287386fc-8751-4781-a0c0-23c8ea899505" class="numbered-list" start="1"><li>브라우저는 렌더링에 필요한 리소스(HTML, CSS, JS, 이미지 등)를 요청
+→ 서버로부터 응답 받음</li></ol><ol type="1" id="34f4237d-8fc6-4ac9-b561-27225dffcfd7" class="numbered-list" start="2"><li>브라우저의 렌더링 엔진은 서버로부터 응답된 HTML, CSS를 파싱해
+DOM과 CSSOM을 생성하고, 이들을 결합해 렌더 트리 생성</li></ol><ol type="1" id="a9cc75fb-2a1b-4399-9fdd-a5f45b75e206" class="numbered-list" start="3"><li>브라우저의 자바스크립트 엔진은 서버로부터 받은 자바스크립트를 파싱해
+AST(abstract syntax tree)를 생성하고 바이트코드로 변환해 실행함.
+이때 자바스크립트는 DOM API를 통해 DOM이나 CSSOM을 변경할 수 있음
+변경된 DOM과 CSSOM은 다시 렌더 트리로 결합됨</li></ol><ol type="1" id="10e556c9-543b-4f49-b6f1-a3396ff14133" class="numbered-list" start="4"><li>렌더 트리를 기반으로 HTML 요소의 레이아웃(위치와 크기)를 계산하고
+브라우저 화면에 HTML 요소를 페인팅함</li></ol><p id="86906c3a-bb44-4907-9925-2336083cfdca" class="">
+</p><p id="46463608-b35c-45a1-ada0-43543e00edc5" class="">&lt;요청과 응답&gt;</p><p id="bf797d54-37c8-4122-93ad-dd7519ed2ed9" class="">브라우저의 핵심 기능 : 리소스를 서버에 요청하고 서버로부터 응답받아 브라우저에 시각적으로 렌더링</p><p id="8578275e-eccd-453e-bdc4-233a60cac046" class="">서버에 요청을 전송하기 위해 브라우저는 주소창을 제공함</p><ol type="1" id="59041a49-f1f6-4eba-b6f2-0d8375292fca" class="numbered-list" start="1"><li>브라우저의 주소창에 URL 입력 후 Enter</li></ol><ol type="1" id="72c1da61-8952-4502-97fa-34d65544871a" class="numbered-list" start="2"><li>URL의 호스트 이름이 DNS를 통해 IP 주소로 변환</li></ol><ol type="1" id="79c11566-c54a-42a1-a8c7-a8ae26598b9d" class="numbered-list" start="3"><li>해당 IP를 갖는 서버에게 요청을 전송함</li></ol><hr id="d0114d78-73b8-4db9-82fa-7ff09c3004ad"/><ol type="1" id="b635065b-5096-4c3f-8eb3-e78429d4ac28" class="numbered-list" start="1"><li><a href="https://poiemaweb.com">https://poiemaweb.com</a> 입력 후 Enter</li></ol><ol type="1" id="3d49715b-fbd5-44b3-8d7a-fd204bf80c51" class="numbered-list" start="2"><li><a href="http://poiemaweb.com">poiemaweb.com</a> 서버로 루트 요청이 전송됨(/, scheme, host 만으로 구성된 URI에 의한 요청)</li></ol><ol type="1" id="7d0bf4a5-8a55-4d36-b42d-8d3ff24b977b" class="numbered-list" start="3"><li>루트 요청에는 명확히 리소스를 요청하는 내용이 없지만 일반적으로 서버는 루트 요청에 대해
+암묵적으로 index.html을 응답하도록 기본설정 되어있음</li></ol><ol type="1" id="4110be9a-c605-4bc9-8db9-517bf6f112fb" class="numbered-list" start="4"><li>즉 서버는 루트요청에 대해 루트 폴더에 존재하는 정적 파일 index.html을
+클라이언트(브라우저)로 응답함</li></ol><p id="66eba329-a6f1-48a6-b206-cd8ad5786365" class="">
+</p><ul id="c111e5b2-4f1b-427c-a7ac-e95c23541f51" class="bulleted-list"><li style="list-style-type:disc">주소창 뿐 아니라 자바스크립트를 통해서도 동적으로 서버에 정적/동적 데이터를 요청 가능함
+(ajax, REST API)</li></ul><ul id="5a8fed0b-0b22-4cb7-8a44-f8492f18f33f" class="bulleted-list"><li style="list-style-type:disc">요청과 응답은 개발자 도구의 Network 패널에서 확인 가능</li></ul><ul id="29c750df-bdc7-4f0d-92d6-3747e8c40247" class="bulleted-list"><li style="list-style-type:disc">브라우저 렌더링 엔진이 HTML을 파싱하는 도중 외부 리소스를 로드하는 태그(link, img, script 등)를 만나면 HTML 파싱을 일시 중단하고 해당 리소스 파일을 서버로 요청함</li></ul><p id="80d12301-85f8-4167-8fbb-1d4569845820" class="">
+</p><p id="7a1f4d29-6751-40b2-89ec-08592091e4e1" class="">&lt;HTTP 1.1과 HTTP 2.0&gt;</p><p id="89465950-a655-44df-af0e-bdaffad34714" class="">HTTP : 웹에서 브라우저와 서버가 통신하기 위한 프로토콜(규약)</p><ul id="8e67901a-ca47-4e88-984d-ea36efaeb1c0" class="bulleted-list"><li style="list-style-type:disc">1989년, HTML/URL과 함께 팀 버너스 경이 고안</li></ul><ul id="e538bb91-8cc7-4e68-a362-c48f7be8b324" class="bulleted-list"><li style="list-style-type:disc">1991년, 최초로 문서화</li></ul><ul id="3147f425-08f6-4783-af9d-04c6b4a43c1d" class="bulleted-list"><li style="list-style-type:disc">1996년, HTTP/1.0 발표</li></ul><ul id="a68a8e1f-23a3-4f74-be2e-1d1f21c9ed6d" class="bulleted-list"><li style="list-style-type:disc">1999년, HTTP/1.1 발표</li></ul><ul id="830f9f16-3507-4ae6-afe7-1dfdfaf18033" class="bulleted-list"><li style="list-style-type:disc">2015년, HTTP/2 발표</li></ul><p id="d2ccbcdc-a2c4-47af-be5b-960b7b41a4a0" class="">
+</p><p id="249d6408-ea45-4f1f-b2db-b4e7f8ade582" class="">HTTP/1.1</p><ul id="715ff8a6-c1b6-4838-8ca8-6d643b729f13" class="bulleted-list"><li style="list-style-type:disc">리소스 동시 전송 불가능한 구조</li></ul><ul id="d1aa046a-0615-4a1f-9916-74cf54d817a4" class="bulleted-list"><li style="list-style-type:disc">기본적으로 커넥션 당 하나의 요청과 응답만 처리
+(즉, 여러 개의 요청을 한번에 전송 불가. 응답도 마찬가지)</li></ul><ul id="e8204600-d51d-461f-830b-f0b0c410be8f" class="bulleted-list"><li style="list-style-type:disc">따라 HTML 문서 내에 포함된 여러개의 리소스 요청(link, script, img 태그 등)이
+개별적으로 전송되고, 응답도 개별적으로 전송됨</li></ul><ul id="bd03339b-7b46-4883-bf5d-ebc3803fdd99" class="bulleted-list"><li style="list-style-type:disc">요청할 리소스 개수에 비례해 응답 시간 증가하는 단점</li></ul><p id="eacd0fca-1be3-4f14-a08e-785cea86ba39" class="">
+</p><p id="909fad2b-afe1-418b-bb05-ce5a16e2389c" class="">HTTP/2</p><ul id="edcfcc04-3cce-47ef-8575-a9e1bf447370" class="bulleted-list"><li style="list-style-type:disc">다중 요청/응답 가능 (커넥션 당 여러 개의 요청과 응답 가능)</li></ul><ul id="c10f19c1-495d-4eb1-b2dd-cb445252286a" class="bulleted-list"><li style="list-style-type:disc">여러 리소스 동시 전송이 가능하므로 HTTP/1.1에 비해 페이지 로드 속도 약 50% 빠름</li></ul><p id="f7edf1bc-ff8b-43ce-8354-df0121e7813d" class="">
+</p><p id="910884cc-4e4c-4944-892c-09ded74854d5" class="">&lt;HTML 파싱과 DOM 생성&gt;</p><p id="8d136dd7-2b5d-4cf7-88ed-600fbe1511a9" class="">브라우저 요청에 의해 서버가 응답한 HTML 문서는 문자열로 이루어진 순수 텍스트.
+따라 HTML 문서를 브라우저에 시각적인 픽셀로 렌더링하기 위해선 브라우저가 이해 가능한
+자료구조(객체)로 변환해 메모리에 저장해야 함</p><p id="051aef6c-b7bf-4146-aa4c-c5f27a5dc883" class="">
+</p><p id="02813fd3-e836-4f17-8fb1-cfe3d1aa4bd8" class="">브라우저 렌더링 엔진은 아래와 같은 순서로 이 역할을 함
+(HTML 문서를 파싱해 브라우저가 이해 가능한 자료구조인 DOM을 생성함)</p><ol type="1" id="c67b70f1-41e4-444c-a65f-caec1b0af6d0" class="numbered-list" start="1"><li>서버에 존재하던 HTML 파일이 브라우저 요청에 의해 응답됨
+이때 서버는 브라우저가 요청한 HTML 파일을 읽어들여 메모리에 저장한 뒤
+메모리에 저장된 바이트(2진수)를 인터넷을 경유해 응답함</li></ol><ol type="1" id="e526c25a-9a9a-4458-8c06-3e1adbc46759" class="numbered-list" start="2"><li>브라우저는 서버가 응답한 HTML 문서를 바이트(2진수) 형태로 응답받음
+그리고 응답된 바이트 형태의 HTML 문서는 meta 태그의 charset 어트리뷰트에 의해
+지정된 인코딩 방식(ex.UTF-8)을 기준으로 문자열로 변환됨
+(인코딩 방식은 응답 헤더에 담겨 응답되며 브라우저는 이를 확인하고 문자열로 변환함)
+content-type: text/html; charset=utf-8</li></ol><ol type="1" id="eb10fd82-a9dc-4fca-a20d-f299002fd320" class="numbered-list" start="3"><li>문자열로 변환된 HTML 문서를 읽어 들여 문법적 의미를 갖는 코드의 최소 단위인 토큰들로 분해함</li></ol><ol type="1" id="704a7c93-cf6d-4422-a8c1-971abc665861" class="numbered-list" start="4"><li>각 토큰들을 객체로 변환해 노드들을 생성함
+토큰의 내용에 따라 문서 노드, 요소 노드, 어트리뷰트 노드, 텍스트 노드가 생성됨
+노드는 이후 DOM을 구성하는 기본 요소가 됨</li></ol><ol type="1" id="d03c01ed-48e0-4099-90a5-5b4d12ec34b8" class="numbered-list" start="5"><li>HTML 문서는 HTML 요소들의 집합으로 이루어지며 HTML 요소는 중첩 관계를 갖음
+때문에 HTML 요소 간에는 중첩 관계에 의해 부자 관계가 형성됨
+이러한 HTML 요소 간의 부자 관계를 반영해 모든 노드들을 트리 자료구조로 구성함
+이 노드들로 구성된 트리 자료 구조를 DOM이라고 부름</li></ol><p id="f7ce8a4d-53e2-424b-9ae1-c97c0deb5e68" class="">즉 DOM = HTML 문서를 파싱한 결과물</p><p id="5cd7a68b-ecfe-48cb-82f1-6c7d2cf59cab" class="">
+</p><p id="4d542fc2-2bf0-4a1d-b3a8-439668fcb11b" class="">&lt;CSS 파상과 CSSOM 생성&gt;</p><p id="27868078-e537-4201-844f-eb36c7ae4410" class="">렌더링 엔진은 HTML 순서대로 한줄 씩 파싱해 DOM을 생성하다가 link태그나 style 태그를 만나면 DOM 생성을 일시 중단함 → href 어트리뷰트에 지정된 CSS 파일을 서버에 요청하여 로드한 CSS 파일이나 style 태그 내의 CSS를 HTML과 동일한 파싱 과정 (바이트 → 문자 → 토큰 → 노드 → CSSOM)
+을 거치며 해석해 CSSOM을 생성함 → 이후 css 파싱을 완료하면 HTML 파싱이 중단된 지점부터 다시 HTML 파싱을 시작해 DOM 생성을 재개함</p><p id="3824379e-ba5a-49e1-9ddd-dec79c63d999" class="">
+</p><p id="cae780db-7f40-4fa7-93f8-2bf3f8190070" class="">CSSOM은 CSS의 상속을 반영해 생성됨
+</p><p id="286f816a-e8ba-4a18-ab3d-b6960eb299fe" class="">
+</p><p id="f24ec19d-65e7-4eb1-be2b-2d41f475856b" class="">&lt;렌더 트리 생성&gt;</p><p id="08922a17-77cf-4368-8021-491934c6e7d1" class="">렌더링 엔진은 서버로부터 응답된 HTML과 CSS를 파싱해 각각 DOM과 CSSOM을 생성함
+그리고 DOM과 CSSOM은 렌더링을 위해 렌더 트리로 결합됨</p><p id="31fd1a33-0da1-408d-acf9-010c6c640eda" class="">
+</p><p id="45e60831-efb9-439a-9716-51677d972dfc" class="">렌더 트리 : 렌더링을 위한 트리 구조의 자료구조</p><p id="acf86f7e-03f2-4d8f-b1e1-507de862644e" class="">따라 브라우저 화면에 렌더링되지 않는 노드(meta, script 태그 등)와
+CSS에 의해 비표시(display:none) 되는 노드들은 포함하지 않음.
+즉, 렌더 트리는 브라우저 화면에 렌더링되는 노드만으로 구성됨</p><p id="fe19ce9b-35ae-4104-9030-abb5eb611537" class="">
+</p><p id="dc076320-3f4b-447c-8cb8-29f1d1bce92b" class="">이후 완성된 렌더 트리는 각 HTML 요소의 레이아웃(위치와 크기)을 계산하는데 사용되며,
+브라우저 화면에 픽셀을 렌더링하는 페인팅 처리에 입력됨</p><p id="59ea0dab-ce18-4a2b-bb17-94cef24634cf" class="">
+</p><p id="389f39fc-13a9-4e38-ab3e-3092aec8d847" class="">HTML → DOM tree → <div class="indented"><p id="628798cd-2b9d-40b4-9a85-8458b419f0ab" class="">                            Render tree → Layout → Paint</p></div></p><p id="14e617a6-8793-408b-b898-f3b8349995d8" class="">CSS → CSSOM tree → </p><p id="83d334ae-cce5-44d9-a023-e445ffd25550" class="">
+</p><p id="b031a792-26ce-4ddf-883f-8caf036d3e35" class="">지금까지 살펴본 렌더링 과정은 반복되서 실행될 수 있음
+예를 들어 아래와 같은 경우 반복해서 레이아웃 계산과 페인팅이 재차 실행됨</p><ul id="b124063f-ab0e-4316-ab1c-6ebc241a92f6" class="bulleted-list"><li style="list-style-type:disc">자바스크립트에 의한 노드 추가 또는 삭제</li></ul><ul id="54b24a4b-a9a3-41a2-8388-0daa9252cf00" class="bulleted-list"><li style="list-style-type:disc">브라우저 창의 리사이징에 대한 뷰포트 크기 변경</li></ul><ul id="29c6a96d-3761-4e9a-9819-b285e0e6cf90" class="bulleted-list"><li style="list-style-type:disc">HTML 요소의 레이아웃(위치/크기)에 변경을 발생시키는 width, height, margin, padding, border, display, position, top/right/bottom/left 등의 스타일 변경</li></ul><p id="e6310c93-972c-46f5-a6bc-5975b19fe8dd" class="">
+</p><p id="6599369b-616c-4885-aec4-108312ba3092" class="">레이아웃 계산과 페인팅을 다시 실행시키는 리렌더링은 비용이 많이 드는, 즉 성능에 악영향을 주는 작업
+따라 가급적 리렌더링이 빈번하게 발생하지 않도록 주의 필요함</p><p id="1ff80a1b-c326-4aaa-8ca5-b4b45f639df2" class="">(transform, opacity, cursor, orphans, perspective 등의 속성들은 연산적이 절대적으로 줄어들어 Layoutrhk Paint가 모두 발생하지 않음. 따라 속도 빠름)</p><p id="27bfe0e6-31da-40e1-9612-68bfa641a488" class="">
+</p><p id="33ac152e-67d4-43ea-ade8-b2954fd9df91" class="">&lt;자바스크립트 파싱과 실행&gt;</p><p id="6ff7c8e9-dd99-4a2e-8fbd-3b4188e475c6" class="">HTML 문서의 파싱 결과물인 DOM은 HTML 문서 구조, 정보 뿐 아니라
+HTML 요소와 스타일 등을 변경할 수 있는 프로그래밍 인터페이스로서 DOM API를 제공함
+즉, 자바스크립트 코드에서 DOM API를 사용하면 이미 생성된 DOM을 동적으로 조작 가능함</p><p id="ff3b26df-fc89-4792-9dbf-490d85f7dcbd" class="">
+</p><p id="2fa4291d-3fbd-49c0-8894-b4bae3a091ae" class="">렌더링 엔진은 HTML을 한 줄씩 순차적으로 파싱해 DOM을 생성하다가 JS 파일을 로드하는 script 태그나 자바스크립트를 콘텐츠로 담은 script 태그를 만나면 DOM 생성을 일시 중단함.</p><p id="36f07946-5aa0-4c20-b3b8-893b31b1c8cf" class="">
+</p><p id="6cde9998-7406-4d69-b833-25791d6e3f13" class="">그래고 자바스크립트 파일을 서버에 요청해 로드한 JS 파일 또는 script 태그 내 JS 코드를 파싱하기 위해
+자바스크립트 엔진에 제어권을 넘김
+이후 자바스크립트 파싱과 실행이 종료되면 렌더링 엔진으로 다시 제어권을 넘겨
+HTML 파싱이 중단된 지점부터 다시 시작해 DOM 생성 재개함</p><p id="da9b774f-0958-4c61-a480-945fe70a10f9" class="">
+</p><p id="3f0f7b6d-a5d8-478d-98b3-2b77fce9a4aa" class="">자바스크립트의 파싱과 실행은 브라우저 렌더링 엔진이 아닌 자바스크립트 엔진이 처리함
+자바스크립트 엔진은 JS 코드를 파싱해 CPU가 이해 가능한 저수준 언어로 변환하고 실행하는 역할을 함
+JS 엔진은 구글 크롬과 Node.js의 V8, 파이어폭스의 spiderMonkey, 사파리의 javascriptCore등 다양하며, 모든 자바스크립트 엔진은 ECMAScript 사양을 준수함</p><p id="a6bea966-4df3-4efe-8536-7dd810d695da" class="">
+</p><p id="a8bc80f5-7daf-4530-b87a-586e19b746fa" class="">렌더링 엔진으로부터 제어권을 넘겨받은 자바스크립트 엔진은 JS 코드를 파싱하기 시작함
+JS 코드를 해석해 AST (추상적 구문 트리 - Abstract Syntax Tree)를 생성함
+그리고 AST를 기반으로 인터프리터가 실행 가능한 중간코드인 바이트코드를 생성해 실행함</p><p id="e84769cb-5a61-444c-8c17-6dcc3f185694" class="">
+</p><p id="3445fe2d-ed8c-42e6-96b9-91563a4add3a" class="">JS 코드 —토크나이징(토크나이저)—&gt; 토큰 —파싱(파서)—&gt; AST
+—바이트코드 생성(바이트코드 생성기)—&gt; 바이트코드 —실행(인터프리터)—&gt;</p><p id="2fb7f34e-e9c9-4897-aba5-3bd954fc565f" class="">
+</p><ul id="8c880c39-9e35-4bd3-8736-630186f7447e" class="bulleted-list"><li style="list-style-type:disc">토크나이징<p id="fb703743-73c4-4cd2-9b1d-98090ef23be3" class="">단순 문자열인 자바스크립트 소스코드를 어휘 분석해 문법적 의미를 갖는 코드의 최소 단위인 토큰들로 분해함 (이 과정을 렉싱이라고 부르기도 하지만 토크나이징과 미묘한 차이 존재)</p></li></ul><ul id="d62feb6b-57ea-473d-9e05-61eee703a148" class="bulleted-list"><li style="list-style-type:disc">파싱<p id="4c64bd0c-b2f5-421e-ae9f-d29f194b2c18" class="">토큰들의 집합을 구문분석해 AST를 생성함
+AST : 토큰에 문법적 의미와 구조를 반영한 트리구조의 자료구조
+AST는 인터프리터나 컴파일러만이 사용하는 것은 아님.
+AST로 Typescritp, Babel, Prettier 같은 트랜스파일러를 구현 가능함</p></li></ul><ul id="5412e24b-9088-48af-8ae7-f72bc2fa17da" class="bulleted-list"><li style="list-style-type:disc">바이트코드 생성과 실행<p id="9d8d8e6c-2482-424b-af23-61982c9c47ad" class="">파싱의 결과물로서 생성된 AST는 인터프리터가 실행할 수 있는 중간코드인 바이트코드로 변환되고
+인터프리터에 실행됨.
+V8엔진의 경우 자주 사용되는 코드는 터보팬이라고 불리는 컴파일러에 의해 최적화된 머신코드로 컴파일되어 성능을 최저화함. 만약 코드 사용의 빈도가 적어지면 다시 디옵티마이징하기도 함</p><p id="09fb352f-f2f6-4aeb-8f19-7ca3e1274e90" class="">
+</p></li></ul><p id="bd09098c-b1c6-4402-85f9-bc0c06abdb36" class="">&lt;리플로우와 리페인트&gt;</p><p id="3e223bea-2da7-44c1-a019-8f6754e3ecc2" class="">만약 자바스크립트 코드에 DOM이나 CSSOM을 변경하는 DOM API가 사용된 경우
+이때 변경된 DOM, CSSOM은 다시 렌더 트리로 결합되고 변경된 렌더 트리를 기반으로 레이아웃과 페인트과정을 거쳐 브라우저의 화면에 다시 렌더링 됨. = 이를 리플로우, 리페인트라고 함</p><p id="6490fc37-83de-46cd-b85f-036f127bd190" class="">
+</p><ul id="b47a61b9-87d2-42ea-af5a-45fa46e820e8" class="bulleted-list"><li style="list-style-type:disc">리플로우<p id="e8dca4e2-8b6b-4d94-9fe5-95d481919555" class="">레이아웃 계산을 다시 하는 것. 노드 추가/삭제, 요소의 크기/위치 변경, 윈도우 리사이징 등
+레이아웃에 영향이 주는 변경이 발생한 경우에 한해 실행</p></li></ul><ul id="6be97470-4a8a-41c2-ba69-65b46a3807e4" class="bulleted-list"><li style="list-style-type:disc">리페인트<p id="9772fce9-c835-4650-a234-72f8b09a9728" class="">재결합된 렌더 트리를 기반으로 다시 페인팅</p></li></ul><p id="3ffdc12c-6cc8-4882-8621-1bd37fed01fc" class="">
+</p><p id="941d7ee7-b3b3-4c4f-96bc-8276c2d53980" class="">리플로우와 리페인트가 반드시 순차적으로 동시에 실행되는 것은 아님.
+레이아웃에 영향이 없는 변경은 리플로우 없이 리페인트만 실행</p><p id="e7eeea06-8986-4587-91de-a7a1baf5ac43" class="">
+</p><p id="7ee89af9-3883-4dee-8ad6-c54c921d72eb" class="">&lt;자바스크립트 파싱에 의한 HTML 파싱 중단&gt;</p><p id="feb83348-5361-49ed-a332-a5f89ed18aca" class="">렌더링 엔진과 자바스크립트 엔진은 병렬적으로 파싱을 실행하지 않고 직렬적으로 파싱을 수행함
+이처럼 브라우저는 동기적으로, 즉 위에서 아래 방향으로 순차적으로 HTML, CSS, JS를 파싱하고 실행함
+이것은 script 위치에 따라 HTML 파싱이 블로킹되어 DOM 생성이 지연될 수 있음을 의미
+따라 script의 위치는 중요한 의미를 가짐</p><p id="8e2f0c1b-995c-453a-8549-3125aea6e0fb" class="">
+</p><p id="15f65f3c-cebb-4f0e-a5b9-97f5b92ab911" class="">자바스크립트 코드에서 DOM이나 CSSOM을 변경하는 DOM API를 사용하려할 때
+DOM과 CSSOM이 이미 생성되어 있어야 함. 그렇지 않으면 정상적으로 동작하지 않음</p><p id="9a74491b-5e67-48c9-9b34-722e2cbc6519" class="">
+</p><p id="f8341610-7da9-45a4-8043-4b42da2c3db0" class="">이런 문제를 회피하기 위해 body 요소 가장 아래에 (닫는 body 태그 바로 위)
+자바스크립트를 위치시키는 건 좋은 아이디어임</p><ul id="56002b07-bd19-44f6-aece-b0ee1073d654" class="bulleted-list"><li style="list-style-type:disc">DOM이 완성되지 않은 상태에서 자바스크립트가 DOM을 조작하면 에러 발생 가능 있음</li></ul><ul id="ab7d2c05-367e-42b7-a8f5-f71b2226773e" class="bulleted-list"><li style="list-style-type:disc">자바스크립트 로딩/파싱/실행으로 인해 HTML 요소들의 렌더링이 지장받지 않아
+페이지 로딩 시간 단축됨</li></ul><p id="b352b9e6-0cb1-49b3-9e71-aff9b28d6bd4" class="">
+</p><p id="a1377f27-916d-4b37-b071-d1bc5ddfe23d" class="">
+</p><p id="ad96a989-f436-411b-9118-48220cc6fed7" class="">&lt;script 태그의 async/defer 어트리뷰트&gt;</p><pre id="fdec70e5-a31a-4b11-892c-ea917e14ed02" class="code"><code>&lt;script async src=&quot;extern.js&quot;&gt;&lt;/script&gt;
+&lt;script defer src=&quot;extern.js&quot;&gt;&lt;/script&gt;</code></pre><p id="9487005d-8f11-4527-8598-e32c1a05fac3" class="">async와 defer 어트리뷰트를 사용하면 HTML 파싱과 외부 자바스크립트 파일의 로드가
+비동기적으로 동시에 진행됨. 다만 자바스크립트 실행 시점에 차이가 있음</p><p id="c0503074-7799-4210-b121-a60c72a6e59c" class="">
+</p><ul id="37e53065-26cc-47f6-bea4-b5beef7975f3" class="bulleted-list"><li style="list-style-type:disc">async 어트리뷰트<ul id="8b374c01-4f6b-43fa-90ba-fe91b21525a4" class="bulleted-list"><li style="list-style-type:circle">HTML 파싱과 외부 자바스크립트 파일의 로드가 비동기적으로 동시에 진행됨</li></ul><ul id="8b6335e6-9011-4364-8bbe-bd8515d6c28a" class="bulleted-list"><li style="list-style-type:circle">자바스크립트의 파싱과 실행은 자바스크립트 파일의 로드가 완료된 직후 실행되며
+이때 HTML 파싱 중단됨</li></ul><ul id="fd5f4335-ad61-4e8e-ac8b-1b7bfbd37449" class="bulleted-list"><li style="list-style-type:circle">여러 개 script 태그에 async 어트리뷰트를 지정 시 script 태그의 순서 상관없이 로드가 완료된
+자바스크립트부터 먼저 실행하므로 순서 보장 안됨
+따라 순서 보장 필요한 script 태그엔 async를 지정하면 안됨.</li></ul><ul id="9adeeb4d-0873-42dc-a43c-eec58f863983" class="bulleted-list"><li style="list-style-type:circle">IE10 이상에서 지원됨</li></ul></li></ul><ul id="1d3d7cf7-3655-4aac-9ac6-4f0364a78b47" class="bulleted-list"><li style="list-style-type:disc">defer 어트리뷰트<ul id="1d456168-02f1-4e5b-a3f0-7070bbdd7f4f" class="bulleted-list"><li style="list-style-type:circle">마찬가지로 HTML 파싱과 외부 자바스크립트 파일의 로드가 비동기적으로 동시에 진행됨</li></ul><ul id="ac3e22e1-b8bb-4d39-886a-25c91a47c43f" class="bulleted-list"><li style="list-style-type:circle">JS 파싱과 실행은 HTML 파싱이 완료된 직후, 즉 DOM 생성이 완료된 직후
+(이때 DOMContentLoaded 이벤트 발생함) 진행됨
+따라 DOM 생성 완료된 이후 실행되어야 할 자바스크립트에 유용함</li></ul><ul id="3855bc4b-33ac-4c92-9f6f-1da05f345113" class="bulleted-list"><li style="list-style-type:circle">IE10 이상에서 지원됨</li></ul><ul id="d3119ef1-7cae-46b2-a81d-74237440daf6" class="bulleted-list"><li style="list-style-type:circle">IE 6 ~ 9에서도 지원되기는 하지만 비정상적으로 동작할수도 있음</li></ul></li></ul></details></li></ul><ul id="add064a2-7a9e-46f8-acb2-4877135eff24" class="toggle"><li><details open=""><summary>REST API란 ?</summary><ul id="14cd6871-1752-4e56-96ad-42d4e4800c79" class="bulleted-list"><li style="list-style-type:disc">REST = HTTP를 기반으로 클라이언트가 서버의 리소스에 접근하는 방식을 규정한 아키텍처</li></ul><ul id="6f94277d-7733-4119-b745-f6e36e2ba4d0" class="bulleted-list"><li style="list-style-type:disc">REST API = REST를 기반으로 서비스 API를 구현한 것을 의미</li></ul><hr id="1a98011f-4405-44f8-a736-2bb6540d58dc"/><ul id="4045f71c-8df5-4b99-895f-51b50f01c1f3" class="bulleted-list"><li style="list-style-type:disc">웹이 HTTP를 제대로 활용하지 못하는 것을 보고
+HTTP 장점을 최대한 활용할 수 있는 아키텍처로 REST를 소개함</li></ul><ul id="f5c5b89f-e570-417a-b3ea-f19113d3676e" class="bulleted-list"><li style="list-style-type:disc">HTTP 프로토콜을 의도에 맞게 디자인하도록 유도</li></ul><ul id="c0622396-5d3c-4884-ab57-3b1cb51d9607" class="bulleted-list"><li style="list-style-type:disc">REST의 기본 원칙을 지킨 서비스 디자인을 RESTful이라고 표현함</li></ul><ul id="626aa96f-d402-44f5-9ec2-a9c49f6878b8" class="bulleted-list"><li style="list-style-type:disc">Representational State Transfer</li></ul><ul id="deeacea9-76a7-403c-95b9-1ca10e43871f" class="bulleted-list"><li style="list-style-type:disc">기본적으로 웹 기본 기술과 HTTP 프로토콜을 그대로 활용하므로 웹의 장점 최대한 활용함</li></ul><p id="6278e666-16f8-4a40-81d0-30ed728cbd46" class="">
+</p><ul id="356ad179-143c-48d9-b954-de463bdaa44c" class="toggle"><li><details open=""><summary>REST API의 구성</summary><ul id="e204fed2-7672-4d7b-8eec-5e608447e744" class="bulleted-list"><li style="list-style-type:disc">REST API는 자원, 행위, 표현의 3가지 요소로 구성되며,
+REST는 자체 표현 구조로 구성되어 REST API만으로 HTTP 요청을 이해 가능함</li></ul><ul id="08684679-4328-491e-aa92-f5013091dc8c" class="bulleted-list"><li style="list-style-type:disc">자원<ul id="4074c10b-4a7a-46b2-adfe-f356875c833a" class="bulleted-list"><li style="list-style-type:circle">자원에 대한 내용이 들어감</li></ul><ul id="f80879df-c666-4eae-9fb9-ed1a8a2e9ad9" class="bulleted-list"><li style="list-style-type:circle">URI(엔드포인트)로 표현됨</li></ul></li></ul><ul id="cecd3ac8-e786-4cc1-ae6b-0a0118cc408f" class="bulleted-list"><li style="list-style-type:disc">행위<ul id="901ad8d8-d109-4f6e-8e0f-2e0e81610d99" class="bulleted-list"><li style="list-style-type:circle">자원에 대한 행위 내용</li></ul><ul id="1217ea7b-a118-4272-8522-09ec17689d1a" class="bulleted-list"><li style="list-style-type:circle">HTTP 요청 메서드로 표현됨</li></ul></li></ul><ul id="8a33f446-cea1-46fd-a75b-8c3ae41772ce" class="bulleted-list"><li style="list-style-type:disc">표현<ul id="d032e1e0-2951-43b6-8714-e63871e5d5a4" class="bulleted-list"><li style="list-style-type:circle">자원에 대한 행위의 구체적 내용</li></ul><ul id="acfde70e-3fea-4591-8219-7bf0ad29cf8c" class="bulleted-list"><li style="list-style-type:circle">페이로드로 표현됨</li></ul></li></ul><p id="8daf02a4-8699-4cda-9324-8f085ad84b1b" class="">
+</p></details></li></ul><ul id="dfe568ec-77b7-40e8-b1aa-7fc47061e083" class="toggle"><li><details open=""><summary>REST API 설계 원칙</summary><ul id="03e40a26-b6a0-418c-90c8-83009f166654" class="bulleted-list"><li style="list-style-type:disc">URI는 리소스를 표현해야 함<p id="41448173-2700-4365-9b16-83484f50b283" class="">리소스를 식별할 수 있는 이름은 동사보단 명사 사용 (get 같은 행위 표현 들어가면 안됨)</p></li></ul><ul id="011632ce-c76b-497c-ae58-e8af1699db9a" class="bulleted-list"><li style="list-style-type:disc">행위에 대한 정의는 HTTP 요청 메서드를 통해 표현함<p id="b3ce6195-e518-4833-a26b-7eff49d6f9d5" class="">HTTP 요청 메서드는 클라이언트가 서버에게 요청의 종류와 목적을 알리는 방법
+주로 5가지 요청 메서들르 사용해 CRUD를 구현함
+(GET, POST, PUT, PATCH, DELETE 등)
+리소스에 대한 행위는 HTTP 요청 메스드를 통해 표현하며 URI에 표현하지 않음</p></li></ul><p id="899ed101-0b02-420b-a688-43d74d37481e" class="">
+</p></details></li></ul><ul id="aca5da44-bcd7-45ff-bdda-962d43ed4a3a" class="toggle"><li><details open=""><summary>REST API 장단점</summary><ul id="73d43be8-acdb-4a28-af7c-9e1238eeb754" class="bulleted-list"><li style="list-style-type:disc">장점<ul id="29ce3546-5c78-4fd8-a851-184d4b2c74a6" class="bulleted-list"><li style="list-style-type:circle">HTTP 프로토콜의 인프라 그대로 사용하므로 별도의 인프라 구축 필요 없음</li></ul><ul id="bac87a57-5211-4aec-85f6-0c17e7d2183f" class="bulleted-list"><li style="list-style-type:circle">HTTP 프로토콜의 표준을 최대한 활용해 여러 추가적인 장점을 함께 가져갈 수 있음</li></ul><ul id="67c898f8-4fc5-49d7-b12d-903baf4005e3" class="bulleted-list"><li style="list-style-type:circle">HTTP 표준 프로토콜에 따르는 모든 플랫폼에서 사용 가능</li></ul><ul id="dcf6d4bc-a207-43f2-af9c-2f7e483e7fe8" class="bulleted-list"><li style="list-style-type:circle">Hypermedia API의 기본을 충실히 지키며 범용성 보장</li></ul><ul id="0371dae6-4ff8-4957-85f9-8f930adf1a16" class="bulleted-list"><li style="list-style-type:circle">메세지가 의도하는 바 명확하므로 의도 쉽게 파악 가능</li></ul><ul id="f42c6d7f-a6ad-4560-908b-849b8cba2ad7" class="bulleted-list"><li style="list-style-type:circle">서버와 클라이언트의 명확한 역할 분배</li></ul><ul id="89f7b7d9-936a-46e1-b4f4-2eeebb01c64e" class="bulleted-list"><li style="list-style-type:circle">여러 서비스 디자인에서 생길 수 있는 문제 최소화함</li></ul></li></ul><ul id="cd4098f4-2736-4f23-92dd-bc12b50a68d9" class="bulleted-list"><li style="list-style-type:disc">단점<ul id="2c72e7f1-f5ad-41db-9f53-69386fbef4b6" class="bulleted-list"><li style="list-style-type:circle">표준 존재하지 않음</li></ul><ul id="6aae99a5-bbfd-49cb-ae30-1bf139899013" class="bulleted-list"><li style="list-style-type:circle">사용 가능한 메서드 4개밖에 없음</li></ul><ul id="4ea46dd3-75aa-40bc-9f15-041812827a79" class="bulleted-list"><li style="list-style-type:circle">브라우저 통해 테스트가 많이 필요한 서비스라면 Header 값이 더 여럽게 느껴짐</li></ul><ul id="96dc6323-e111-4a18-895e-20fec15bc10d" class="bulleted-list"><li style="list-style-type:circle">구형 브라우저 제대로 미지원</li></ul></li></ul><p id="6e4ed96c-250f-4dbd-9570-72e6c2fb19b1" class="">
+</p></details></li></ul><p id="5eb2d089-426a-4672-8c80-190612f04b79" class="">
+</p></details></li></ul><ul id="2b73034e-e003-4eb4-bef4-be281047b836" class="toggle"><li><details open=""><summary>자바스크립트 엔진에 대해 아는대로 설명하세요.
+(콜 스택, 테스크 큐, 이벤트 루프, 싱글스레드, 멀티스레드, 프로세스)</summary><p id="4126d0cb-69b2-4535-b635-0625049eb75b" class="">
+</p><ul id="c33feda9-e0b4-4324-ae34-09d8070b9e65" class="toggle"><li><details open=""><summary>JS 엔진이란</summary><ul id="181f18ca-2280-49bf-ae92-08b44a0251a7" class="bulleted-list"><li style="list-style-type:disc">JS 코드를 실행하는 프로그램 또는 인터프리터</li></ul><ul id="a774546c-3137-4650-9f8d-d5bda45a5247" class="bulleted-list"><li style="list-style-type:disc">모든 브라우저와 Node.js는 JS를 해석하고 실행할 수 있는 JS 엔진은 내장하고 있음</li></ul><ul id="d04460bc-71fc-41f3-8ee8-23a3dc9e008e" class="bulleted-list"><li style="list-style-type:disc">JS 파싱과 실행은 브라우저의 렌더링 엔진이 아닌 JS 엔진이 처리함</li></ul><ul id="22003196-c13e-4e5c-9ac9-bc977e762c6a" class="bulleted-list"><li style="list-style-type:disc">브라우저의 JS 엔진은 서버로부터 응답된 JS코드를 파싱해 AST(Abstract Syntax Tree)를
+생성하고 AST를 기반으로 인터프리터가 실행할 수 있는 중간코드인 바이트코드를 생성해 실행</li></ul><ul id="207ef1be-7040-4be9-a15d-6144328a9519" class="bulleted-list"><li style="list-style-type:disc">구글 크롬과 Node.js의 V8, 파이어폭스의 SpiderMonkey, 사파리의 JavaScriptCore 등
+다양한 종류가 있으며, 모든 JS 엔진은 ECMAScript 사양을 준수함</li></ul><p id="e827442a-2da2-4647-941d-275586d04a66" class="">
+</p></details></li></ul><ul id="b266341d-096d-4f9f-b8d2-a44b110ab140" class="toggle"><li><details open=""><summary>JS 엔진 동작 원리</summary><ul id="637f692b-edfc-4778-940b-3c1f3468dcdd" class="bulleted-list"><li style="list-style-type:disc">JS 엔진은 싱글 스레드로 동작함
+(단 하나의 실행 컨텍스트 스택을 가지고 있기 떄문에 두 가지 이상의 태스크를
+동시 실행 불가능함. 한번에 하나의 태스크만 처리 가능)<p id="a9fcf01c-6be5-4a9d-8599-9dbf96bf84bf" class="">
+</p><p id="b1e5da9b-ef3e-4369-94f0-230f6bba16c3" class="">싱글 스레드 기반 코딩은 멀티 스레드 환경에서 발생할 수 있는 복잡한 문제(데드락)나
+시나리오를 고민하지 않아도 되기 때문에 쉬움
+But. 제약은 많음 (실행이 느려지거나 등)</p></li></ul><ul id="9fa577cf-6354-4872-b7ee-7d5eefa6c23c" class="bulleted-list"><li style="list-style-type:disc">브라우저의 동작을 보면 많은 태스크가 동시에 처리되는 것처럼 보임</li></ul><ul id="d152ee93-b8a8-420e-8438-d4d4fa18c58b" class="bulleted-list"><li style="list-style-type:disc">이렇게 JS의 동시성을 지원하는 것은 바로 이벤트 루프</li></ul><figure id="ff8bafb2-378b-4c25-bd6e-094e2e5f46d3" class="image"><a href="img/221204-1.png"><img style="width:744px" src="img/221204-1.png"/></a></figure><ul id="f68a4606-2d1f-4fd0-a874-e89a4812d6f0" class="bulleted-list"><li style="list-style-type:disc">JS 엔진은 크게 2개의 영역으로 나눌 수 있음<ul id="a62eaa72-8d91-434d-a78c-75b96f495d86" class="toggle"><li><details open=""><summary>Call Stack</summary><ul id="dda18048-86c8-4481-8949-9e2265f6e1d5" class="bulleted-list"><li style="list-style-type:disc">코드 실행에 따라 호출 스택이 쌓이는 곳</li></ul><ul id="ed73ed4a-f710-4138-8ade-dfbdaa772e43" class="bulleted-list"><li style="list-style-type:disc">실행 컨텍스트가 추가/제거되는 스택 자료구조인 실행 컨텍스트 스택이 바로 콜 스택</li></ul><ul id="8fb588f0-35f5-4480-a729-73a852f17caa" class="bulleted-list"><li style="list-style-type:disc">함수 실행 컨텍스트가 순차적으로 콜 스택에 푸시되어 순차적으로 실행됨</li></ul><ul id="08c7aa17-f0c9-4a1d-bc2d-82b49d21dca1" class="bulleted-list"><li style="list-style-type:disc">JS 엔진은 단 하나의 콜 스택을 사용하기 때문에 최상위 실행 컨텍스트가 종료되어
+콜 스택에서 제거되기 전까진 다른 어떤 태스크도 실행되지 않음</li></ul><p id="03bfff9b-694f-4812-bcd4-fad353c77d03" class="">
+</p></details></li></ul><ul id="c5ecd5f0-2f45-4a4a-bf1e-e8dbe2db840f" class="toggle"><li><details open=""><summary>Memory Heap</summary><ul id="e7c46022-9960-4dd7-809b-f7e96bf7268c" class="bulleted-list"><li style="list-style-type:disc">객체가 저장되는 메모리 공간 (메모리 할당이 일어나는 곳)</li></ul><ul id="e26c7637-7678-46f7-bfd6-df18dce50fb6" class="bulleted-list"><li style="list-style-type:disc">함수나 변수, 함수 실행 시 사용하는 값들을 저장함</li></ul><ul id="8ea3e1df-40de-4aaa-9955-1136f85ce88d" class="bulleted-list"><li style="list-style-type:disc">콜 스택의 요소인 실행 컨텍스트는 힙에 저장된 객체를 참조함</li></ul><ul id="50943a2e-6e73-445c-98a5-a0829a19060f" class="bulleted-list"><li style="list-style-type:disc">객체가 저장되는 메모리 공간인 힙은 값을 저장할 메모리 공간의 크기가
+런타임에 동적 할당되기 때문에 구조화되어 있지 않음</li></ul><p id="9e23eebe-a0fa-4f26-8c68-15ca88a47a73" class="">
+</p></details></li></ul></li></ul><ul id="e233d178-e99e-491e-a43e-b1b33ab48823" class="bulleted-list"><li style="list-style-type:disc">이렇게 콜 스택과 힙으로 구성되어 있는 JS 엔진은 단순히 태스크 요청 시
+콜 스택을 통해 요청된 작업을 실행할 뿐임.
+
+비동기 처리에서 소스코드의 평가와 실행을 제외한 모든 처리는 JS엔진을 구동하는 환경인
+브라우저/Node.js가 담당함
+
+ex) setTimeout의 콜백 함수의 평가와 실행은 JS 엔진이 담당.
+호출 스케줄링을 위한 타이머 설정과 콜백 함수의 등록은 브라우저/Node.js가 담당
+이를 위해 브라우저는 태스크 큐와 이벤트 루프를 제공함
+
+만약 콜 스택에 들어간 코드 중 일부가 시간이 오래 걸린다면?
+다음에 호출되어야 하는 코드는 기다릴 수밖에 없음.
+이를 해결하기 위해 Web API, Callback Queue, Event Loop가 필요함<p id="fd66e938-041c-4cde-8b17-6540086e9235" class="">
+</p></li></ul><ul id="7c4162f9-3a60-4b77-91c7-2c141bcdb19a" class="bulleted-list"><li style="list-style-type:disc">태스크 큐와 이벤트 루프<ul id="688901cc-0ec6-4b94-9a21-1e0cdafa7283" class="toggle"><li><details open=""><summary>Web API</summary><ul id="99b52a3a-4190-413a-96e2-044b381a102d" class="bulleted-list"><li style="list-style-type:disc">브라우저에서 제공하는 API</li></ul><ul id="72aa3d0e-4dd6-4ed6-94c5-a380b99885ff" class="bulleted-list"><li style="list-style-type:disc">DOM, Ajax, Timeout 등이 존재</li></ul><ul id="ec8d4e55-9e85-4f6d-b4e5-9662b4866de3" class="bulleted-list"><li style="list-style-type:disc">Call Stack에서 실행된 비동기 함수는 Web API를 호출하고
+Web API는 콜백 함수를 Callback Queue에 담아둠</li></ul><p id="1a03312d-5a70-46f5-808e-bdbe8ffdfd5e" class="">
+</p></details></li></ul><ul id="46a0cb11-af96-494d-a23d-0c2f9bad2093" class="toggle"><li><details open=""><summary>Task queue (Callback Queue)</summary><ul id="5bf85bcc-9dda-485f-9e20-d72b28214cb6" class="bulleted-list"><li style="list-style-type:disc">비동기 함수의 콜백 함수, 이벤트 핸들러가 일시적으로 보관되는 영역</li></ul><ul id="e32a9ba6-4d71-4c38-b596-19c9eafedd7c" class="bulleted-list"><li style="list-style-type:disc">태스크 큐와는 별도로 프로미스의 후속처리 메서드의 콜백 함수가
+일시적으로 보관되는 마이크로태스크 큐도 존재함
+(일반 태스크보다 더 높은 우선순위를 갖는 태스크)
+⇒ 태스크 큐에 대기중인 태스크가 있더라도 마이크로 태스크 먼저 실행됨</li></ul><p id="e1d982b4-ba18-4779-81dc-02d9fa900c32" class="">
+</p></details></li></ul><ul id="414dbd0d-1372-41d6-87a4-3cfb14f0ffbe" class="toggle"><li><details open=""><summary>Event Loop</summary><ul id="e156c911-49cc-4ce7-93c5-5bbd8eb6ccaf" class="bulleted-list"><li style="list-style-type:disc">콜 스택에 현재 실행중인 실행 컨텍스트가 있는지,
+태스크 큐에 대기중인 함수(콜백 함수, 이벤트 핸들러 등)이 있는지 반복해 확인함</li></ul><ul id="7d0eedc3-0717-4809-bdf9-1077ceec931a" class="bulleted-list"><li style="list-style-type:disc">만약 콜 스택이 비어있고 태스크 큐에 대기중인 함수가 있다면 이벤트 루프는
+순차적(FIFO)으로 태스크 큐에 대기중인 함수를 콜 스택으로 이동시킴</li></ul><ul id="06f4d45a-39af-479a-b14a-b96712cd7374" class="bulleted-list"><li style="list-style-type:disc">이때 콜 스택으로 이동한 함수는 실행됨
+즉, 태스크 큐에 일시 보관된 함수들은 비동기 처리 방식으로 동작함</li></ul><p id="12cc5175-91da-4bc5-892d-c3c49c90fa0b" class="">
+</p></details></li></ul><p id="984ee7a9-384f-4848-a490-b078424ce3a3" class="">
+</p></li></ul><ul id="4e87d6d8-aa09-468e-97b7-a88c92b29998" class="bulleted-list"><li style="list-style-type:disc">즉, JS엔진은 싱글 스레드 방식으로 동작하지만 JS 런타임은 멀티 스레드 방식으로 동작</li></ul><p id="85645c73-6a3c-426e-b9fc-2da98df9c9d1" class="">
+</p></details></li></ul><ul id="b9b411ea-5c23-4dd0-a2be-78ac1337b23e" class="toggle"><li><details open=""><summary>프로세스와 스레드의 차이점</summary><p id="fc37ed1b-e92f-4d33-8d66-984f9f049176" class=""><a href="https://brunch.co.kr/@kd4/3">https://brunch.co.kr/@kd4/3</a></p><ul id="a9ff2829-2dc9-49f7-946a-4cad2288c5d2" class="bulleted-list"><li style="list-style-type:disc">프로세스?<ul id="50cb3e84-52f1-42cf-b8e3-ca959048b980" class="bulleted-list"><li style="list-style-type:circle">단순히 실행중인 프로그램을 뜻함</li></ul><ul id="66265152-5669-4e1a-a88d-8d979ea14e4e" class="bulleted-list"><li style="list-style-type:circle">즉, 사용자가 작성한 프로그램이 운영체제에 의해
+메모리 공간을 할당받아 실행 중인 것을 뜻함</li></ul><ul id="2a96bc52-a81d-4f0d-af47-78d0e2e75a20" class="bulleted-list"><li style="list-style-type:circle">프로세스는 프로그램에 사용되는 데이터와 메모리 등의 자원, 스레드로 구성됨</li></ul></li></ul><ul id="c979055d-e48f-4b9c-9664-455bcef3e0e6" class="bulleted-list"><li style="list-style-type:disc">스레드<ul id="ad2ac14a-1914-4881-bb83-606472ecb220" class="bulleted-list"><li style="list-style-type:circle">프로세스 내에서 실제로 작업을 수행하는 주체를 의미</li></ul><ul id="dcff50ae-7e7a-4df1-87d1-aa000009026b" class="bulleted-list"><li style="list-style-type:circle">모든 프로세스에는 한 개 이상의 스레드가 존재하며 작업을 수행함</li></ul><ul id="4cd2b504-e418-47c4-8570-cd8a9d146678" class="bulleted-list"><li style="list-style-type:circle">두 개 이상의 스레드를 가지는 프로세스를 멀티스레드 프로세스라고 함</li></ul><ul id="d594b4ac-d67a-413b-a9c7-c86f31b73792" class="bulleted-list"><li style="list-style-type:circle">스택을 제외한 나머지 부분을 다른 스레드랑 공유 가능</li></ul></li></ul></details></li></ul><p id="67ff9f1a-7deb-4728-b483-0f1956cc0e57" class="">
+</p></details></li></ul><ul id="31685a94-aae2-4b3a-979e-b4bfcaea10a8" class="toggle"><li><details open=""><summary>가비지 컬렉터란?</summary><ul id="9d8b20fb-5c52-43d4-9594-c6ec40978c94" class="bulleted-list"><li style="list-style-type:disc">메모리 생존 주기는 아래와 같음<ul id="527a36f7-902c-45d6-8015-733d4b672b49" class="bulleted-list"><li style="list-style-type:circle">필요할 때 할당 (값 선언 시, 함수 호출 시 등)</li></ul><ul id="39d662e8-8075-420e-a263-aa0c93faadea" class="bulleted-list"><li style="list-style-type:circle">할당된 메모리를 사용 (읽고 쓰기)</li></ul><ul id="15722c09-4441-48d3-ad3b-0cab59c55016" class="bulleted-list"><li style="list-style-type:circle">더 이상 필요치 않으면 해제함</li></ul></li></ul><ul id="014e0f2d-6319-495a-b871-dfba13df7c13" class="bulleted-list"><li style="list-style-type:disc">저수준 언어에서는 메모리가 필요 없어질 때를 개발자가 직접 결정하고 해제하지만
+JS 같은 고수준 언어에서는 가비지 콜렉션(GC)라는 자동 메모리 관리 방법을 사용함</li></ul><ul id="0d662c5a-59fa-45a8-9fa9-f4fa7f9dbd3a" class="bulleted-list"><li style="list-style-type:disc">가비지 컬렉터의 목적 :
+메모리 할당을 추적하고, 할당된 메모리 블록이 더 이상 필요치 않게 되었는지 판단해 회수하는 것</li></ul><ul id="4cd353dd-baae-4cc3-befb-9c5f4b93a74d" class="bulleted-list"><li style="list-style-type:disc">스택은 함수 호출이 끝난 후 OS에 의해 정리되지만, 힙 메모리는 그렇지 않기 떄문에
+쓸모없는 메모리가 해제되지 않으면 메모리 누수가 발생하고 프로그램 속도가 점점 느려짐</li></ul><ul id="bc0b6346-e3d7-4eb3-83d9-42730ef7fb50" class="bulleted-list"><li style="list-style-type:disc">자동 메모리 관리는 편할 것 같지만 잠재적 혼란의 원인이 될 수도 있음</li></ul><ul id="dfe21c07-eb4f-488d-abd8-fd9783723157" class="bulleted-list"><li style="list-style-type:disc">더 이상 필요치 않은 메모리를 찾는 건 비결졍적인 문제이기 때문.
+따라 가비지 컬렉터들은 이 문제에 대해 제한적인 해결책을 구현함</li></ul><ul id="eab071f6-d4fd-441c-a458-ab8b7ac4ef33" class="bulleted-list"><li style="list-style-type:disc">가비지 컬렉션 알고리즘의 핵심 개념 = ‘참조’
+A라는 메모리를 통해 (명시적이든 암시적이든) B라는 메모리에 접근 가능하다면 B는 A에 참조됨</li></ul><ul id="5b53e450-967f-41af-9eb2-daf60035ef9a" class="bulleted-list"><li style="list-style-type:disc">“참조-세기 알고리즘” (Reference-counting)<ul id="592ef105-c748-4453-93ac-294610f1b1f0" class="bulleted-list"><li style="list-style-type:circle">“더 이상 필요 없는 오브젝트”를 “어떤 다른 오브젝트도 참조하지 않는 오브젝트”로 정의</li></ul><ul id="81f8e34b-49d0-40f9-80fe-2b7b1c997fd2" class="bulleted-list"><li style="list-style-type:circle">어떤 다른 오브젝트도 참조하지 않는 오브젝트를 가비지라고 부르며,
+이를 참조하는 다른 오브젝트가 하나도 없는 경우 수집 가능함</li></ul><ul id="3108d96d-4ce5-4561-994c-eb38e591d335" class="bulleted-list"><li style="list-style-type:circle">But, 순환 참조의 경우 메모리 누수 발생함
+두 객체가 서로 참조함으로써 순환 구조 생성 시, 함수 호출 완료되면 두 객체는 불필요해지므로
+할당된 메모리가 회수되어야 하는데 두 객체가 서로 참조하고 있으므로 가비지 컬렉션의 대상으로 표시되지 않음. ⇒ 메모리 누수 발생</li></ul><ul id="ed2849b2-e343-459b-8241-c71b850880c3" class="bulleted-list"><li style="list-style-type:circle">IE6,7은 DOM 오브젝트에 의해 참조-세기 알고리즘으로 가비지 컬렉션을 수행함</li></ul></li></ul><ul id="811c704b-192e-4f27-8c36-35042fc230bc" class="bulleted-list"><li style="list-style-type:disc">“표시하고-쓸기 알고리즘” (Mark-and-sweep)<ul id="7a181faf-0c33-4782-a807-8aca986d180c" class="bulleted-list"><li style="list-style-type:circle">“더 이상 필요 없는 오브젝트”를 “닿을 수 없는 오브젝트”로 정의함</li></ul><ul id="504c2d5d-7959-4cae-8f9f-c344e447a8e3" class="bulleted-list"><li style="list-style-type:circle">해당 알고리즘은 roots라는 오브젝트 집합을 가지고 있음 (JS의 전역 변수)</li></ul><ul id="09142bcd-3c0a-43ad-b03c-e5039e29e7f7" class="bulleted-list"><li style="list-style-type:circle">가비지 컬렉터는 주기적으로 roots부터 시작해 roots가 참조하는 오브젝트들,
+roots가 참조하는 오브젝트가 참조하는 오브젝트들..을 닿을 수 있는 오브젝트라고 표시함
+그리고 닿을 수 없는 오브젝트들에 대해 가비지 컬렉션을 수행함</li></ul><ul id="5d12bce0-3b2b-4cfa-9450-a209f4fb5466" class="bulleted-list"><li style="list-style-type:circle">참조-세기 알고리즘보다 효율적.
+참조되지 않는 오브젝트는 모두 닿을 수 없는 오브젝트이지만 역은 성립하지 않기 떄문
+→ 순환참조는 더 이상 문제되지 않음</li></ul><ul id="307e72a9-3633-41c3-94bb-2d3b45141c41" class="bulleted-list"><li style="list-style-type:circle">모든 최신 브라우저들은 가비지 컬렉션에서 표시하고-쓸기 알고리즘을 사용함
+(개선된 알고리즘도 여전히 더 이상 필요 없는 오브젝트를 닿을 수 없는 오브젝트로 정의함)</li></ul></li></ul><p id="7b40126a-c5b4-4837-b826-1c347067facf" class="">
+</p><ul id="6546ded5-e41b-4465-819c-cf1201eadb0b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Memory_Management">https://developer.mozilla.org/ko/docs/Web/JavaScript/Memory_Management</a></li></ul><ul id="a04afd89-5315-4089-a987-0ec05d174caf" class="bulleted-list"><li style="list-style-type:disc"><a href="https://fe-developers.kakaoent.com/2022/220519-garbage-collection/">https://fe-developers.kakaoent.com/2022/220519-garbage-collection/</a></li></ul><p id="03d4e32d-e75f-48a0-8d72-c99b8f67c7df" class="">
+</p><p id="ece2927e-531e-4299-866d-8c64cdc9f20e" class="">
+</p></details></li></ul><ul id="c9faa695-27ce-4df6-b05d-8cca7905bc61" class="toggle"><li><details open=""><summary>배열 메서드(map, filter, reduce, foreach, every...)에 대해 아는대로 설명하세요.
+그리고 차이점에 대해 설명하세요.</summary><p id="f3b7bede-5122-4603-959c-b640d21b467f" class="">&lt;기타&gt;</p><ul id="9b42acd6-e0be-4e2d-b539-fdfde8586194" class="bulleted-list"><li style="list-style-type:disc">at : 정수값을 받아 배열에서 해당 값에 해당하는 인덱스의 요소 반환함</li></ul><ul id="934b1e1f-82f2-4674-83e7-43dc76941360" class="bulleted-list"><li style="list-style-type:disc">copyWithin : 배열의 일부를 얇게 복사한 뒤, 동일한 배열의 다른 위치에 덮어쓰고 그 배열 반환</li></ul><ul id="ae4ac437-a9f9-4b1b-af03-d23c161eefa7" class="bulleted-list"><li style="list-style-type:disc">fill : 배열의 시작 인덱스부터 끝 인덱스 이전까지 정적인 값 하나로 채움</li></ul><p id="9e5cee38-22a7-4c4b-91b2-835c4c429d93" class="">
+</p><p id="dd041ddd-3949-4611-bf2e-3f7ce91eef91" class="">&lt;원본 배열 변경 X&gt;</p><ul id="5434834e-b2cc-41e0-82ee-7a1767562db4" class="bulleted-list"><li style="list-style-type:disc">concat : 인자로 주어진 배열이나 값들을 기존 배열에 합쳐 새로운 배열 반환</li></ul><ul id="6c6b0e11-7e65-4078-bc3e-b032de35c105" class="bulleted-list"><li style="list-style-type:disc">entries : 배열의 각 인덱스에 대한 키/값 쌍을 가지는 새로운 Array Iterator 객체 반환</li></ul><ul id="3be302d4-dd0b-4457-acf1-1ea539e3676f" class="bulleted-list"><li style="list-style-type:disc">every : 배열 안에 모든 요소가 주어진 판별 함수를 통과하는지 테스트. Boolean 반환</li></ul><ul id="c67429f0-b25f-4abc-80f3-7ca69b681890" class="bulleted-list"><li style="list-style-type:disc">some : 배열 안에 적어도 하나의 요소가 주어진 판별 함수를 통과하는 지 테스트</li></ul><ul id="e734577d-6bab-4c12-b8e6-04664db36bbd" class="bulleted-list"><li style="list-style-type:disc">filter : 주어진 함수의 테스트를 토과하는 모든 요소를 모아 새로우 배열로 반환</li></ul><ul id="276ceb14-269d-4151-9fed-580f6519281a" class="bulleted-list"><li style="list-style-type:disc">find : 주어진 판별 함수를 만족하는 첫 번째 요소의 값 반환</li></ul><ul id="cec25e40-7e44-4879-bd17-805dece6aff1" class="bulleted-list"><li style="list-style-type:disc">findIndex : 주어진 판별 함수를 만족하는 첫 번째 요소에 대한 인덱스 반환</li></ul><ul id="09431880-5943-43d6-b95b-974b32146764" class="bulleted-list"><li style="list-style-type:disc">findLast : 역순으로 주어진 판별 함수를 만족하는 첫 번째 요소의 값 반환</li></ul><ul id="92439928-c950-4c57-88b8-c37b92ae476e" class="bulleted-list"><li style="list-style-type:disc">findLastIndex : 역순으로 주어진 판별 함수를 만족하는 첫 번째 요소에 대한 인덱스 반환</li></ul><ul id="6bd286a3-5318-47a5-b314-696a3f191ccd" class="bulleted-list"><li style="list-style-type:disc">flat : 모든 하위 배열 요소가 지정한 깊이까지 재귀적으로 연결된 새 배열 만듬</li></ul><ul id="ea6d8d4f-7496-4ca8-94ff-5a3298f6d0e2" class="bulleted-list"><li style="list-style-type:disc">flatMap : 배열의 각 요소에 지정된 콜백 함수 적용 뒤 결과를 한 수준씩 평면화 해 새 배열 반환 (.flat().map())</li></ul><ul id="63637d8d-3f22-4f93-b7ff-5bc74157e8a1" class="bulleted-list"><li style="list-style-type:disc">forEach : 각 배열 요소에 대해 제공된 함수 한번 실행</li></ul><ul id="60c3ac88-351b-4e61-ae6d-fe99ba181efd" class="bulleted-list"><li style="list-style-type:disc">from : 얕게 복사된 새 배열 만듬</li></ul><ul id="859b31e8-1f0a-46df-a23b-05ce14f0954e" class="bulleted-list"><li style="list-style-type:disc">include : 배열이 항목 중 특정 값을 포함하는지 확인</li></ul><ul id="31712e74-abcd-413e-b64e-853c1ac40c67" class="bulleted-list"><li style="list-style-type:disc">indexOf : 배열에서 지정된 요소 찾을 수 있는 첫 번째 인덱스 반환</li></ul><ul id="d15b4398-d6c4-4419-b564-cc65fcd2bbfa" class="bulleted-list"><li style="list-style-type:disc">keys : 배열의 각 인덱스에 대한 키를 포함하는 새로운 배열 반환</li></ul><ul id="8d5b7eb6-b598-46e9-a7cf-03f377758e50" class="bulleted-list"><li style="list-style-type:disc">map : 배열의 모든 요소 각각에 주어진 함수를 호출한 결과를 모아 새로운 배열 반환</li></ul><ul id="b288172b-a4c1-40ce-b7bd-5d4ceae043fc" class="bulleted-list"><li style="list-style-type:disc">reduce : 배열의 각 요소에 대해 사용자 제공 &quot;리듀서&quot; 콜백 함수를 순서대로 실행하고 이전 요소에 대한 계산의 반환 값을 전달. 최종 결과는 단일값</li></ul><ul id="ad1824e3-9c4b-43d7-9e21-139eed000bef" class="bulleted-list"><li style="list-style-type:disc">slice : 배열을 start에서 end까지 얕은 복사해 새로운 배열 반환</li></ul><p id="30d5e1a8-646f-4de9-914e-03561183d094" class="">
+</p><p id="60fe56c2-ddf7-4f34-a7af-7747b69b14ab" class="">&lt;원본 배열 수정&gt;</p><ul id="fa9d2bf7-9da9-40cf-9a9a-bc99f15564d1" class="bulleted-list"><li style="list-style-type:disc">push : 배열 끝에 하나 이상의 요소를 추가하고 배열의 새 길이를 반환</li></ul><ul id="eaa71c63-060e-430b-96ca-a0d88a2161e8" class="bulleted-list"><li style="list-style-type:disc">pop : 배열의 마지막 요소 제거하고 요소 값을 리턴</li></ul><ul id="d56882c1-5997-481a-b156-4908ab55ba8c" class="bulleted-list"><li style="list-style-type:disc">shift : 배열에서 첫 번째 요소를 제거하고 제거된 요소를 반환</li></ul><ul id="befa6aba-e2de-4eb6-8586-7508f8070577" class="bulleted-list"><li style="list-style-type:disc">unshift : 첫 요소에 추가하고 변경된 새로운 배열 길이 리턴</li></ul><ul id="82c43d72-c0b4-4a94-bd00-f83413a25f24" class="bulleted-list"><li style="list-style-type:disc">splice : startIndex부터 기존 요소 제거하고 새로운 요소 추가함. 제거된 요소 배열로 리턴</li></ul><ul id="cabf9c08-e1d6-4d9a-97b2-f86bf8ece753" class="bulleted-list"><li style="list-style-type:disc">reverse : 배열을 뒤집고 동일한 배열에 대한 참조를 반환</li></ul><ul id="8144acde-eb28-4264-8276-3e7a5336ab69" class="bulleted-list"><li style="list-style-type:disc">sort : 배열을 정렬하고 정렬된 동일한 배열의 참조 반환</li></ul><p id="2d614be9-de78-4b27-95ba-bffd2a56c728" class="">
+</p></details></li></ul></div></article></body></html>
